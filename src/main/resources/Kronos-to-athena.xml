@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net 
+      http://dozer.sourceforge.net/schema/beanmapping.xsd">
+<!--        
+     <mapping>
+        <class-a>org.otcl.airlines.kronos.dto.KronosAirlinePassenger</class-a>
+        <class-b>org.otcl.airlines.athena.dto.AthenaAirlinePassenger</class-b>
+        <field>
+            <a>travelers.traveler</a>
+            <b>travelers.traveler</b>
+        </field>
+    </mapping>
+  -->
+     <mapping>
+        <class-a>org.otcl.airlines.kronos.dto.Travelers</class-a>
+        <class-b>org.otcl.airlines.athena.dto.Travelers</class-b>
+        <field>
+            <a>travelers.traveler.recognizedTraveler.ptc.value</a>
+            <b>preference.cabinPreferences.cabinType.code</b>
+        </field>
+    </mapping>
+
+ 
+</mappings>

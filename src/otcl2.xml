@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<AthenaAirlinePassenger>
+	<DataLists>
+		<PassengerList>
+			<Passenger>
+				<IdentityDocument>
+					<Visa>
+						<VisaType>Abel</VisaType>
+					</Visa>
+				</IdentityDocument>
+			</Passenger>
+		</PassengerList>
+	</DataLists>
+	<PTC>Abel</PTC>
+	<MainPassengerName>M</MainPassengerName>
+</AthenaAirlinePassenger>

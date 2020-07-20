@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.2.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<groupId>org.otcl</groupId>
+	<artifactId>otcl-test</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<otcl.version>1.0</otcl.version>
+		<jmh.version>1.23</jmh.version>
+		<mapstrut.version>1.3.1.Final</mapstrut.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-compiler-plugin</artifactId>
+			    <configuration>
+			        <source>1.8</source>
+			        <target>1.8</target>
+			        <annotationProcessorPaths>
+				        <path>
+			                <groupId>org.openjdk.jmh</groupId>
+			                <artifactId>jmh-generator-annprocess</artifactId>
+			                <version>${jmh.version}</version>
+			            </path>
+			            <path>
+			                <groupId>org.mapstruct</groupId>
+			                <artifactId>mapstruct-processor</artifactId>
+		    				<version>${mapstrut.version}</version>
+			            </path>
+         			</annotationProcessorPaths>
+			    </configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+	
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.yaml</groupId>
+		    <artifactId>snakeyaml</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.openjdk.jmh</groupId>
+		    <artifactId>jmh-core</artifactId>
+		    <version>${jmh.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.openjdk.jmh</groupId>
+		    <artifactId>jmh-generator-annprocess</artifactId>
+		    <version>${jmh.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.mapstruct</groupId>
+		    <artifactId>mapstruct-jdk8</artifactId>
+		    <version>${mapstrut.version}</version>
+		</dependency>
+		
+ 		<dependency>
+			<groupId>org.otcl</groupId>
+			<artifactId>otcl-core</artifactId>
+			<version>${otcl.version}</version>
+		</dependency>
+
+ 		<dependency>
+			<groupId>org.otcl</groupId>
+			<artifactId>otcl2-common</artifactId>
+			<version>${otcl.version}</version>
+		</dependency>
+ 		<dependency>
+			<groupId>org.otcl</groupId>
+			<artifactId>otcl2-core</artifactId>
+			<version>${otcl.version}</version>
+		</dependency>
+
+	</dependencies>
+</project>
+ 

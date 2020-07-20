@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<AthenaAirlinePassenger>
+	<CoreQuery>
+		<OriginDestinations>
+			<OriginDestination>
+				<Departure>
+					<Date>2016-06-20</Date>
+				</Departure>
+			</OriginDestination>
+			<OriginDestination>
+				<Departure>
+					<Date>2016-07-05</Date>
+				</Departure>
+			</OriginDestination>
+		</OriginDestinations>
+	</CoreQuery>
+	<DataLists>
+		<PassengerList>
+			<Passenger>
+				<IdentityDocument>
+					<GivenName>Frank</GivenName>
+					<GivenName>Josh</GivenName>
+				</IdentityDocument>
+			</Passenger>
+			<Passenger>
+				<IdentityDocument>
+					<GivenName>F</GivenName>
+					<GivenName>J</GivenName>
+				</IdentityDocument>
+			</Passenger>
+		</PassengerList>
+	</DataLists>
+	<Travelers>
+		<Traveler>
+			<RecognizedTraveler>
+				<PTC Quantity="1">CHD</PTC>
+				<Age>
+					<BirthDate>2016-06-20</BirthDate>
+				</Age>
+				<Name>
+					<Given>Frank</Given>
+					<Given>Josh</Given>
+				</Name>
+			</RecognizedTraveler>
+		</Traveler>
+		<Traveler>
+			<RecognizedTraveler>
+				<PTC Quantity="1">ADT</PTC>
+				<Age>
+					<BirthDate>1990-04-15</BirthDate>
+				</Age>
+				<Name>
+					<Given>F</Given>
+					<Given>J</Given>
+				</Name>
+			</RecognizedTraveler>
+		</Traveler>
+	</Travelers>
+	<PTC>Frank</PTC>
+	<PTC>Josh</PTC>
+	<PTC>F</PTC>
+	<PTC>J</PTC>
+	<MainPassengerName>Abel</MainPassengerName>
+</AthenaAirlinePassenger>
