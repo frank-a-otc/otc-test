@@ -15,9 +15,10 @@ import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
-import org.otcl.airlines.kronos.dto.KronosAirlinePassenger;
 import org.otcl.test.dto.ContractEmployee;
 import org.otcl2.common.config.OtclConfig;
+
+import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 public abstract class AbstractTest {
 

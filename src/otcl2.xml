@@ -1,16 +1,21 @@
 <?xml version="1.0" ?>
 <AthenaAirlinePassenger>
-	<DataLists>
-		<PassengerList>
-			<Passenger>
-				<IdentityDocument>
-					<Visa>
-						<VisaType>Abel</VisaType>
-					</Visa>
-				</IdentityDocument>
-			</Passenger>
-		</PassengerList>
-	</DataLists>
-	<PTC>Abel</PTC>
-	<MainPassengerName>M</MainPassengerName>
+	<Travelers>
+		<Traveler>
+			<customObjectsMap>
+				<entry>
+					<key>
+						<PTC>Child</PTC>
+					</key>
+					<value></value>
+				</entry>
+				<entry>
+					<key>
+						<PTC>Adult</PTC>
+					</key>
+					<value></value>
+				</entry>
+			</customObjectsMap>
+		</Traveler>
+	</Travelers>
 </AthenaAirlinePassenger>

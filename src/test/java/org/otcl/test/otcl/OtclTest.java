@@ -9,12 +9,13 @@ import javax.xml.stream.FactoryConfigurationError;
 import javax.xml.stream.XMLStreamException;
 
 import org.junit.jupiter.api.Test;
-import org.otcl.airlines.athena.dto.AthenaAirlinePassenger;
-import org.otcl.airlines.kronos.dto.KronosAirlinePassenger;
 import org.otcl.test.AbstractTest;
 import org.otcl2.common.engine.OtclEngine;
 import org.otcl2.common.engine.compiler.CompilationReport;
 import org.otcl2.core.engine.OtclEngineImpl;
+
+import com.athena.airlines.dto.AthenaAirlinePassenger;
+import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 public class OtclTest extends AbstractTest {
 

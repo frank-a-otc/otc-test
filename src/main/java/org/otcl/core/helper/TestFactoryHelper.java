@@ -1,9 +1,9 @@
 package org.otcl.core.helper;
 
-import org.otcl.airlines.athena.dto.AthenaAirlinePassenger;
-import org.otcl.airlines.athena.dto.TravelerCoreType;
-import org.otcl.airlines.athena.dto.TravelerDetailType;
-import org.otcl.airlines.kronos.dto.KronosAirlinePassenger;
+import com.athena.airlines.dto.AthenaAirlinePassenger;
+import com.athena.airlines.dto.TravelerCoreType;
+import com.athena.airlines.dto.TravelerDetailType;
+import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 public class TestFactoryHelper {
 
@@ -13,6 +13,14 @@ public class TestFactoryHelper {
 	
 	public static TravelerCoreType.PTC getPtc(TravelerDetailType travelerDetailType) {
 		return travelerDetailType.getPTC();
+	}
+
+	public static void setPtc(TravelerCoreType travelerCoreType, TravelerCoreType.PTC ptc) {
+		travelerCoreType.setPTC(ptc);
+	}
+	
+	public static TravelerCoreType.PTC getPtc(TravelerCoreType travelerCoreType) {
+		return travelerCoreType.getPTC();
 	}
 
 	public static void setMainPassenger(AthenaAirlinePassenger athenaAirlinePassenger, String mainPassengerName) {

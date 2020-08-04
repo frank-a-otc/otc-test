@@ -40,7 +40,6 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
-import org.otcl.airlines.kronos.dto.KronosAirlinePassenger;
 import org.otcl.test.AbstractTest;
 import org.otcl.test.dto.ContractEmployee;
 import org.otcl.test.dto.PermanentEmployee;
@@ -49,6 +48,8 @@ import org.otcl2.common.OtclConstants;
 import org.otcl2.common.config.OtclConfig;
 import org.otcl2.common.engine.OtclEngine;
 import org.otcl2.core.engine.OtclEngineImpl;
+
+import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 public class Otcl extends AbstractTest {
 
@@ -101,7 +102,7 @@ public class Otcl extends AbstractTest {
 		if (contractEmployee == null) {
 			System.out.println("deployed..............."); 
 		}
-		PermanentEmployee permanentEmployee = otclEngine.executeOtcl(deploymentId, contractEmployee, null);
+		PermanentEmployee permanentEmployee = otclEngine.executeOtcl("", otclFileName, contractEmployee, null);
 //		AthenaAirlinePassenger athenaAirlinePassenger = otclEngine.executeOtcl(deploymentId, kronosAirlinePassenger, null);
 		myState.counter++;
 //		print(airlinePassenger, jaxbContext); 

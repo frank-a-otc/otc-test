@@ -1,9 +1,13 @@
 <?xml version="1.0" ?>
 <AthenaAirlinePassenger>
-	<MainPassengerName>Business</MainPassengerName>
-	<TravelerDetailType>
-		<Name>
-			<Surname>M</Surname>
-		</Name>
-	</TravelerDetailType>
+	<recognizedTravelerMap>
+		<entry>
+			<key>Martin</key>
+			<value>
+				<Name>
+					<Given>Martin</Given>
+				</Name>
+			</value>
+		</entry>
+	</recognizedTravelerMap>
 </AthenaAirlinePassenger>
