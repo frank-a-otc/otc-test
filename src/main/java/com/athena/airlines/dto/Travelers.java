@@ -136,10 +136,10 @@ public class Travelers {
         protected Map<String, AnonymousTravelerType> anonymousTravelerMap;
         @XmlElement(name = "RecognizedTravelerMap")
         protected Map<Integer, TravelerDetailType> recognizedTravelerMap;
-        @XmlElement(name = "AnonymousAndTravelerMap")
+        @XmlElement(name = "CustomObjectsMap")
         protected Map<AnonymousTravelerType, TravelerDetailType> customObjectsMap;
 
-        @XmlElement(name = "AnonymousAndTravelerMap")
+        @XmlElement(name = "CustomStringMap")
         protected Map<AnonymousTravelerType, String> customStringMap;
 		@XmlElement(name = "IntIntMap")
         protected Map<Integer, Integer> intIntMap;

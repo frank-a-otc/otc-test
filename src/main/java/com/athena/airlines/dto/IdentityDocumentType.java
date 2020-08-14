@@ -101,7 +101,7 @@ public class IdentityDocumentType {
     @XmlElement(name = "Birthplace")
     protected String birthplace;
     @XmlElement(name = "Gender")
-    protected String gender;
+    protected TravelerDetailType.Gender gender;
     @XmlElement(name = "NameTitle")
     protected String nameTitle;
     @XmlElement(name = "GivenName")
@@ -333,31 +333,24 @@ public class IdentityDocumentType {
         this.birthplace = value;
     }
 
-    /**
-     * Gets the value of the gender property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getGender() {
-        return gender;
-    }
 
-    /**
-     * Sets the value of the gender property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGender(String value) {
-        this.gender = value;
-    }
+    public TravelerDetailType.Gender getGender() {
+		return gender;
+	}
 
-    /**
+	public void setGender(TravelerDetailType.Gender gender) {
+		this.gender = gender;
+	}
+
+	public void setGivenName(List<String> givenName) {
+		this.givenName = givenName;
+	}
+
+	public void setMiddleName(List<String> middleName) {
+		this.middleName = middleName;
+	}
+
+	/**
      * Gets the value of the nameTitle property.
      * 
      * @return

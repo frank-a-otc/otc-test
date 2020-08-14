@@ -5,6 +5,8 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.xml.bind.annotation.XmlEnumValue;
+
 public class Test {
 
 	String[] t = null;
@@ -15,11 +17,13 @@ public class Test {
 
 		Field field = SetterGetterMethodTest.class.getDeclaredField("parent");
 		try {
-			Method method = SetterGetterMethodTest.class.getDeclaredMethod("setParent", Child.class);
+			Method method = MyEnum.class.getDeclaredMethod("valueOf", String.class);
+			System.out.println(MyEnum.valueOf("4")); 
 		} catch (NoSuchMethodException | SecurityException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+//		MyEnum myEnum = null; myEnum.valueOf(arg0)
 		
 	}
 
@@ -55,4 +59,20 @@ class SetterGetterMethodTest {
 		this.parent = child;
 	}
 
+}
+
+enum MyEnum {
+    MALE(1),
+    FEMALE(2),
+    UNKNOWN(3),
+    OTHER(4);
+    private final Integer value;
+
+    MyEnum(Integer v) {
+        value = v;
+    }
+    
+//    public String valueOf(String name) {
+//    	return MyEnum.
+//    }
 }

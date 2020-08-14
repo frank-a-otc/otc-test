@@ -110,7 +110,8 @@ import javax.xml.bind.annotation.XmlType;
     "customStringMap",
     "integerIntegerMap",
     "integerStringMap",
-    "stringIntegerMap"
+    "stringIntegerMap",
+    "enumsMap"
 })
 @XmlRootElement(name = "AthenaAirlinePassenger")
 public class AthenaAirlinePassenger {
@@ -146,6 +147,8 @@ public class AthenaAirlinePassenger {
     protected Map<Integer, String> integerStringMap;
     @XmlElement(name = "StringIntegerMap")
     protected Map<String, Integer> stringIntegerMap;
+    @XmlElement(name = "EnumsMap")
+    protected Map<TravelerGenderSimpleType, TravelerGenderSimpleType> enumsMap;
 
     /**
      * Gets the value of the coreQuery property.
@@ -344,6 +347,14 @@ public class AthenaAirlinePassenger {
 
 	public void setStringIntegerMap(Map<String, Integer> stringIntegerMap) {
 		this.stringIntegerMap = stringIntegerMap;
+	}
+
+	public Map<TravelerGenderSimpleType, TravelerGenderSimpleType> getEnumsMap() {
+		return enumsMap;
+	}
+
+	public void setEnumsMap(Map<TravelerGenderSimpleType, TravelerGenderSimpleType> enumsMap) {
+		this.enumsMap = enumsMap;
 	}
 
 	/**

@@ -254,7 +254,8 @@ public class TravelerSummaryType
         "given",
         "title",
         "surnameSuffix",
-        "middle"
+        "middle",
+        "aliases"
     })
     public static class Name {
 
@@ -274,6 +275,8 @@ public class TravelerSummaryType
         @XmlAttribute(name = "ObjectMetaReferences")
         @XmlIDREF
         protected List<Object> objectMetaReferences;
+        @XmlElement(name = "Aliases")
+        protected List<String> aliases;
 
         /**
          * Gets the value of the surname property.
@@ -464,7 +467,16 @@ public class TravelerSummaryType
         }
 
 
-        /**
+        public List<String> getAliases() {
+			return aliases;
+		}
+
+		public void setAliases(List<String> aliases) {
+			this.aliases = aliases;
+		}
+
+
+		/**
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.

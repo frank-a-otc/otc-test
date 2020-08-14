@@ -38,8 +38,19 @@ public class AnonymousTravelerType
     extends TravelerCoreType
 {
 
+    @XmlElement(name = "Name", required = true)
+    protected TravelerSummaryType.Name name;
+    
     @XmlElement(name = "Gender")
     protected TravelerDetailType.Gender gender;
+
+	public TravelerSummaryType.Name getName() {
+		return name;
+	}
+
+	public void setName(TravelerSummaryType.Name name) {
+		this.name = name;
+	}
 
 	public TravelerDetailType.Gender getGender() {
 		return gender;

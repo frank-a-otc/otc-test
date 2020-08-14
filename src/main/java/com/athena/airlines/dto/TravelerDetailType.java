@@ -171,12 +171,15 @@ public class TravelerDetailType
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "value"
+        "value",
+        "values"
     })
     public static class Gender {
 
-        @XmlValue
+//        @XmlValue
         protected TravelerGenderSimpleType value;
+        @XmlElement(name = "Values")
+        protected List<TravelerGenderSimpleType> values;
         @XmlAttribute(name = "refs")
         @XmlIDREF
         protected List<Object> refs;
@@ -205,7 +208,15 @@ public class TravelerDetailType
             this.value = value;
         }
 
-        /**
+        public List<TravelerGenderSimpleType> getValues() {
+			return values;
+		}
+
+		public void setValues(List<TravelerGenderSimpleType> values) {
+			this.values = values;
+		}
+
+		/**
          * Gets the value of the refs property.
          * 
          * <p>
