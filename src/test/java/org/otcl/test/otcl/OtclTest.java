@@ -1,14 +1,11 @@
 package org.otcl.test.otcl;
 
-import java.io.IOException;
 import java.util.Collection;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.stream.FactoryConfigurationError;
-import javax.xml.stream.XMLStreamException;
 
 import org.junit.jupiter.api.Test;
+import org.otcl.DateFields;
 import org.otcl.test.AbstractTest;
 import org.otcl2.common.engine.OtclEngine;
 import org.otcl2.common.engine.compiler.CompilationReport;
@@ -21,20 +18,33 @@ public class OtclTest extends AbstractTest {
 
 	private static KronosAirlinePassenger kronosAirlinePassenger;
 	private static OtclEngine otclEngine = OtclEngineImpl.instance;
+	private static String pkg;
 	
- 	@Test
-	public void executeXmlTest() throws JAXBException, IOException, XMLStreamException, FactoryConfigurationError, InstantiationException, IllegalAccessException, ClassNotFoundException {
+// 	@Test
+	public void test() {
+ 		
+// 		pkg = "org.otcl";   
+ 		
+		kronosAirlinePassenger = loadKronosXml();
+		AthenaAirlinePassenger airlinePassenger = null;
+		DateFields sourceDateFields = new DateFields();
 
 //		for (int i = 0; i < 5; i++) {
 			Collection<CompilationReport> compilationReports = otclEngine.deploy();
 //		}
-		kronosAirlinePassenger = loadKronosXml();
-		AthenaAirlinePassenger airlinePassenger = null;
-//		for (int i = 0; i < 5; i++) {
-			airlinePassenger = otclEngine.executeOtcl(AthenaAirlinePassenger.class, kronosAirlinePassenger, null);
-//		}
-		JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
-		print(airlinePassenger, jaxbContext); 
+		try {
+	//		for (int i = 0; i < 5; i++) {
+				airlinePassenger = otclEngine.executeOtcl(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
+				JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
+				print(airlinePassenger, jaxbContext); 
+	//		}
+//			DateFields targetDateFields = otclEngine.executeOtcl(pkg, sourceDateFields, DateFields.class, null);
+//			JAXBContext jaxbContext = JAXBContext.newInstance(DateFields.class);
+//			print(targetDateFields, jaxbContext); 
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 	
+ 	
 }

@@ -40,26 +40,22 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
+import org.otcl.common.OtclConstants;
+import org.otcl.common.config.OtclConfig;
+import org.otcl.common.engine.OtclEngine;
+import org.otcl.core.engine.OtclEngineImpl;
 import org.otcl.test.AbstractTest;
-import org.otcl.test.dto.ContractEmployee;
-import org.otcl.test.dto.PermanentEmployee;
-import org.otcl.test.mapstrut.ContractToPermanentEmployeeMapStrutMapper;
-import org.otcl2.common.OtclConstants;
-import org.otcl2.common.config.OtclConfig;
-import org.otcl2.common.engine.OtclEngine;
-import org.otcl2.core.engine.OtclEngineImpl;
 
+import com.athena.airlines.dto.AthenaAirlinePassenger;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
 
+@Deprecated
 public class Otcl extends AbstractTest {
 
 	private static KronosAirlinePassenger kronosAirlinePassenger;
-	private static ContractEmployee contractEmployee = null;
 	private static OtclEngine otclEngine = (OtclEngineImpl) OtclEngineImpl.instance;
-	private static ContractToPermanentEmployeeMapStrutMapper mapper = null;
 	private static JAXBContext jaxbContext;
-	private static String otclFileName = "org.otcl.test.dto.PermanentEmployee-org.otcl.test.dto.ContractEmployee.otcl";
-//	private static String otclFileName = "org.otcl.airlines.athena.dto.AthenaAirlinePassenger-org.otcl.airlines.kronos.dto.KronosAirlinePassenger.otcl";
+	private static String otclFileName = "org.otcl.airlines.athena.dto.AthenaAirlinePassenger-org.otcl.airlines.kronos.dto.KronosAirlinePassenger.otcl";
 	private static String deploymentId = OtclConstants.DEFAULT_NAMESPACE + "." + otclFileName;
 
 	public static void main(String[] args) throws IOException  {
@@ -73,8 +69,7 @@ public class Otcl extends AbstractTest {
     	public static int counter;
     	@Setup(Level.Trial)
         public void doSetup() {
-    		contractEmployee = loadContractEmployeeFromXml();
-//    		kronosAirlinePassenger = loadKronosXml();
+    		kronosAirlinePassenger = loadKronosXml();
     		OtclConfig.enableTestProfile();
     		otclEngine.deploy();
 //    		try {
@@ -99,11 +94,7 @@ public class Otcl extends AbstractTest {
 //    @Warmup(iterations = 10, time = 500, timeUnit = TimeUnit.MILLISECONDS)
 //    @Measurement(iterations = 50, time = 200, timeUnit = TimeUnit.MILLISECONDS)
 	public void testOtcl(MyState myState) {
-		if (contractEmployee == null) {
-			System.out.println("deployed..............."); 
-		}
-		PermanentEmployee permanentEmployee = otclEngine.executeOtcl("", otclFileName, contractEmployee, null);
-//		AthenaAirlinePassenger athenaAirlinePassenger = otclEngine.executeOtcl(deploymentId, kronosAirlinePassenger, null);
+		AthenaAirlinePassenger athenaAirlinePassenger = otclEngine.executeOtcl(deploymentId, kronosAirlinePassenger, null);
 		myState.counter++;
 //		print(airlinePassenger, jaxbContext); 
 		return;

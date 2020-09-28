@@ -11,11 +11,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.stream.FactoryConfigurationError;
-import javax.xml.stream.XMLOutputFactory;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamWriter;
 
-import org.otcl.test.dto.ContractEmployee;
 import org.otcl2.common.config.OtclConfig;
 
 import com.kronos.airlines.dto.KronosAirlinePassenger;
@@ -23,21 +19,6 @@ import com.kronos.airlines.dto.KronosAirlinePassenger;
 public abstract class AbstractTest {
 
 	private static String otclHome = OtclConfig.getOtclHomeLocation();
-
-	protected static ContractEmployee loadContractEmployeeFromXml() {
-		ContractEmployee contractEmployee = null;
-		try {
-			JAXBContext jaxbContext = JAXBContext.newInstance(ContractEmployee.class);
-			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-			String fileName = otclHome + "\\otcl-test-source\\samples\\ContractEmployee.xml";
-			String xml = new String(Files.readAllBytes(Paths.get(fileName)));
-			StringReader reader = new StringReader(xml);
-			contractEmployee = (ContractEmployee) unmarshaller.unmarshal(reader);
-		} catch (IOException | JAXBException | FactoryConfigurationError ex) {
-			ex.printStackTrace();
-		}
-		return contractEmployee;
-	}
 
 	protected static KronosAirlinePassenger loadKronosXml() {
 		KronosAirlinePassenger kronosAirlinePassenger = null;
@@ -49,23 +30,34 @@ public abstract class AbstractTest {
 			StringReader reader = new StringReader(xml);
 			kronosAirlinePassenger = (KronosAirlinePassenger) unmarshaller.unmarshal(reader);
 			
-	//		List<Travelers.Traveler> travelers = kronosAirlinePassenger.getTravelers().getTraveler();
-	//		for (int idx = 0; idx < travelers.size(); idx++) {
-	//			Travelers.Traveler traveler = travelers.get(idx);
-	//			Map<Integer, TravelerDetailType> mapTravelerDetailTypes = new HashMap<>();
-	//			traveler.setRecognizedTravelerMap(mapTravelerDetailTypes);
-	//			TravelerDetailType travelerDetailType = new TravelerDetailType();
-	//			mapTravelerDetailTypes.put(Integer.valueOf(idx), travelerDetailType);
-	//			travelerDetailType.setName(traveler.getRecognizedTraveler().get(0).getName());
-	//			
-	//			Map<Object, AnonymousTravelerType> mapAnonymousTravelerTypes = new HashMap<>();
-	//			traveler.setAnonymousTravelerMap(mapAnonymousTravelerTypes);
-	//			AnonymousTravelerType anonymousTravelerType = new AnonymousTravelerType();
-	//			mapAnonymousTravelerTypes.put(Integer.valueOf(idx), anonymousTravelerType);
-	//			anonymousTravelerType.setAge(traveler.getAnonymousTraveler().get(0).getAge());
-	//			anonymousTravelerType.setPTC(traveler.getAnonymousTraveler().get(0).getPTC());
-	//		}
-	//		print(kronosAirlinePassenger, jaxbContext); 
+//			List<Travelers.Traveler> travelers = kronosAirlinePassenger.getTravelers().getTraveler();
+//			for (int idx = 0; idx < travelers.size(); idx++) {
+//				Travelers.Traveler traveler = travelers.get(idx);
+////				Map<Integer, TravelerDetailType> mapTravelerDetailTypes = new HashMap<>();
+////				traveler.setRecognizedTravelerMap(mapTravelerDetailTypes);
+////				TravelerDetailType travelerDetailType = new TravelerDetailType();
+////				mapTravelerDetailTypes.put(Integer.valueOf(idx), travelerDetailType);
+////				travelerDetailType.setName(traveler.getRecognizedTraveler().get(0).getName());
+////				
+////				Map<String, AnonymousTravelerType> mapAnonymousTravelerTypes = new HashMap<>();
+////				traveler.setAnonymousTravelerMap(mapAnonymousTravelerTypes);
+////				AnonymousTravelerType anonymousTravelerType = new AnonymousTravelerType();
+////				mapAnonymousTravelerTypes.put(Integer.toString(idx), anonymousTravelerType);
+////				anonymousTravelerType.setAge(traveler.getAnonymousTraveler().get(0).getAge());
+////				anonymousTravelerType.setPTC(traveler.getAnonymousTraveler().get(0).getPTC());
+//				Map<AnonymousTravelerType, TravelerDetailType> customObjectsMap = new HashMap<>();
+//				traveler.setCustomObjectsMap(customObjectsMap);
+//				AnonymousTravelerType anonymousTravelerType = new AnonymousTravelerType();
+//				TravelerDetailType travelerDetailType = new TravelerDetailType();
+//				customObjectsMap.put(anonymousTravelerType, travelerDetailType);
+//				anonymousTravelerType.setResidenceCode("560300");
+//				TravelerSummaryType.Name name = new TravelerSummaryType.Name();
+//				travelerDetailType.setName(name);
+//				TravelerSummaryType.Name.Given given = new TravelerSummaryType.Name.Given();
+//				name.getGiven().add(given);
+//				given.setValue("Anand K");
+//			}
+//			print(kronosAirlinePassenger, jaxbContext); 
 		} catch (IOException | JAXBException | FactoryConfigurationError ex) {
 			ex.printStackTrace();
 		}
@@ -73,16 +65,16 @@ public abstract class AbstractTest {
 
 	}
 	
-	protected void print(Object value, JAXBContext jaxbContext)  {
+	protected static void print(Object value, JAXBContext jaxbContext)  {
 		try {
 			Marshaller marshaller = jaxbContext.createMarshaller();
 			StringWriter stringWriter = new StringWriter();
-			XMLStreamWriter xmlStreamWriter = XMLOutputFactory.newInstance().createXMLStreamWriter(stringWriter); 
 			marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
-			marshaller.marshal(value, xmlStreamWriter);
+			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+			marshaller.marshal(value, stringWriter);
 			String xml = stringWriter.toString();
 			System.out.println(xml);
-		} catch (JAXBException | XMLStreamException | FactoryConfigurationError e) {
+		} catch (JAXBException | FactoryConfigurationError e) {
 			e.printStackTrace();
 		}
 	}

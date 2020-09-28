@@ -32,7 +32,7 @@ public class TestFactoryHelper {
 		return travelerCoreType.getPTC();
 	}
 
-	public static void setGender(TravelerDetailType.Gender gender, String value) {
-		gender.setValue(TravelerGenderSimpleType.fromValue(value));
+	public static void setValue(TravelerDetailType.Gender gender, String value) {
+		gender.setValue(TravelerGenderSimpleType.valueOf(value.toUpperCase()));
 	}
 }
