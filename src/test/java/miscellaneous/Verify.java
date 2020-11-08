@@ -1,17 +1,12 @@
 package miscellaneous;
 
-import java.io.File;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 
-import org.otcl2.common.dto.OtclFileDto;
-
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
+import org.otcl2.common.OtclConstants;
 
 public class Verify {
 
@@ -126,24 +121,33 @@ public class Verify {
 	
 	public static void main(String[] args) throws DatatypeConfigurationException, IOException {
 
-//	    int cnt = 0;
-//	    System.out.println("private static final Map<String, String> mapDateStr = new HashMap<>();");
-//	    for (Entry<String, String> entry : dateStr.entrySet()) {
-//	    	System.out.println("mapDateStr.put(\"dateStr" + cnt + "\",\"" + entry.getKey() + "\");");
-//	    	System.out.println("mapDateStr.put(\"dateStr" + cnt + "_1\",\"" + entry.getValue() + "\");");
-//	    	cnt++;
-//	    }
-		
-		String fileName ="D:\\otcl-home\\otcl-test-source\\com.kronos.airlines.dto.KronosAirlinePassenger_com.athena.airlines.dto.AthenaAirlinePassenger.otcl";
-		YAMLFactory yamlFactory = new YAMLFactory();
-		yamlFactory.enable(YAMLGenerator.Feature.MINIMIZE_QUOTES);
-		ObjectMapper objectMapper = new ObjectMapper(yamlFactory);
-		objectMapper.setSerializationInclusion(Include.NON_NULL);
-		objectMapper.configure(SerializationFeature.INDENT_OUTPUT, false);
+		String REGEX_CHECK_OTCLCHAIN = "(?s)from:\\s(.*)otclChain:";
+		Pattern FROM_OTCLCHAIN_PATTERN = Pattern.compile(REGEX_CHECK_OTCLCHAIN);
 
-		OtclFileDto otclFileDto = objectMapper.readValue(new File(fileName), OtclFileDto.class);
-		String yaml = objectMapper.writeValueAsString(otclFileDto);
-		System.out.println(yaml);
+		String json = "otclScripts:\r\n" + 
+				"- copy:\r\n" + 
+				"    id: TC_CV_01\r\n" + 
+				"    disable: false\r\n" + 
+				"    debug: false\r\n" + 
+				"    from:\r\n" + 
+				"      values:\r\n" + 
+				"      - Franklin\r\n" + 
+				"    to:\r\n" + 
+				"      otclChain: mainPassengerName\r\n" + 
+				"- copy:\r\n" + 
+				"    id: TC_CV_02\r\n" + 
+				"    factoryClassName: CV_TC02_Flatpath\r\n" + 
+				"    disable: false\r\n" + 
+				"    debug: false\r\n" + 
+				"    from:\r\n" + 
+				"      values:\r\n" + 
+				"      - Abel\r\n" + 
+				"    to:\r\n" + 
+				"      otclChain: travelerDetailType.name.surname.value\r\n";
+		
+		Matcher matcher = FROM_OTCLCHAIN_PATTERN.matcher(json);
+		System.out.println(matcher.find());
+
 	}
 
 	

@@ -76,8 +76,8 @@ public class Otcl2 extends AbstractTest {
     @Warmup(iterations = 10, time = 500, timeUnit = TimeUnit.MILLISECONDS)
     @Measurement(iterations = 50, time = 200, timeUnit = TimeUnit.MILLISECONDS)
 	public void test(MyState myState) {
-		AthenaAirlinePassenger athenaAirlinePassenger = otcl2Engine.executeOtcl(pkg, otclFileName, kronosAirlinePassenger,
-				 null);
+//		AthenaAirlinePassenger athenaAirlinePassenger = otcl2Engine.executeOtcl(pkg, otclFileName, kronosAirlinePassenger,
+//				 null);
 		myState.counter++;
 //		print(airlinePassenger, jaxbContext); 
 		return;
