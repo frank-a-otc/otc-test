@@ -19,7 +19,7 @@ public class OtclTest extends AbstractTest {
  	@Test
 	public void test() {
  		
-// 		pkg = "org.otcl";   
+ 		pkg = "org.otcl";   
  		
 		kronosAirlinePassenger = loadKronosXml();
 		AthenaAirlinePassenger airlinePassenger = null;
