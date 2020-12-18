@@ -14,35 +14,54 @@ public class OtclTest extends AbstractTest {
 
 	private static KronosAirlinePassenger kronosAirlinePassenger;
 	private static OtclEngine otclEngine = OtclEngineImpl.instance;
-	private static String pkg;
 	
- 	@Test
-	public void test() {
- 		
- 		pkg = "org.otcl";   
- 		
-		kronosAirlinePassenger = loadKronosXml();
-		AthenaAirlinePassenger airlinePassenger = null;
-
-//		for (int i = 0; i < 5; i++) {
+	private void compileDeployAndLoad() {
+		// -- compile script and generated source code
 		otclEngine.compileOtcl();
 		otclEngine.compileSourceCode();
+		
+		// -- deploy the generated .dep files.
 		otclEngine.deploy();
-//		}
+	}
+	
+// 	@Test
+	public void testCopyValues() {
+ 		
+ 		compileDeployAndLoad();
+		AthenaAirlinePassenger airlinePassenger = null;
+		
+ 		String pkg = null;
 		try {
-	//		for (int i = 0; i < 5; i++) {
-				airlinePassenger = otclEngine.executeOtcl(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
-				JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
-				print(airlinePassenger, jaxbContext); 
-	//		}
-//			DateFields sourceDateFields = new DateFields();
-//			DateFields targetDateFields = otclEngine.executeOtcl(pkg, sourceDateFields, DateFields.class, null);
-//			JAXBContext jaxbContext = JAXBContext.newInstance(DateFields.class);
-//			print(targetDateFields, jaxbContext); 
+			// -- execute ID - "com.athena.airlines.dto.AthenaAirlinePassenger.otcl" (CopyValues)
+			airlinePassenger = otclEngine.executeOtcl(pkg, AthenaAirlinePassenger.class, null);
+
+			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
+			print(airlinePassenger, jaxbContext); 
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
 	
- 	
+ 	@Test
+	public void testCopyKronosToAthena() {
+ 		
+ 		compileDeployAndLoad();
+		kronosAirlinePassenger = loadKronosXml();
+		
+		AthenaAirlinePassenger airlinePassenger = null;
+ 		String pkg = null;
+		try {
+//			-- execute ID - "org / otcl / com.kronos.airlines.dto.KronosAirlinePassenger_com.athena.airlines.dto.AthenaAirlinePassenger.otcl".
+//	 		-- Copy from  KronosAirlinePassenger to AthenaAirlinePassenger
+			
+	 		pkg = "org.otcl";   
+			airlinePassenger = otclEngine.executeOtcl(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
+
+			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
+			print(airlinePassenger, jaxbContext); 
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
 }
