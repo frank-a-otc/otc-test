@@ -15,7 +15,7 @@ public class OtclTest extends AbstractTest {
 	private static KronosAirlinePassenger kronosAirlinePassenger;
 	private static OtclEngine otclEngine = OtclEngineImpl.instance;
 	
-	private void compileDeployAndLoad() {
+	private void compileAndDeploy() {
 		// -- compile script and generated source code
 		otclEngine.compileOtcl();
 		otclEngine.compileSourceCode();
@@ -27,7 +27,7 @@ public class OtclTest extends AbstractTest {
 // 	@Test
 	public void testCopyValues() {
  		
- 		compileDeployAndLoad();
+ 		compileAndDeploy();
 		AthenaAirlinePassenger airlinePassenger = null;
 		
  		String pkg = null;
@@ -45,7 +45,7 @@ public class OtclTest extends AbstractTest {
  	@Test
 	public void testCopyKronosToAthena() {
  		
- 		compileDeployAndLoad();
+ 		compileAndDeploy();
 		kronosAirlinePassenger = loadKronosXml();
 		
 		AthenaAirlinePassenger airlinePassenger = null;
