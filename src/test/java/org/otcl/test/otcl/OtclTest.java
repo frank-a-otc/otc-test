@@ -33,6 +33,7 @@ public class OtclTest extends AbstractTest {
  		String pkg = null;
 		try {
 			// -- execute ID - "com.athena.airlines.dto.AthenaAirlinePassenger.otcl" (CopyValues)
+	 		pkg = "scenario2";   
 			airlinePassenger = otclEngine.executeOtcl(pkg, AthenaAirlinePassenger.class, null);
 
 			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
@@ -54,7 +55,7 @@ public class OtclTest extends AbstractTest {
 //			-- execute ID - "org / otcl / com.kronos.airlines.dto.KronosAirlinePassenger_com.athena.airlines.dto.AthenaAirlinePassenger.otcl".
 //	 		-- Copy from  KronosAirlinePassenger to AthenaAirlinePassenger
 			
-	 		pkg = "org.otcl";   
+	 		pkg = "scenario5";   
 			airlinePassenger = otclEngine.executeOtcl(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
 
 			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
