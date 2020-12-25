@@ -55,7 +55,7 @@ public class OtclTest extends AbstractTest {
 //			-- execute ID - "org / otcl / com.kronos.airlines.dto.KronosAirlinePassenger_com.athena.airlines.dto.AthenaAirlinePassenger.otcl".
 //	 		-- Copy from  KronosAirlinePassenger to AthenaAirlinePassenger
 			
-	 		pkg = "scenario5";   
+	 		pkg = "et6";   
 			airlinePassenger = otclEngine.executeOtcl(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
 
 			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
