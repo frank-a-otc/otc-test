@@ -1,5 +1,5 @@
 
-package org.otcl.test.benchmark;
+package org.otcl.test.benchmark.otcl2;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -25,7 +25,7 @@ import org.otcl2.core.engine.OtclEngineImpl;
 import com.athena.airlines.dto.AthenaAirlinePassenger;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
 
-public class Otcl2 extends AbstractTest {
+public class Otcl2Jmh extends AbstractTest {
 
 	private static KronosAirlinePassenger kronosAirlinePassenger;
 	private static OtclEngine otcl2Engine = (OtclEngineImpl) OtclEngineImpl.instance;

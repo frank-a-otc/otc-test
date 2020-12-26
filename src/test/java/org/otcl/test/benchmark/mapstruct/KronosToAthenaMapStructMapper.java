@@ -1,4 +1,4 @@
-package org.otcl.test.mapstrut;
+package org.otcl.test.benchmark.mapstruct;
 
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
@@ -9,7 +9,7 @@ import com.athena.airlines.dto.AthenaAirlinePassenger;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface KronosToAthenaMapStrutMapper {
+public interface KronosToAthenaMapStructMapper {
 	
 	@BeanMapping(ignoreByDefault = true)
 	@Mapping(source = "mainPassengerName", target = "mainPassengerName")

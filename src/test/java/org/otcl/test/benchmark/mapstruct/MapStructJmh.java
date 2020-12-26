@@ -1,5 +1,5 @@
 
-package org.otcl.test.benchmark;
+package org.otcl.test.benchmark.mapstruct;
 
 import java.io.IOException;
 
@@ -12,20 +12,19 @@ import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
 import org.otcl.test.AbstractTest;
-import org.otcl.test.mapstrut.KronosToAthenaMapStrutMapper;
 
 import com.athena.airlines.dto.AthenaAirlinePassenger;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
 
-public class MapStruct extends AbstractTest {
+public class MapStructJmh extends AbstractTest {
 
-	private static KronosToAthenaMapStrutMapper mapper;
+	private static KronosToAthenaMapStructMapper mapper;
 	private static KronosAirlinePassenger kronosAirlinePassenger;
 	private static JAXBContext jaxbContext;
 
 	static {
 		kronosAirlinePassenger = loadKronosXml();
-		mapper = Mappers.getMapper(KronosToAthenaMapStrutMapper.class);
+		mapper = Mappers.getMapper(KronosToAthenaMapStructMapper.class);
 //		try {
 //			jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
 //		} catch (JAXBException e) {
