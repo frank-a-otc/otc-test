@@ -58,8 +58,7 @@ public class Otcl2Jmh extends AbstractTest {
     	@Setup(Level.Trial)
         public void doSetup() {
 			kronosAirlinePassenger = loadKronosXml();
-    		OtclConfig.enableTestProfile();
-    		otcl2Engine.deploy();
+    		otcl2Engine.register();
     		counter = 0;
     		System.out.println("initilized OTCL 2 test ..............."); 
         }

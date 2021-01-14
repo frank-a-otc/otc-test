@@ -12,57 +12,51 @@ import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 public class OtclTest extends AbstractTest {
 
-	private static KronosAirlinePassenger kronosAirlinePassenger;
 	private static OtclEngine otclEngine = OtclEngineImpl.instance;
 	
+	private static enum TEST_METHOD {
+		COPY_VALUES, 
+		COPY_FROM_SOURCE
+	}
+
+	@Test
+	public void runTest() {
+ 		TEST_METHOD testMethod = TEST_METHOD.COPY_FROM_SOURCE;
+ 		
+		AthenaAirlinePassenger airlinePassenger = null;
+ 		if (TEST_METHOD.COPY_VALUES == testMethod) {
+ 			airlinePassenger = testCopyValues("cpyvalues2");
+ 		} else {
+ 			airlinePassenger = testCopyKronosToAthena("cpysource_collection");
+ 		}
+		try {
+			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
+			print(airlinePassenger, jaxbContext); 
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+ 	}
+ 	
 	private void compileAndDeploy() {
 		// -- compile script and generated source code
 		otclEngine.compileOtcl();
 		otclEngine.compileSourceCode();
 		
-		// -- deploy the generated .dep files.
-		otclEngine.deploy();
+		// -- register the generated .tmd and the executable files.
+		otclEngine.register();
 	}
 	
-// 	@Test
-	public void testCopyValues() {
- 		
+ 	private AthenaAirlinePassenger testCopyValues(String pkg) {
  		compileAndDeploy();
-		AthenaAirlinePassenger airlinePassenger = null;
-		
- 		String pkg = null;
-		try {
-			// -- execute ID - "com.athena.airlines.dto.AthenaAirlinePassenger.otcl" (CopyValues)
-	 		pkg = "cpyvalues2";   
-			airlinePassenger = otclEngine.executeOtcl(pkg, AthenaAirlinePassenger.class, null);
-
-			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
-			print(airlinePassenger, jaxbContext); 
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
+		AthenaAirlinePassenger airlinePassenger = otclEngine.executeOtcl(pkg, AthenaAirlinePassenger.class, null);
+		return airlinePassenger;
 	}
 	
- 	@Test
-	public void testCopyKronosToAthena() {
- 		
+	private AthenaAirlinePassenger testCopyKronosToAthena(String pkg) {
  		compileAndDeploy();
-		kronosAirlinePassenger = loadKronosXml();
-		
-		AthenaAirlinePassenger airlinePassenger = null;
- 		String pkg = null;
-		try {
-//			-- execute ID - "org / otcl / com.kronos.airlines.dto.KronosAirlinePassenger_com.athena.airlines.dto.AthenaAirlinePassenger.otcl".
-//	 		-- Copy from  KronosAirlinePassenger to AthenaAirlinePassenger
-			
-	 		pkg = "cpysource_collection";   
-			airlinePassenger = otclEngine.executeOtcl(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
-
-			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
-			print(airlinePassenger, jaxbContext); 
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
+		KronosAirlinePassenger kronosAirlinePassenger = loadKronosXml();
+		AthenaAirlinePassenger airlinePassenger = otclEngine.executeOtcl(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
+		return airlinePassenger;
 	}
 
 }

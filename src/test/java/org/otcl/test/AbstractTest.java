@@ -25,7 +25,7 @@ public abstract class AbstractTest {
 		try {
 			JAXBContext jaxbContext = JAXBContext.newInstance(KronosAirlinePassenger.class);
 			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-			String fileName = otclHome + "\\test-framework\\samples\\Kronos-passenger-map.xml";
+			String fileName = otclHome + "\\test-samples\\Kronos-passenger-map.xml";
 			String xml = new String(Files.readAllBytes(Paths.get(fileName)));
 			StringReader reader = new StringReader(xml);
 			kronosAirlinePassenger = (KronosAirlinePassenger) unmarshaller.unmarshal(reader);
