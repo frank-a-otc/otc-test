@@ -18,7 +18,6 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
 import org.openjdk.jmh.annotations.Warmup;
 import org.otcl.test.AbstractTest;
-import org.otcl2.common.config.OtclConfig;
 import org.otcl2.common.engine.OtclEngine;
 import org.otcl2.core.engine.OtclEngineImpl;
 
