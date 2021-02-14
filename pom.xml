@@ -4,13 +4,6 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.2.RELEASE</version>
-		<relativePath />
-	</parent>
-
 	<groupId>org.otcl</groupId>
 	<artifactId>otcl-test</artifactId>
 	<version>1.0</version>
@@ -18,60 +11,39 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<junit.version>5.7.0</junit.version>
+		<jackson.version>2.12.1</jackson.version>
 		<otcl-schema.version>1.0</otcl-schema.version>
 		<otcl.version>1.0</otcl.version>
 		<jmh.version>1.23</jmh.version>
-		<mapstrut.version>1.3.1.Final</mapstrut.version>
-		<jmapper.version>1.6.0.1</jmapper.version>
+		<mapstruct.version>1.4.1.Final</mapstruct.version>
+		<dozer.version>5.5.1</dozer.version>
 		<dateconverters.version>1.0</dateconverters.version>
 	</properties>
 
-	<build>
-		<plugins>
-			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-compiler-plugin</artifactId>
-			    <configuration>
-			        <source>1.8</source>
-			        <target>1.8</target>
-			        <annotationProcessorPaths>
-				        <path>
-			                <groupId>org.openjdk.jmh</groupId>
-			                <artifactId>jmh-generator-annprocess</artifactId>
-			                <version>${jmh.version}</version>
-			            </path>
-			            <path>
-			                <groupId>org.mapstruct</groupId>
-			                <artifactId>mapstruct-processor</artifactId>
-		    				<version>${mapstrut.version}</version>
-			            </path>
-         			</annotationProcessorPaths>
-			    </configuration>
-			</plugin>
-
-		</plugins>
-	</build>
-	
 	<dependencies>
-
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
+		    <groupId>org.junit.jupiter</groupId>
+        	<artifactId>junit-jupiter</artifactId>
+		    <version>${junit.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+        	<artifactId>junit-jupiter-engine</artifactId>
+		    <version>${junit.version}</version>
+		    <scope>test</scope>
 		</dependency>
 
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
+		    <version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 		    <groupId>com.fasterxml.jackson.dataformat</groupId>
 		    <artifactId>jackson-dataformat-yaml</artifactId>
+		    <version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.openjdk.jmh</groupId>
@@ -85,15 +57,16 @@
 		</dependency>
 		<dependency>
 		    <groupId>org.mapstruct</groupId>
-		    <artifactId>mapstruct-jdk8</artifactId>
-		    <version>${mapstrut.version}</version>
+		    <artifactId>mapstruct</artifactId>
+		    <version>${mapstruct.version}</version>
 		</dependency>
+ 
 		<dependency>
-		    <groupId>com.googlecode.jmapper-framework</groupId>
-		    <artifactId>jmapper-core</artifactId>
-		    <version>${jmapper.version}</version>
+		    <groupId>net.sf.dozer</groupId>
+		    <artifactId>dozer</artifactId>
+		    <version>${dozer.version}</version>
 		</dependency>
-		
+
  		<dependency>
 			<groupId>org.otclfoundation</groupId>
 			<artifactId>dateconverters</artifactId>
@@ -118,5 +91,35 @@
 		</dependency>
 
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-compiler-plugin</artifactId>
+   				<version>3.8.1</version>
+			    <configuration>
+			        <source>1.8</source>
+			        <target>1.8</target>
+			        <annotationProcessorPaths>
+			            <path>
+			                <groupId>org.mapstruct</groupId>
+			                <artifactId>mapstruct-processor</artifactId>
+		    				<version>${mapstruct.version}</version>
+			            </path>
+
+				        <path>
+			                <groupId>org.openjdk.jmh</groupId>
+			                <artifactId>jmh-generator-annprocess</artifactId>
+			                <version>${jmh.version}</version>
+			            </path>
+
+         			</annotationProcessorPaths>
+			    </configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+	
 </project>
  

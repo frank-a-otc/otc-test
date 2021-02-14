@@ -1,14 +1,21 @@
 package org.otcl.test.unit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.JAXBContext;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.otcl.test.AbstractTest;
 import org.otcl2.common.engine.OtclEngine;
 import org.otcl2.core.engine.OtclEngineImpl;
 
 import com.athena.airlines.dto.AthenaAirlinePassenger;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
+
+import benchmark.test.ContractEmployee;
+import benchmark.test.ContractEmployees;
+import benchmark.test.PermanentEmployee;
 
 public class OtclTest extends AbstractTest {
 
@@ -27,14 +34,16 @@ public class OtclTest extends AbstractTest {
  		if (TEST_METHOD.COPY_VALUES == testMethod) {
  			airlinePassenger = testCopyValues("cpyvalues2");
  		} else {
- 			airlinePassenger = testCopyKronosToAthena("cpysource_collection");
+// 			airlinePassenger = testCopyKronosToAthena("cpysource_collection");
+ 			PermanentEmployee permanentEmployee = testContractEmployeesToPermanent(null);
+ 			System.out.println(permanentEmployee);
  		}
-		try {
-			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
-			print(airlinePassenger, jaxbContext); 
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
+//		try {
+//			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
+//			print(airlinePassenger, jaxbContext); 
+//		} catch (Exception ex) {
+//			ex.printStackTrace();
+//		}
  	}
  	
 	private void compileAndDeploy() {
@@ -57,6 +66,19 @@ public class OtclTest extends AbstractTest {
 		KronosAirlinePassenger kronosAirlinePassenger = loadKronosXml();
 		AthenaAirlinePassenger airlinePassenger = otclEngine.executeOtcl(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
 		return airlinePassenger;
+	}
+
+	private PermanentEmployee testContractEmployeesToPermanent(String pkg) {
+ 		compileAndDeploy();
+		ContractEmployee contractEmployee = new ContractEmployee();
+		contractEmployee.setEmployeeName("Otcl-Jack");
+		ContractEmployees contractEmployees = new ContractEmployees();
+		List<ContractEmployee> list = new ArrayList<>();
+		contractEmployees.setEmployees(list);
+		list.add(contractEmployee);
+		PermanentEmployee permanentEmployee = otclEngine.executeOtcl(pkg, contractEmployees, PermanentEmployee.class,
+				 null);
+		return permanentEmployee;
 	}
 
 }
