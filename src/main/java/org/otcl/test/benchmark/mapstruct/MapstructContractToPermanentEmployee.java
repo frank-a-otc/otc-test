@@ -9,7 +9,7 @@ import benchmark.test.ContractEmployee;
 import benchmark.test.PermanentEmployee;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface MapstructContractToPermananentEmployee {
+public interface MapstructContractToPermanentEmployee {
 	
 	@BeanMapping(ignoreByDefault = true)
 	@Mapping(source = "employeeName", target = "employeeName")

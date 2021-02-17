@@ -67,11 +67,11 @@ public class JmhTest extends AbstractTest {
         }
     }
 
-//    @Benchmark
-//    @Fork(value = 1, warmups = 2)
-//    @BenchmarkMode(Mode.Throughput)
-//    @Warmup(iterations = 10, time = 500, timeUnit = TimeUnit.MILLISECONDS)
-//    @Measurement(iterations = 50, time = 200, timeUnit = TimeUnit.MILLISECONDS)
+    @Benchmark
+    @Fork(value = 1, warmups = 2)
+    @BenchmarkMode(Mode.Throughput)
+    @Warmup(iterations = 10, time = 500, timeUnit = TimeUnit.MILLISECONDS)
+    @Measurement(iterations = 50, time = 200, timeUnit = TimeUnit.MILLISECONDS)
 	public void test(MyState myState) {
 //    	PermanentEmployee permanentEmployee = contractToPermananentEmployee.execute(contractEmployee, null, null);
 		PermanentEmployee permanentEmployee = otclEngine.executeOtcl(pkg, contractEmployees, PermanentEmployee.class,

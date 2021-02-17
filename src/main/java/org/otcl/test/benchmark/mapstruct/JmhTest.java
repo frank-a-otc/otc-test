@@ -63,14 +63,15 @@ public class JmhTest extends AbstractTest {
 
     }
     
-    @Benchmark
-    @Fork(value = 1, warmups = 2)
-    @BenchmarkMode(Mode.Throughput)
-    @Warmup(iterations = 10, time = 500, timeUnit = TimeUnit.MILLISECONDS)
-    @Measurement(iterations = 50, time = 200, timeUnit = TimeUnit.MILLISECONDS)
+//    @Benchmark
+//    @Fork(value = 1, warmups = 2)
+//    @BenchmarkMode(Mode.Throughput)
+//    @Warmup(iterations = 10, time = 500, timeUnit = TimeUnit.MILLISECONDS)
+//    @Measurement(iterations = 50, time = 200, timeUnit = TimeUnit.MILLISECONDS)
     public void test(MyState myState) {
-    	MapstructContractEmployeesToPermananent mapper = Mappers.getMapper(MapstructContractEmployeesToPermananent.class);
-		PermanentEmployee permanentEmployee = mapper.convertContractToPermanent(contractEmployees);
+//    	MapstructContractEmployeesToPermananent mapper = Mappers.getMapper(MapstructContractEmployeesToPermananent.class);
+    	MapstructContractToPermanentEmployee mapper = Mappers.getMapper(MapstructContractToPermanentEmployee.class);
+		PermanentEmployee permanentEmployee = mapper.convertContractToPermanent(contractEmployee);
     }
 
 }

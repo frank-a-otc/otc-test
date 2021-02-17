@@ -9,9 +9,9 @@ import benchmark.test.ContractEmployees;
 import benchmark.test.PermanentEmployee;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface MapstructContractEmployeesToPermananent {
+public interface MapstructContractEmployeesToPermanent {
 	
 	@BeanMapping(ignoreByDefault = true)
-	@Mapping(source = "employees.employeeName", target = "employeeName")
+//	@Mapping(source = "employees.employeeName", target = "employeeName")
 	PermanentEmployee convertContractToPermanent(ContractEmployees contractEmployees);
 }

@@ -1,8 +1,5 @@
 package org.otcl.test.unit;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.xml.bind.JAXBContext;
 
 import org.junit.Test;
@@ -13,37 +10,35 @@ import org.otcl2.core.engine.OtclEngineImpl;
 import com.athena.airlines.dto.AthenaAirlinePassenger;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
 
-import benchmark.test.ContractEmployee;
-import benchmark.test.ContractEmployees;
-import benchmark.test.PermanentEmployee;
-
 public class OtclTest extends AbstractTest {
 
 	private static OtclEngine otclEngine = OtclEngineImpl.instance;
 	
 	private static enum TEST_METHOD {
-		COPY_VALUES, 
-		COPY_FROM_SOURCE
+		VALUES_TO_TARGET, 
+		SOURCE_TO_TARGET
 	}
+	private static TEST_METHOD testMethod = TEST_METHOD.SOURCE_TO_TARGET;
+	private static String pkg = "execute";
 
 	@Test
 	public void runTest() {
- 		TEST_METHOD testMethod = TEST_METHOD.COPY_FROM_SOURCE;
- 		
 		AthenaAirlinePassenger airlinePassenger = null;
- 		if (TEST_METHOD.COPY_VALUES == testMethod) {
- 			airlinePassenger = testCopyValues("cpyvalues2");
+ 		if (TEST_METHOD.VALUES_TO_TARGET == testMethod) {
+ 			airlinePassenger = testCopyValues(pkg);
+ 		} else if (TEST_METHOD.SOURCE_TO_TARGET == testMethod) {
+ 			airlinePassenger = testCopyKronosToAthena(pkg);
+ 			System.out.println(airlinePassenger);
  		} else {
-// 			airlinePassenger = testCopyKronosToAthena("cpysource_collection");
- 			PermanentEmployee permanentEmployee = testContractEmployeesToPermanent(null);
- 			System.out.println(permanentEmployee);
+//			PermanentEmployee permanentEmployee = testContractEmployeesToPermanent(null);
+// 			System.out.println(permanentEmployee);
  		}
-//		try {
-//			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
-//			print(airlinePassenger, jaxbContext); 
-//		} catch (Exception ex) {
-//			ex.printStackTrace();
-//		}
+		try {
+			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
+			print(airlinePassenger, jaxbContext); 
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
  	}
  	
 	private void compileAndDeploy() {
@@ -68,17 +63,17 @@ public class OtclTest extends AbstractTest {
 		return airlinePassenger;
 	}
 
-	private PermanentEmployee testContractEmployeesToPermanent(String pkg) {
- 		compileAndDeploy();
-		ContractEmployee contractEmployee = new ContractEmployee();
-		contractEmployee.setEmployeeName("Otcl-Jack");
-		ContractEmployees contractEmployees = new ContractEmployees();
-		List<ContractEmployee> list = new ArrayList<>();
-		contractEmployees.setEmployees(list);
-		list.add(contractEmployee);
-		PermanentEmployee permanentEmployee = otclEngine.executeOtcl(pkg, contractEmployees, PermanentEmployee.class,
-				 null);
-		return permanentEmployee;
-	}
+//	private PermanentEmployee testContractEmployeesToPermanent(String pkg) {
+// 		compileAndDeploy();
+//		ContractEmployee contractEmployee = new ContractEmployee();
+//		contractEmployee.setEmployeeName("Otcl-Jack");
+//		ContractEmployees contractEmployees = new ContractEmployees();
+//		List<ContractEmployee> list = new ArrayList<>();
+//		contractEmployees.setEmployees(list);
+//		list.add(contractEmployee);
+//		PermanentEmployee permanentEmployee = otclEngine.executeOtcl(pkg, contractEmployees, PermanentEmployee.class,
+//				 null);
+//		return permanentEmployee;
+//	}
 
 }
