@@ -18,8 +18,8 @@ public class OtclTest extends AbstractTest {
 		VALUES_TO_TARGET, 
 		SOURCE_TO_TARGET
 	}
-	private static TEST_METHOD testMethod = TEST_METHOD.SOURCE_TO_TARGET;
-	private static String pkg = "execute";
+	private static TEST_METHOD testMethod = TEST_METHOD.VALUES_TO_TARGET;
+	private static String pkg = "cpyvalues1";
 
 	@Test
 	public void runTest() {
