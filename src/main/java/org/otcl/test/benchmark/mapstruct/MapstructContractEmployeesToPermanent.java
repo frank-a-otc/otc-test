@@ -2,7 +2,6 @@ package org.otcl.test.benchmark.mapstruct;
 
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 
 import benchmark.test.ContractEmployees;

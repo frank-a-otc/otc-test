@@ -23,15 +23,15 @@ public class OtclTest extends AbstractTest {
 
 	@Test
 	public void runTest() {
+		
+ 		compileAndDeploy();
+ 		
 		AthenaAirlinePassenger airlinePassenger = null;
  		if (TEST_METHOD.VALUES_TO_TARGET == testMethod) {
- 			airlinePassenger = testCopyValues(pkg);
+ 			airlinePassenger = otclEngine.executeOtcl(pkg, AthenaAirlinePassenger.class, null);
  		} else if (TEST_METHOD.SOURCE_TO_TARGET == testMethod) {
- 			airlinePassenger = testCopyKronosToAthena(pkg);
- 			System.out.println(airlinePassenger);
- 		} else {
-//			PermanentEmployee permanentEmployee = testContractEmployeesToPermanent(null);
-// 			System.out.println(permanentEmployee);
+ 			KronosAirlinePassenger kronosAirlinePassenger = loadKronosXml();
+ 			airlinePassenger = otclEngine.executeOtcl(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
  		}
 		try {
 			JAXBContext jaxbContext = JAXBContext.newInstance(AthenaAirlinePassenger.class);
@@ -50,30 +50,4 @@ public class OtclTest extends AbstractTest {
 		otclEngine.register();
 	}
 	
- 	private AthenaAirlinePassenger testCopyValues(String pkg) {
- 		compileAndDeploy();
-		AthenaAirlinePassenger airlinePassenger = otclEngine.executeOtcl(pkg, AthenaAirlinePassenger.class, null);
-		return airlinePassenger;
-	}
-	
-	private AthenaAirlinePassenger testCopyKronosToAthena(String pkg) {
- 		compileAndDeploy();
-		KronosAirlinePassenger kronosAirlinePassenger = loadKronosXml();
-		AthenaAirlinePassenger airlinePassenger = otclEngine.executeOtcl(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
-		return airlinePassenger;
-	}
-
-//	private PermanentEmployee testContractEmployeesToPermanent(String pkg) {
-// 		compileAndDeploy();
-//		ContractEmployee contractEmployee = new ContractEmployee();
-//		contractEmployee.setEmployeeName("Otcl-Jack");
-//		ContractEmployees contractEmployees = new ContractEmployees();
-//		List<ContractEmployee> list = new ArrayList<>();
-//		contractEmployees.setEmployees(list);
-//		list.add(contractEmployee);
-//		PermanentEmployee permanentEmployee = otclEngine.executeOtcl(pkg, contractEmployees, PermanentEmployee.class,
-//				 null);
-//		return permanentEmployee;
-//	}
-
 }

@@ -1,14 +1,15 @@
 package org.otcl.test.benchmark.otcl2;
 
 
-import org.otcl2.common.engine.profiler.dto.IndexedCollectionsDto;
+import java.util.Map;
 
-import benchmark.test.PermanentEmployee;
-import benchmark.test.ContractEmployee;
-import benchmark.test.ContractEmployees;
+import org.otcl2.common.engine.profiler.dto.IndexedCollectionsDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.util.Map;
+
+import benchmark.test.ContractEmployee;
+import benchmark.test.ContractEmployees;
+import benchmark.test.PermanentEmployee;
 
 
 public class CP2 {

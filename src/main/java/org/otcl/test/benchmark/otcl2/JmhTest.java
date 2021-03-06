@@ -2,8 +2,6 @@
 package org.otcl.test.benchmark.otcl2;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.xml.bind.JAXBContext;
@@ -39,10 +37,10 @@ public class JmhTest extends AbstractTest {
 	static {
 		contractEmployee = new ContractEmployee();
 		contractEmployee.setEmployeeName("Otcl-Jack");
-		contractEmployees = new ContractEmployees();
-		List<ContractEmployee> list = new ArrayList<>();
-		contractEmployees.setEmployees(list);
-		list.add(contractEmployee);
+//		contractEmployees = new ContractEmployees();
+//		List<ContractEmployee> list = new ArrayList<>();
+//		contractEmployees.setEmployees(list);
+//		list.add(contractEmployee);
 	}
 	
 
@@ -52,18 +50,15 @@ public class JmhTest extends AbstractTest {
 
     @State(Scope.Thread)
     public static class MyState {
-
-    	public static int counter;
+    	
     	@Setup(Level.Trial)
         public void doSetup() {
     		otclEngine.register();
-    		counter = 0;
     		System.out.println("initialized OTCL 2 test ..............."); 
         }
 
         @TearDown(Level.Trial)
         public void doTearDown() {
-        	System.out.println("\n\nTotal operations in this iteration - " + counter);
         }
     }
 
@@ -74,7 +69,7 @@ public class JmhTest extends AbstractTest {
     @Measurement(iterations = 50, time = 200, timeUnit = TimeUnit.MILLISECONDS)
 	public void test(MyState myState) {
 //    	PermanentEmployee permanentEmployee = contractToPermananentEmployee.execute(contractEmployee, null, null);
-		PermanentEmployee permanentEmployee = otclEngine.executeOtcl(pkg, contractEmployees, PermanentEmployee.class,
+		PermanentEmployee permanentEmployee = otclEngine.executeOtcl(pkg, contractEmployee, PermanentEmployee.class,
 				 null);
 		return;
     }

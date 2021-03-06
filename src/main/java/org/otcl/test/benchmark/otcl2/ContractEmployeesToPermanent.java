@@ -1,12 +1,14 @@
 package org.otcl.test.benchmark.otcl2;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.otcl2.common.engine.profiler.dto.IndexedCollectionsDto;
 import org.otcl2.common.executor.CodeExecutor;
-import java.util.Map;
-import java.util.HashMap;
-import benchmark.test.PermanentEmployee;
+
 import benchmark.test.ContractEmployees;
+import benchmark.test.PermanentEmployee;
 
 public class ContractEmployeesToPermanent
 	implements CodeExecutor<ContractEmployees, PermanentEmployee> {
