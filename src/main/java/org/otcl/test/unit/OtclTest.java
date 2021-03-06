@@ -15,8 +15,11 @@ public class OtclTest extends AbstractTest {
 	private static OtclEngine otclEngine = OtclEngineImpl.instance;
 	
 	private static enum TEST_METHOD {
-		VALUES_TO_TARGET, // - use this when the OTCL files does not have even a single reference to a source object
-		SOURCE_TO_TARGET  // use this when the OTCL file has references to a source object with or without values.
+		VALUES_TO_TARGET, 
+		// - use the above when the OTCL files has 'from: values:' only and does not have even a single reference 
+		//      to a source object
+		SOURCE_TO_TARGET  
+		// use the above when the OTCL file has references to a source object with or without 'from: values:'.
 	}
 	private static TEST_METHOD testMethod = TEST_METHOD.VALUES_TO_TARGET;
 	private static String pkg = "cpyvalues1";
