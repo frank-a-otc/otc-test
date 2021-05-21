@@ -1,0 +1,16 @@
+{
+  "id": "42",
+  "state": "Acknowledged",
+  "shipmentTrackingNumber": "1234",
+  "returnShipmentTrackingNumber ": "787879",
+  "carrierId": "CP",
+  "resource": [{
+    "id": "001F7D9EAC91",
+    "resourceTypeId": "MAC",
+  }],
+  "header": [{
+    "code": "201",
+    "reason": "",
+    "message": "",
+  }]
+}

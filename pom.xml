@@ -14,10 +14,10 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 		<java.version>1.8</java.version>
 		
-		<junit.version>5.7.0</junit.version>
+		<!-- <junit.version>5.7.0</junit.version> -->
 		<jackson.version>2.12.1</jackson.version>
 		<otcl-schema.version>1.0</otcl-schema.version>
-		<otcl.version>1.2</otcl.version>
+		<otcl.version>1.4-SNAPSHOT</otcl.version>
 		<jmh.version>1.23</jmh.version>
 		<mapstruct.version>1.4.1.Final</mapstruct.version>
 		<dozer.version>5.5.1</dozer.version>
@@ -25,6 +25,7 @@
 	</properties>
 
 	<dependencies>
+<!-- 
 		<dependency>
 		    <groupId>org.junit.jupiter</groupId>
         	<artifactId>junit-jupiter</artifactId>
@@ -37,7 +38,7 @@
 		    <version>${junit.version}</version>
 		    <scope>test</scope>
 		</dependency>
-
+ -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
@@ -92,7 +93,40 @@
 			<artifactId>otcl2-core</artifactId>
 			<version>${otcl.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>tmf-652</groupId>
+            <artifactId>resource-order-v4</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>jsr-144</groupId>
+            <artifactId>order-mgmt-v1.5</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.4.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.10</version>
+        </dependency>
 
+		<dependency>
+		    <groupId>org.xmlunit</groupId>
+		    <artifactId>xmlunit-core</artifactId>
+		    <version>2.8.2</version>
+		    <!-- <scope>test</scope> -->
+		</dependency>
 	</dependencies>
 	
 	<build>

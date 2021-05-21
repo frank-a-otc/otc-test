@@ -13,12 +13,11 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
-import org.otcl.test.AbstractTest;
 
 import benchmark.test.ContractEmployee;
 import benchmark.test.PermanentEmployee;
 
-public class JmhTest extends AbstractTest {
+public class JmhTest {
 
 	private static ContractEmployee contractEmployee;
 	private static DozerBeanMapper  mapper;

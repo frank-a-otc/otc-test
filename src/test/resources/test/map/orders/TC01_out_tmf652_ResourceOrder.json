@@ -1,0 +1,31 @@
+{
+  "id" : "223423",
+  "href" : null,
+  "category" : null,
+  "completionDate" : null,
+  "description" : null,
+  "expectedCompletionDate" : null,
+  "externalId" : null,
+  "name" : null,
+  "orderDate" : null,
+  "orderType" : null,
+  "priority" : null,
+  "requestedCompletionDate" : null,
+  "requestedStartDate" : null,
+  "startDate" : null,
+  "state" : "Acknowledged",
+  "externalReference" : null,
+  "note" : null,
+  "orderItem" : [ {
+    "id" : "001F7D9EAC91",
+    "action" : null,
+    "quantity" : null,
+    "state" : null,
+    "appointment" : null,
+    "orderItemRelationship" : null,
+    "resource" : null,
+    "resourceSpecification" : null
+
+  } ]
+
+}

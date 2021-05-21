@@ -1,0 +1,205 @@
+metadata:
+  objectTypes:
+    source: com.kronos.airlines.dto.KronosAirlinePassenger
+    target: com.athena.airlines.dto.AthenaAirlinePassenger
+  entryClassName: KronosToAthena
+  helper: otcl.test.helper.TestFactoryHelper
+otclCommands:
+
+###################################################################
+#################   EXECUTE TEST CASES 
+###################################################################
+
+###---- XE Test case 01 : otclConverter -----------------
+- execute:
+    id: XE1
+    otclConverter: otcl.test.converter.TestConverter
+    source:
+      otclChain: travelerDetailType.name.surname
+    target:
+      otclChain: dataLists.passengerList.passenger[*].identityDocuments[*].visa.
+    factoryClassName: XE1
+#    disable: true
+
+###---- XE Test case 02 : otclConverter  -----------------
+- execute:
+    id: XE2
+    otclConverter: otcl.test.converter.TestConverter
+    source:
+      otclChain: dataLists.passengerList.passenger[*].identityDocuments[*].visa
+    target:
+      otclChain: travelerDetailType.name.surname
+    factoryClassName: XE2
+#    disable: true
+
+###---- XE Test case 03 : otclConverter -----------------
+- execute:
+    id: XE3
+    otclConverter: otcl.test.converter.TestConverter
+    source:
+      otclChain: travelerDetailType.name.surname
+    target:
+      otclChain: dataLists.passengerList.passenger[*].identityDocuments[*]
+    factoryClassName: XE3
+#    disable: true
+
+###---- XE Test case 04 : otclConverter  -----------------
+- execute:
+    id: XE4
+    otclConverter: otcl.test.converter.TestConverter
+    source:
+      otclChain: dataLists.passengerList.passenger[*].identityDocuments[*]
+    target:
+      otclChain: travelerDetailType.name.surname
+    factoryClassName: XE4
+#    disable: true
+
+###---- XE Test case 05 : otclConverter -----------------
+- execute:
+    id: XE5
+    otclConverter: otcl.test.converter.TestConverter
+    source:
+      otclChain: travelerDetailType.name.surname
+    target:
+      otclChain: travelers.traveler[*].customObjectsMap[*,*]<K>.given[*]
+    factoryClassName: XE5
+#    disable: true
+
+###---- XE Test case 06 : otclConverter  -----------------
+- execute:
+    id: XE6
+    otclConverter: otcl.test.converter.TestConverter
+    source:
+      otclChain: travelers.traveler[*].customObjectsMap[*,*]<K>
+    target:
+      otclChain: travelerDetailType.name.surname
+    factoryClassName: XE6
+#    disable: true
+
+###---- XE Test case 07 : otclConverter -----------------
+- execute:
+    id: XE7
+    otclConverter: otcl.test.converter.TestConverter
+    source:
+      otclChain: travelerDetailType.name.surname
+    target:
+      otclChain: travelers.traveler[*].customObjectsMap[*,*]<V>.name.given[*]
+    factoryClassName: XE7
+#    disable: true
+
+###---- XE Test case 08 : otclConverter  -----------------
+- execute:
+    id: XE8
+    otclConverter: otcl.test.converter.TestConverter
+    source:
+      otclChain: travelers.traveler[*].anonymousTravelerMap[*,*]<V>
+    target:
+      otclChain: travelerDetailType.name.surname
+    factoryClassName: XE8
+#    disable: true
+
+###---- XE Test case 09 : otclConverter  -----------------
+- execute:
+    id: XE9
+    otclConverter: otcl.test.converter.TestConverter
+    source:
+      otclChain: travelers.traveler[*].anonymousTravelerMap[*,*]<V>
+    target:
+      otclChain: $
+    factoryClassName: XE9
+#    disable: true
+
+###---- XE Test case 10 : otclConverter  -----------------
+- execute:
+    id: XE10
+    otclConverter: otcl.test.converter.TestConverter
+    source:
+      otclChain: $
+    target:
+      otclChain: travelers.traveler[*].customObjectsMap[*,*]<K>
+    factoryClassName: XE10
+#    disable: true
+
+###---- XE Test case 11 : otclConverter  -----------------
+- execute:
+    id: XE11
+    otclConverter: otcl.test.converter.TestConverter
+    source:
+      otclChain: $
+    target:
+      otclChain: $
+    factoryClassName: XE11
+#    disable: true
+
+###---- XE Test case 12 : otclModule -----------------
+- execute:
+    id: XE12
+    otclModule:
+      otclNamespace: 
+    source:
+      otclChain: travelerDetailType.name.surname
+    target:
+      otclChain: dataLists.passengerList.passenger[*].identityDocuments[*].visa
+    factoryClassName: XE12
+#    disable: true
+
+###---- XE Test case 13 : otclModule -----------------
+- execute:
+    id: XE13
+    otclModule:
+      otclNamespace: org.otcl
+    source:
+      otclChain: dataLists.passengerList.passenger[*].identityDocuments[*].visa
+    target:
+      otclChain: travelerDetailType.name.surname
+    factoryClassName: XE13
+#    disable: true
+
+###---- XE Test case 14 : otclModule -----------------
+- execute:
+    id: XE14
+    otclModule:
+      otclNamespace: org.otcl
+    source:
+      otclChain: $
+    target:
+      otclChain: travelerDetailType.name.surname
+    factoryClassName: XE14
+#    disable: true
+
+###---- XE Test case 15 : otclModule -----------------
+- execute:
+    id: XE15
+    otclModule:
+      otclNamespace: org.otcl
+    source:
+      otclChain: dataLists.passengerList.passenger[*].identityDocuments[*].visa
+    target:
+      otclChain: $
+    factoryClassName: XE15
+#    disable: true
+
+###---- XE Test case 16 : otclModule -----------------
+- execute:
+    id: XE16
+    otclModule:
+      otclNamespace: org.otcl
+    source:
+      otclChain: $
+    target:
+      otclChain: $
+    factoryClassName: XE16
+#    disable: true
+
+###---- XE Test case 17 : executionOrder (optional) --------------
+- execute:
+    id: XE17
+    otclConverter: otcl.test.converter.TestConverter
+    otclModule:
+      otclNamespace: org.otcl
+    source:
+      otclChain: travelerDetailType.name
+    target:
+      otclChain: dataLists.passengerList.passenger[*].identityDocuments[*].visa
+    factoryClassName: XE17
+#    disable: true
