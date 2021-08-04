@@ -1,5 +1,5 @@
 
-package org.otcl.test.benchmark.dozer;
+package org.otc.test.benchmark.dozer;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,5 +1,5 @@
 
-package org.otcl.test.benchmark.mapstruct;
+package org.otc.test.benchmark.mapstruct;
 
 import java.io.IOException;
 
@@ -24,7 +24,7 @@ public class JmhTest {
 
 	static {
 		contractEmployee = new ContractEmployee();
-		contractEmployee.setEmployeeName("Otcl-Jack");
+		contractEmployee.setEmployeeName("Otc-Jack");
 //		contractEmployees = new ContractEmployees();
 //		List<ContractEmployee> list = new ArrayList<>();
 //		contractEmployees.setEmployees(list);

@@ -1,9 +1,9 @@
-package org.otcl.test.benchmark.otcl2;
+package org.otc.test.benchmark.otc;
 
 
 import java.util.Map;
 
-import org.otcl2.common.engine.profiler.dto.IndexedCollectionsDto;
+import org.otcframework.common.engine.indexer.dto.IndexedCollectionsDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,7 +39,7 @@ public class CP2 {
 			LOGGER.warn("'employees' is null!");
 			return;
 		}
-		ContractEmployee employees = (ContractEmployee) memberSourceICD.profiledObject;
+		ContractEmployee employees = (ContractEmployee) memberSourceICD.indexedObject;
 		String employeeName = employees.getEmployeeName();
 		if (employeeName == null) {
 			LOGGER.warn("'employees[*].employeeName' is null!.");

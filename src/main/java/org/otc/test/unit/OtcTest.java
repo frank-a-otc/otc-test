@@ -1,13 +1,13 @@
-package org.otcl.test.unit;
+package org.otc.test.unit;
 
 import javax.xml.transform.Source;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.otcl2.common.OtclConstants;
-import org.otcl2.common.engine.OtclEngine;
-import org.otcl2.common.util.OtclUtils;
-import org.otcl2.core.engine.OtclEngineImpl;
+import org.otcframework.common.OtcConstants;
+import org.otcframework.common.engine.OtcEngine;
+import org.otcframework.common.util.OtcUtils;
+import org.otcframework.core.engine.OtcEngineImpl;
 import org.xmlunit.builder.Input;
 import org.xmlunit.diff.Comparison;
 import org.xmlunit.diff.ComparisonListener;
@@ -19,9 +19,9 @@ import com.athena.airlines.dto.AthenaAirlinePassenger;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 
-public class OtclTest {
+public class OtcTest {
 
-	private static OtclEngine otclEngine = OtclEngineImpl.instance;
+	private static OtcEngine otcEngine = OtcEngineImpl.instance;
 	
 	private static enum TEST_METHOD {
 		VALUES_TO_TARGET, 
@@ -29,13 +29,13 @@ public class OtclTest {
 	}
 	
 	private static TEST_METHOD testMethod = TEST_METHOD.SOURCE_TO_TARGET;
-	// - set 'testMethod' to TEST_METHOD.VALUES_TO_TARGET when the OTCL file has 'from: values:' only and does 
+	// - set 'testMethod' to TEST_METHOD.VALUES_TO_TARGET when the OTC file has 'from: values:' only and does 
 	//    not have even a single reference to a source object
 	// 
-	// set 'testMethod' to  TEST_METHOD.SOURCE_TO_TARGET when the OTCL file has references to a source object with
+	// set 'testMethod' to  TEST_METHOD.SOURCE_TO_TARGET when the OTC file has references to a source object with
 	//    or without 'from: values:'.
 	
-	private static String pkg = null;
+	private static String pkg = "cpysource_collection";
 
 	@Test
 	public void runTest() {
@@ -44,21 +44,21 @@ public class OtclTest {
  		
 		AthenaAirlinePassenger airlinePassenger = null;
  		if (TEST_METHOD.VALUES_TO_TARGET == testMethod) {
- 			airlinePassenger = otclEngine.executeOtcl(pkg, AthenaAirlinePassenger.class, null);
+ 			airlinePassenger = otcEngine.executeOtc(pkg, AthenaAirlinePassenger.class, null);
  		} else if (TEST_METHOD.SOURCE_TO_TARGET == testMethod) {
  			KronosAirlinePassenger kronosAirlinePassenger = TestUtil.loadKronosXml();
- 			airlinePassenger = otclEngine.executeOtcl(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
+ 			airlinePassenger = otcEngine.executeOtc(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
  			
  			//-- compare results.
 			String result = PrintUtil.jaxbObjectToXML(airlinePassenger); 
 			System.out.println(result);
 			
-			String otclFile = OtclUtils.createDeploymentId(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class) +
-					OtclConstants.OTCL_SCRIPT_EXTN; 
-			String expected = TestUtil.getTestCase(otclFile);
+			String otcFile = OtcUtils.createDeploymentId(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class) +
+					".xml"; 
+			String expected = TestUtil.getTestCase(otcFile);
 			Source control = Input.fromString(expected).build();
 
-			Source test = Input.fromString(expected).build();
+			Source test = Input.fromString(result).build();
 			DifferenceEngine diff = new DOMDifferenceEngine();
 			diff.addDifferenceListener(new ComparisonListener() {
 		        public void comparisonPerformed(Comparison comparison, ComparisonResult outcome) {
@@ -71,11 +71,11 @@ public class OtclTest {
  	
 	private void compileAndDeploy() {
 		// -- compile script and generated source code
-		otclEngine.compileOtcl();
-		otclEngine.compileSourceCode();
+		otcEngine.compileOtc();
+		otcEngine.compileSourceCode();
 		
 		// -- register the generated .tmd and the executable files.
-		otclEngine.register();
+		otcEngine.register();
 	}
 	
 }

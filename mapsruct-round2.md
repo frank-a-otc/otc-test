@@ -1,17 +1,17 @@
 19:52:43,818 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
 19:52:43,818 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
-19:52:43,818 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otcl2/otcl2-core/target/classes/logback.xml]
-19:52:43,985 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@41975e01 - Adding [file:/D:/otcl-home/config/logback-included.xml] to configuration watch list.
+19:52:43,818 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+19:52:43,985 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@41975e01 - Adding [file:/D:/otc-home/config/logback-included.xml] to configuration watch list.
 19:52:43,990 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
 19:52:43,994 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleLogger]
 19:52:44,001 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
 19:52:44,050 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
-19:52:44,056 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otclLogger]
+19:52:44,056 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otcLogger]
 19:52:44,059 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-19:52:44,062 |-INFO in ch.qos.logback.core.FileAppender[otclLogger] - File property is set to [d:/otcl-home/logs/otcl.log]
-19:52:44,065 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otcl] to DEBUG
-19:52:44,066 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otclLogger] to Logger[org.otcl]
-19:52:44,067 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otcl]
+19:52:44,062 |-INFO in ch.qos.logback.core.FileAppender[otcLogger] - File property is set to [d:/otc-home/logs/otc.log]
+19:52:44,065 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otc] to DEBUG
+19:52:44,066 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otcLogger] to Logger[org.otc]
+19:52:44,067 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otc]
 19:52:44,067 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
 19:52:44,068 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[ROOT]
 19:52:44,068 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
@@ -25,24 +25,24 @@
 # Timeout: 10 min per iteration
 # Threads: 1 thread, will synchronize iterations
 # Benchmark mode: Throughput, ops/time
-# Benchmark: org.otcl.test.benchmark.mapstruct.JmhTest.test
+# Benchmark: org.otc.test.benchmark.mapstruct.JmhTest.test
 
 # Run progress: 0.00% complete, ETA 00:00:45
 # Warmup Fork: 1 of 2
 # Warmup Iteration   1: 19:52:45,145 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
 19:52:45,145 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
-19:52:45,145 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otcl2/otcl2-core/target/classes/logback.xml]
-19:52:45,273 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@710f953 - Adding [file:/D:/otcl-home/config/logback-included.xml] to configuration watch list.
+19:52:45,145 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+19:52:45,273 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@710f953 - Adding [file:/D:/otc-home/config/logback-included.xml] to configuration watch list.
 19:52:45,278 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
 19:52:45,282 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleLogger]
 19:52:45,289 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
 19:52:45,327 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
-19:52:45,332 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otclLogger]
+19:52:45,332 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otcLogger]
 19:52:45,333 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-19:52:45,335 |-INFO in ch.qos.logback.core.FileAppender[otclLogger] - File property is set to [d:/otcl-home/logs/otcl.log]
-19:52:45,337 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otcl] to DEBUG
-19:52:45,338 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otclLogger] to Logger[org.otcl]
-19:52:45,338 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otcl]
+19:52:45,335 |-INFO in ch.qos.logback.core.FileAppender[otcLogger] - File property is set to [d:/otc-home/logs/otc.log]
+19:52:45,337 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otc] to DEBUG
+19:52:45,338 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otcLogger] to Logger[org.otc]
+19:52:45,338 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otc]
 19:52:45,339 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
 19:52:45,339 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[ROOT]
 19:52:45,339 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
@@ -116,18 +116,18 @@ Total operations in this iteration - 0
 # Warmup Fork: 2 of 2
 # Warmup Iteration   1: 19:53:00,910 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
 19:53:00,910 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
-19:53:00,910 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otcl2/otcl2-core/target/classes/logback.xml]
-19:53:01,032 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@710f953 - Adding [file:/D:/otcl-home/config/logback-included.xml] to configuration watch list.
+19:53:00,910 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+19:53:01,032 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@710f953 - Adding [file:/D:/otc-home/config/logback-included.xml] to configuration watch list.
 19:53:01,038 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
 19:53:01,041 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleLogger]
 19:53:01,048 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
 19:53:01,094 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
-19:53:01,098 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otclLogger]
+19:53:01,098 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otcLogger]
 19:53:01,100 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-19:53:01,101 |-INFO in ch.qos.logback.core.FileAppender[otclLogger] - File property is set to [d:/otcl-home/logs/otcl.log]
-19:53:01,104 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otcl] to DEBUG
-19:53:01,104 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otclLogger] to Logger[org.otcl]
-19:53:01,105 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otcl]
+19:53:01,101 |-INFO in ch.qos.logback.core.FileAppender[otcLogger] - File property is set to [d:/otc-home/logs/otc.log]
+19:53:01,104 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otc] to DEBUG
+19:53:01,104 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otcLogger] to Logger[org.otc]
+19:53:01,105 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otc]
 19:53:01,106 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
 19:53:01,106 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[ROOT]
 19:53:01,107 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
@@ -201,18 +201,18 @@ Total operations in this iteration - 0
 # Fork: 1 of 1
 # Warmup Iteration   1: 19:53:16,661 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
 19:53:16,662 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
-19:53:16,662 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otcl2/otcl2-core/target/classes/logback.xml]
-19:53:16,782 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@4aa9be64 - Adding [file:/D:/otcl-home/config/logback-included.xml] to configuration watch list.
+19:53:16,662 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+19:53:16,782 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@4aa9be64 - Adding [file:/D:/otc-home/config/logback-included.xml] to configuration watch list.
 19:53:16,787 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
 19:53:16,790 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleLogger]
 19:53:16,797 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
 19:53:16,833 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
-19:53:16,837 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otclLogger]
+19:53:16,837 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otcLogger]
 19:53:16,839 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-19:53:16,840 |-INFO in ch.qos.logback.core.FileAppender[otclLogger] - File property is set to [d:/otcl-home/logs/otcl.log]
-19:53:16,842 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otcl] to DEBUG
-19:53:16,842 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otclLogger] to Logger[org.otcl]
-19:53:16,843 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otcl]
+19:53:16,840 |-INFO in ch.qos.logback.core.FileAppender[otcLogger] - File property is set to [d:/otc-home/logs/otc.log]
+19:53:16,842 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otc] to DEBUG
+19:53:16,842 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otcLogger] to Logger[org.otc]
+19:53:16,843 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otc]
 19:53:16,844 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
 19:53:16,844 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[ROOT]
 19:53:16,844 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
@@ -282,7 +282,7 @@ Iteration  50:
 887916.599 ops/s
 
 
-Result "org.otcl.test.benchmark.mapstruct.JmhTest.test":
+Result "org.otc.test.benchmark.mapstruct.JmhTest.test":
   876863.135 ±(99.9%) 9626.390 ops/s [Average]
   (min, avg, max) = (806265.740, 876863.135, 908486.078), stdev = 19445.783
   CI (99.9%): [867236.745, 886489.525] (assumes normal distribution)

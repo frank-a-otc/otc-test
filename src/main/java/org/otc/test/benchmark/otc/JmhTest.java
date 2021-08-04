@@ -1,5 +1,5 @@
 
-package org.otcl.test.benchmark.otcl2;
+package org.otc.test.benchmark.otc;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -17,8 +17,8 @@ import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
 import org.openjdk.jmh.annotations.Warmup;
-import org.otcl2.common.engine.OtclEngine;
-import org.otcl2.core.engine.OtclEngineImpl;
+import org.otcframework.common.engine.OtcEngine;
+import org.otcframework.core.engine.OtcEngineImpl;
 
 import benchmark.test.ContractEmployee;
 import benchmark.test.ContractEmployees;
@@ -28,14 +28,14 @@ public class JmhTest {
 
 	private static ContractEmployee contractEmployee;
 	private static ContractEmployees contractEmployees;
-	private static OtclEngine otclEngine = (OtclEngineImpl) OtclEngineImpl.instance;
+	private static OtcEngine otcEngine = (OtcEngineImpl) OtcEngineImpl.instance;
 	private static JAXBContext jaxbContext;
 	private static String pkg = "";
 //	private static ContractToPermananentEmployee contractToPermananentEmployee;
 
 	static {
 		contractEmployee = new ContractEmployee();
-		contractEmployee.setEmployeeName("Otcl-Jack");
+		contractEmployee.setEmployeeName("Otc-Jack");
 //		contractEmployees = new ContractEmployees();
 //		List<ContractEmployee> list = new ArrayList<>();
 //		contractEmployees.setEmployees(list);
@@ -52,8 +52,8 @@ public class JmhTest {
     	
     	@Setup(Level.Trial)
         public void doSetup() {
-    		otclEngine.register();
-    		System.out.println("initialized OTCL 2 test ..............."); 
+    		otcEngine.register();
+    		System.out.println("initialized OTC 2 test ..............."); 
         }
 
         @TearDown(Level.Trial)
@@ -68,7 +68,7 @@ public class JmhTest {
     @Measurement(iterations = 50, time = 200, timeUnit = TimeUnit.MILLISECONDS)
 	public void test(MyState myState) {
 //    	PermanentEmployee permanentEmployee = contractToPermananentEmployee.execute(contractEmployee, null, null);
-		PermanentEmployee permanentEmployee = otclEngine.executeOtcl(pkg, contractEmployee, PermanentEmployee.class,
+		PermanentEmployee permanentEmployee = otcEngine.executeOtc(pkg, contractEmployee, PermanentEmployee.class,
 				 null);
 		return;
     }

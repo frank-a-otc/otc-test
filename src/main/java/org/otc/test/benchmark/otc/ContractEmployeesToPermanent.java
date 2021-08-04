@@ -1,11 +1,11 @@
-package org.otcl.test.benchmark.otcl2;
+package org.otc.test.benchmark.otc;
 
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.otcl2.common.engine.profiler.dto.IndexedCollectionsDto;
-import org.otcl2.common.executor.CodeExecutor;
+import org.otcframework.common.engine.indexer.dto.IndexedCollectionsDto;
+import org.otcframework.common.executor.CodeExecutor;
 
 import benchmark.test.ContractEmployees;
 import benchmark.test.PermanentEmployee;

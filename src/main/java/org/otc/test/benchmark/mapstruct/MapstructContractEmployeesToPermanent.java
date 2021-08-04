@@ -1,4 +1,4 @@
-package org.otcl.test.benchmark.mapstruct;
+package org.otc.test.benchmark.mapstruct;
 
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
