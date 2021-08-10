@@ -4,9 +4,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.otc</groupId>
+	<groupId>org.otcframework</groupId>
 	<artifactId>otc-test</artifactId>
-	<version>1.0</version>
+	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -17,7 +17,6 @@
 		<!-- <junit.version>5.7.0</junit.version> -->
 		<jackson.version>2.12.1</jackson.version>
 		<otc-schema.version>1.0</otc-schema.version>
-		<otc.version>1.0</otc.version>
 		<jmh.version>1.23</jmh.version>
 		<mapstruct.version>1.4.1.Final</mapstruct.version>
 		<dozer.version>5.5.1</dozer.version>
@@ -72,26 +71,26 @@
 		</dependency>
 
  		<dependency>
-			<groupId>etree-dateconverters</groupId>
+			<groupId>org.otcframework</groupId>
 			<artifactId>dateconverters</artifactId>
 			<version>${dateconverters.version}</version>
 		</dependency>
 
  		<dependency>
-			<groupId>org.otc</groupId>
+			<groupId>org.otcframework</groupId>
 			<artifactId>otc-test-schema</artifactId>
-			<version>${otc-schema.version}</version>
+			<version>${project.version}</version>
 		</dependency>
 		
  		<dependency>
 			<groupId>org.otcframework</groupId>
 			<artifactId>otc-common</artifactId>
-			<version>${otc.version}</version>
+			<version>${project.version}</version>
 		</dependency>
  		<dependency>
 			<groupId>org.otcframework</groupId>
 			<artifactId>otc-core</artifactId>
-			<version>${otc.version}</version>
+			<version>${project.version}</version>
 		</dependency>
         <dependency>
             <groupId>tmf-652</groupId>
