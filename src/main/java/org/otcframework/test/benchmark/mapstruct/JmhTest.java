@@ -1,5 +1,5 @@
 
-package org.otc.test.benchmark.mapstruct;
+package org.otcframework.test.benchmark.mapstruct;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package org.otc.test.unit;
+package org.otcframework.test.unit;
 
 import java.io.File;
 import java.io.FileInputStream;

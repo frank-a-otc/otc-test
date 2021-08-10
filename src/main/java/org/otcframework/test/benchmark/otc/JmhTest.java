@@ -1,5 +1,5 @@
 
-package org.otc.test.benchmark.otc;
+package org.otcframework.test.benchmark.otc;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

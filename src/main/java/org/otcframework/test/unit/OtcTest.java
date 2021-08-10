@@ -1,10 +1,9 @@
-package org.otc.test.unit;
+package org.otcframework.test.unit;
 
 import javax.xml.transform.Source;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.otcframework.common.OtcConstants;
 import org.otcframework.common.engine.OtcEngine;
 import org.otcframework.common.util.OtcUtils;
 import org.otcframework.core.engine.OtcEngineImpl;

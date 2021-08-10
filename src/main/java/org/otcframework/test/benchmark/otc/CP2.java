@@ -1,4 +1,4 @@
-package org.otc.test.benchmark.otc;
+package org.otcframework.test.benchmark.otc;
 
 
 import java.util.Map;
