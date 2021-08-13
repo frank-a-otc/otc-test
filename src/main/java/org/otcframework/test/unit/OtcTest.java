@@ -45,12 +45,12 @@ public class OtcTest {
  		if (TEST_METHOD.VALUES_TO_TARGET == testMethod) {
  			airlinePassenger = otcEngine.executeOtc(pkg, AthenaAirlinePassenger.class, null);
  		} else if (TEST_METHOD.SOURCE_TO_TARGET == testMethod) {
- 			KronosAirlinePassenger kronosAirlinePassenger = (KronosAirlinePassenger) TestUtil.kronosXmlFromFile();
+ 			KronosAirlinePassenger kronosAirlinePassenger = (KronosAirlinePassenger) TestUtil.loadKronosXml();
  			airlinePassenger = otcEngine.executeOtc(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
  			
  			//-- compare results.
-//			String result = PrintUtil.jaxbObjectToXML(airlinePassenger); 
-			String result = TestUtil.toXml(airlinePassenger); 
+//			String result = TestUtil.toXml(airlinePassenger); 
+			String result = TestUtil.jaxbObjectToXML(airlinePassenger); 
 			System.out.println(result);
 			
 			String otcFile = OtcUtils.createDeploymentId(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class) +
