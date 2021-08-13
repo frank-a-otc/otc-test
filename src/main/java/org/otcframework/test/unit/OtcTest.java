@@ -4,6 +4,7 @@ import javax.xml.transform.Source;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.otcframework.common.OtcConstants;
 import org.otcframework.common.engine.OtcEngine;
 import org.otcframework.common.util.OtcUtils;
 import org.otcframework.core.engine.OtcEngineImpl;
@@ -27,14 +28,12 @@ public class OtcTest {
 		SOURCE_TO_TARGET  
 	}
 	
-	private static TEST_METHOD testMethod = TEST_METHOD.SOURCE_TO_TARGET;
 	// - set 'testMethod' to TEST_METHOD.VALUES_TO_TARGET when the OTC file has 'from: values:' only and does 
 	//    not have even a single reference to a source object
 	// 
 	// set 'testMethod' to  TEST_METHOD.SOURCE_TO_TARGET when the OTC file has references to a source object with
 	//    or without 'from: values:'.
 	
-	private static String pkg = "cpysource_collection";
 
 	@Test
 	public void runTest() {
@@ -42,31 +41,44 @@ public class OtcTest {
  		compileAndDeploy();
  		
 		AthenaAirlinePassenger airlinePassenger = null;
+		String otcFile = null;
+		String otcExpectedResultFile = null;
+		
+		String pkg = "overrides";
+//		TEST_METHOD testMethod = TEST_METHOD.VALUES_TO_TARGET;
+		TEST_METHOD testMethod = TEST_METHOD.SOURCE_TO_TARGET;
+		
  		if (TEST_METHOD.VALUES_TO_TARGET == testMethod) {
  			airlinePassenger = otcEngine.executeOtc(pkg, AthenaAirlinePassenger.class, null);
- 		} else if (TEST_METHOD.SOURCE_TO_TARGET == testMethod) {
+ 			otcFile = OtcUtils.createDeploymentId(pkg, AthenaAirlinePassenger.class) +
+ 					OtcConstants.OTC_SCRIPT_EXTN; 
+ 			otcExpectedResultFile = OtcUtils.createDeploymentId(pkg, AthenaAirlinePassenger.class) + ".xml"; 
+		} else if (TEST_METHOD.SOURCE_TO_TARGET == testMethod) {
  			KronosAirlinePassenger kronosAirlinePassenger = (KronosAirlinePassenger) TestUtil.loadKronosXml();
  			airlinePassenger = otcEngine.executeOtc(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
- 			
- 			//-- compare results.
-//			String result = TestUtil.toXml(airlinePassenger); 
-			String result = TestUtil.jaxbObjectToXML(airlinePassenger); 
-			System.out.println(result);
-			
-			String otcFile = OtcUtils.createDeploymentId(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class) +
-					".xml"; 
-			String expected = TestUtil.getTestCase(otcFile);
-			Source control = Input.fromString(expected).build();
-
-			Source test = Input.fromString(result).build();
-			DifferenceEngine diff = new DOMDifferenceEngine();
-			diff.addDifferenceListener(new ComparisonListener() {
-		        public void comparisonPerformed(Comparison comparison, ComparisonResult outcome) {
-		            Assert.fail("found a difference: " + comparison);
-		        }
-		    });
-			diff.compare(control, test);
+ 			otcFile = OtcUtils.createDeploymentId(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class) +
+ 					OtcConstants.OTC_SCRIPT_EXTN; 
+ 			otcExpectedResultFile = OtcUtils.createDeploymentId(pkg, kronosAirlinePassenger, 
+ 					AthenaAirlinePassenger.class) + ".xml"; 
 		}
+		//-- compare results.
+		System.out.println("\n\nResult of OTC file: " + otcFile);
+
+//		String result = TestUtil.toXml(airlinePassenger); 
+		String result = TestUtil.jaxbObjectToXML(airlinePassenger); 
+		System.out.println("\n" + result);
+		
+		String expected = TestUtil.getTestCase(otcExpectedResultFile);
+		Source control = Input.fromString(expected).build();
+
+		Source test = Input.fromString(result).build();
+		DifferenceEngine diff = new DOMDifferenceEngine();
+		diff.addDifferenceListener(new ComparisonListener() {
+	        public void comparisonPerformed(Comparison comparison, ComparisonResult outcome) {
+	            Assert.fail("found a difference: " + comparison);
+	        }
+	    });
+		diff.compare(control, test);
 	}
  	
 	private void compileAndDeploy() {
