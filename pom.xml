@@ -6,7 +6,7 @@
 
 	<groupId>org.otcframework</groupId>
 	<artifactId>otc-test</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -14,30 +14,39 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 		<java.version>1.8</java.version>
 
-		<!-- <junit.version>5.7.0</junit.version> -->
+		<junit.version>4.13.2</junit.version>
+		<junit-jupiter.version>5.4.0</junit-jupiter.version>
+		
 		<jackson.version>2.12.1</jackson.version>
 		<otc-schema.version>1.0</otc-schema.version>
 		<jmh.version>1.23</jmh.version>
+		<otc.version>1.0</otc.version>
 		<mapstruct.version>1.4.1.Final</mapstruct.version>
 		<dozer.version>5.5.1</dozer.version>
 		<dateconverters.version>1.0</dateconverters.version>
 	</properties>
 
 	<dependencies>
-<!-- 
 		<dependency>
 		    <groupId>org.junit.jupiter</groupId>
-        	<artifactId>junit-jupiter</artifactId>
-		    <version>${junit.version}</version>
+        	<artifactId>junit-jupiter-api</artifactId>
+		    <version>${junit-jupiter.version}</version>
 		    <scope>test</scope>
 		</dependency>
+<!-- 
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>${junit.version}</version>
+		</dependency>
+ -->
 		<dependency>
 		    <groupId>org.junit.jupiter</groupId>
         	<artifactId>junit-jupiter-engine</artifactId>
-		    <version>${junit.version}</version>
+		    <version>${junit-jupiter.version}</version>
 		    <scope>test</scope>
 		</dependency>
- -->
+
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
@@ -85,12 +94,17 @@
  		<dependency>
 			<groupId>org.otcframework</groupId>
 			<artifactId>otc-common</artifactId>
-			<version>${project.version}</version>
+			<version>${otc.version}</version>
 		</dependency>
  		<dependency>
 			<groupId>org.otcframework</groupId>
 			<artifactId>otc-core</artifactId>
-			<version>${project.version}</version>
+			<version>${otc.version}</version>
+		</dependency>
+ 		<dependency>
+			<groupId>org.otcframework</groupId>
+			<artifactId>otc-executor</artifactId>
+			<version>${otc.version}</version>
 		</dependency>
 
         <dependency>
