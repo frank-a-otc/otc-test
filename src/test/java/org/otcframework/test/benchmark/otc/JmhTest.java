@@ -28,7 +28,7 @@ public class JmhTest {
 
 	private static ContractEmployee contractEmployee;
 	private static ContractEmployees contractEmployees;
-	private static OtcEngine otcEngine = (OtcEngineImpl) OtcEngineImpl.instance;
+	private static OtcEngine otcEngine = OtcEngineImpl.getInstance();
 	private static JAXBContext jaxbContext;
 	private static String pkg = "";
 //	private static ContractToPermananentEmployee contractToPermananentEmployee;

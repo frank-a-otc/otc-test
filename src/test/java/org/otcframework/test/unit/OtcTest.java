@@ -26,12 +26,13 @@ import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 public class OtcTest {
 
+	/** The Constant otcEngine. */
 	private static final OtcEngine otcEngine = OtcEngineImpl.getInstance();
 
-	/** The Constant otcCompiler. */
+	/** The Constant otclCompiler. */
 	private static final OtclCompiler otclCompiler = OtclCompilerImpl.getInstance();
 	
-	/** The Constant deploymentContainer. */
+	/** The Constant otcRegistry. */
 	private static final OtcRegistry otcRegistry = OtcRegistryImpl.instance;
 	
 	/** The Constant otcExecutor. */
@@ -52,7 +53,7 @@ public class OtcTest {
 	@Test
 	public void runTest() {
 
- 		compileAndDeploy();
+ 		compileAndRegister();
  		
 		String pkg = null; 
 		String otclFile = null;
@@ -63,18 +64,18 @@ public class OtcTest {
 		TEST_METHOD testMethod = TEST_METHOD.SOURCE_TO_TARGET;
 		pkg = "overrides";
 		
- 		if (TEST_METHOD.VALUES_TO_TARGET == testMethod) {
+ 		if (testMethod == TEST_METHOD.VALUES_TO_TARGET) {
  			airlinePassenger = otcExecutor.execute(pkg, AthenaAirlinePassenger.class, null);
+ 			otcExpectedResultFile = OtcUtils.createRegistryId(pkg, null, AthenaAirlinePassenger.class) + ".xml"; 
  			otclFile = OtcUtils.createRegistryId(pkg, null, AthenaAirlinePassenger.class) +
  					OtcConstants.OTC_SCRIPT_EXTN; 
- 			otcExpectedResultFile = OtcUtils.createRegistryId(pkg, null, AthenaAirlinePassenger.class) + ".xml"; 
-		} else if (TEST_METHOD.SOURCE_TO_TARGET == testMethod) {
+		} else if (testMethod == TEST_METHOD.SOURCE_TO_TARGET) {
  			KronosAirlinePassenger kronosAirlinePassenger = (KronosAirlinePassenger) TestUtil.loadKronosXml();
  			airlinePassenger = otcExecutor.execute(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
- 			otclFile = OtcUtils.createDeploymentId(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class) +
- 					OtcConstants.OTC_SCRIPT_EXTN; 
- 			otcExpectedResultFile = OtcUtils.createDeploymentId(pkg, kronosAirlinePassenger, 
+ 			otcExpectedResultFile = OtcUtils.createRegistryId(pkg, kronosAirlinePassenger, 
  					AthenaAirlinePassenger.class) + ".xml"; 
+ 			otclFile = OtcUtils.createRegistryId(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class) +
+ 					OtcConstants.OTC_SCRIPT_EXTN; 
 		}
 		//-- compare results.
 		System.out.println("\n\nResults for OTCL file: " + otclFile);
@@ -85,7 +86,7 @@ public class OtcTest {
 
 	}
  	
-	private void compileAndDeploy() {
+	private void compileAndRegister() {
 		// -- compile script and generated source code
 		otclCompiler.compile();
 		otclCompiler.compileSourceCode();
