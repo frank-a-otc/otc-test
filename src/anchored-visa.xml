@@ -1,0 +1,17 @@
+
+	<AthenaAirlinePassenger>
+		<DataLists>
+			<PassengerList>
+				<Passenger>
+					<IdentityDocuments>
+						<Visas>
+							<VisaType>Work Visa</VisaType>
+						</Visas>
+						<Visas>
+							<VisaType>Visit Visa</VisaType>
+						</Visas>
+					</IdentityDocuments>
+				</Passenger>
+			</PassengerList>
+		</DataLists>
+	</AthenaAirlinePassenger>
