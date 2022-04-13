@@ -7,7 +7,6 @@
 	<groupId>org.otcframework</groupId>
 	<artifactId>otc-test</artifactId>
 	<version>1.0</version>
-	<packaging>jar</packaging>
 
 	<properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -23,7 +22,7 @@
 		<otc.version>2.0</otc.version>
 		<mapstruct.version>1.4.1.Final</mapstruct.version>
 		<dozer.version>5.5.1</dozer.version>
-		<dateconverters.version>1.0</dateconverters.version>
+		<dateconverters.version>1.1</dateconverters.version>
 	</properties>
 
 	<dependencies>
@@ -98,7 +97,7 @@
 		</dependency>
  		<dependency>
 			<groupId>org.otcframework</groupId>
-			<artifactId>otc-core</artifactId>
+			<artifactId>otc-compiler</artifactId>
 			<version>${otc.version}</version>
 		</dependency>
  		<dependency>
