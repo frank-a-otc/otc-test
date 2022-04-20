@@ -49,9 +49,7 @@ public class OtcTest {
 	public void runTest() {
 
  		compileAndRegister();
- 		if (true) {
- 			return;
- 		}
+		
 		String pkg = null; 
 		String otclFile = null;
 		AthenaAirlinePassenger airlinePassenger = null;
@@ -59,7 +57,7 @@ public class OtcTest {
 		
 //		TEST_METHOD testMethod = TEST_METHOD.VALUES_TO_TARGET;
 		TEST_METHOD testMethod = TEST_METHOD.SOURCE_TO_TARGET;
-		pkg = "org.otc";
+		pkg = "execute";
 		
  		if (testMethod == TEST_METHOD.VALUES_TO_TARGET) {
  			airlinePassenger = otcExecutor.execute(pkg, AthenaAirlinePassenger.class, null);

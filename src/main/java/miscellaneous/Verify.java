@@ -1,6 +1,5 @@
 package miscellaneous;
 
-import java.io.File;
 import java.io.IOException;
 
 import javax.xml.datatype.DatatypeConfigurationException;
