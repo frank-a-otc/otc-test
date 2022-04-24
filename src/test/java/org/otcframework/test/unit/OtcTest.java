@@ -82,7 +82,7 @@ public class OtcTest {
 	}
  	
 	private void compileAndRegister() {
-		// -- compile script and generated source code
+		// -- compile script and generate source code
 		otclCompiler.compile();
 		otclCompiler.compileSourceCode();
 		

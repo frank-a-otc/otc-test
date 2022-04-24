@@ -17,18 +17,25 @@ import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
 import org.openjdk.jmh.annotations.Warmup;
-import org.otcframework.common.engine.OtcEngine;
-import org.otcframework.core.engine.OtcEngineImpl;
+import org.otcframework.executor.OtcExecutor;
+import org.otcframework.executor.OtcExecutorImpl;
+import org.otcframework.executor.OtcRegistry;
+import org.otcframework.executor.OtcRegistryImpl;
 
 import benchmark.test.ContractEmployee;
 import benchmark.test.ContractEmployees;
 import benchmark.test.PermanentEmployee;
 
 public class JmhTest {
+	
+	/** The Constant otcRegistry. */
+	private static final OtcRegistry otcRegistry = OtcRegistryImpl.instance;
+	
+	/** The Constant otcExecutor. */
+	private static final OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
 
 	private static ContractEmployee contractEmployee;
 	private static ContractEmployees contractEmployees;
-	private static OtcEngine otcEngine = OtcEngineImpl.getInstance();
 	private static JAXBContext jaxbContext;
 	private static String pkg = "";
 //	private static ContractToPermananentEmployee contractToPermananentEmployee;
@@ -52,7 +59,7 @@ public class JmhTest {
     	
     	@Setup(Level.Trial)
         public void doSetup() {
-    		otcEngine.register();
+    		otcRegistry.register();
     		System.out.println("initialized OTC 2 test ..............."); 
         }
 
@@ -68,7 +75,7 @@ public class JmhTest {
     @Measurement(iterations = 50, time = 200, timeUnit = TimeUnit.MILLISECONDS)
 	public void test(MyState myState) {
 //    	PermanentEmployee permanentEmployee = contractToPermananentEmployee.execute(contractEmployee, null, null);
-		PermanentEmployee permanentEmployee = otcEngine.executeOtc(pkg, contractEmployee, PermanentEmployee.class,
+		PermanentEmployee permanentEmployee = otcExecutor.execute(pkg, contractEmployee, PermanentEmployee.class,
 				 null);
 		return;
     }

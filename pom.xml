@@ -19,7 +19,7 @@
 		<jackson.version>2.12.1</jackson.version>
 		<otc-schema.version>1.0</otc-schema.version>
 		<jmh.version>1.23</jmh.version>
-		<otc.version>2.1</otc.version>
+		<otc.version>2.2</otc.version>
 		<mapstruct.version>1.4.1.Final</mapstruct.version>
 		<dozer.version>5.5.1</dozer.version>
 		<dateconverters.version>1.1</dateconverters.version>
