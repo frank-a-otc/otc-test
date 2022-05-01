@@ -33,16 +33,16 @@ public class OtcTest {
 	/** The Constant otcExecutor. */
 	private static final OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
 
-	private static enum TEST_METHOD {
-		VALUES_TO_TARGET, 
-		SOURCE_TO_TARGET  
+	private static enum OTCL_COMMAND_TYPE {
+		FROM_VALUES, 
+		FROM_SOURCE_OBJECT  
 	}
 	
-	// - set 'testMethod' to TEST_METHOD.VALUES_TO_TARGET when the OTC file has 'from: values:' only and does 
+	// - set 'otclCommandType' to OTCL_COMMAND_TYPE.FROM_VALUES when the OTC file has 'from: values:' only and does 
 	//    not have even a single reference to a source object
 	// 
-	// set 'testMethod' to  TEST_METHOD.SOURCE_TO_TARGET when the OTC file has references to a source object with
-	//    or without 'from: values:'.
+	//   set 'otclCommandType' to  OTCL_COMMAND_TYPE.FROM_SOURCE_OBJECT when the OTC file has references to a source object 
+	//    with or without 'from: values:'.
 	
 
 	@Test
@@ -50,21 +50,22 @@ public class OtcTest {
 
  		compileAndRegister();
 		
+		OTCL_COMMAND_TYPE otclCommandType;
 		String pkg = null; 
 		String otclFile = null;
 		AthenaAirlinePassenger airlinePassenger = null;
 		String otcExpectedResultFile = null;
 		
-//		TEST_METHOD testMethod = TEST_METHOD.VALUES_TO_TARGET;
-		TEST_METHOD testMethod = TEST_METHOD.SOURCE_TO_TARGET;
+//		otclCommandType = OTCL_COMMAND_TYPE.FROM_VALUES;
+		otclCommandType = OTCL_COMMAND_TYPE.FROM_SOURCE_OBJECT;
 		pkg = "execute";
 		
- 		if (testMethod == TEST_METHOD.VALUES_TO_TARGET) {
+ 		if (otclCommandType == OTCL_COMMAND_TYPE.FROM_VALUES) {
  			airlinePassenger = otcExecutor.execute(pkg, AthenaAirlinePassenger.class, null);
  			otcExpectedResultFile = OtcUtils.createRegistryId(pkg, AthenaAirlinePassenger.class) + ".xml"; 
  			otclFile = OtcUtils.createRegistryId(pkg, null, AthenaAirlinePassenger.class) +
  					OtcConstants.OTC_SCRIPT_EXTN; 
-		} else if (testMethod == TEST_METHOD.SOURCE_TO_TARGET) {
+		} else if (otclCommandType == OTCL_COMMAND_TYPE.FROM_SOURCE_OBJECT) {
  			KronosAirlinePassenger kronosAirlinePassenger = (KronosAirlinePassenger) TestUtil.loadKronosXml();
  			airlinePassenger = otcExecutor.execute(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
  			otcExpectedResultFile = OtcUtils.createRegistryId(pkg, kronosAirlinePassenger, 
@@ -98,7 +99,7 @@ public class OtcTest {
 		DifferenceEngine diff = new DOMDifferenceEngine();
 		diff.addDifferenceListener(new ComparisonListener() {
 	        public void comparisonPerformed(Comparison comparison, ComparisonResult outcome) {
-//	            Assert.fail("found a difference: " + comparison);
+//	            TODO
 	        }
 	    });
 		diff.compare(control, test);

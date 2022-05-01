@@ -9,20 +9,18 @@
 	<version>1.0</version>
 
 	<properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-		<java.version>1.8</java.version>
 
 		<junit.version>4.13.2</junit.version>
 		<junit-jupiter.version>5.4.0</junit-jupiter.version>
 		
+		<jaxb-core.version>3.1.0-M1</jaxb-core.version>
+		<jackson.databind.version>2.13.2.1</jackson.databind.version>
 		<jackson.version>2.12.1</jackson.version>
-		<otc-schema.version>1.0</otc-schema.version>
 		<jmh.version>1.23</jmh.version>
-		<otc.version>2.2</otc.version>
+		<otc-schema.version>1.0</otc-schema.version>
+		<otc.version>2.3</otc.version>
 		<mapstruct.version>1.4.1.Final</mapstruct.version>
-		<dozer.version>5.5.1</dozer.version>
-		<dateconverters.version>1.1</dateconverters.version>
+		<dateconverters.version>1.2</dateconverters.version>
 	</properties>
 
 	<dependencies>
@@ -32,13 +30,7 @@
 		    <version>${junit-jupiter.version}</version>
 		    <scope>test</scope>
 		</dependency>
-<!-- 
-		<dependency>
-		    <groupId>junit</groupId>
-		    <artifactId>junit</artifactId>
-		    <version>${junit.version}</version>
-		</dependency>
- -->
+
 		<dependency>
 		    <groupId>org.junit.jupiter</groupId>
         	<artifactId>junit-jupiter-engine</artifactId>
@@ -47,9 +39,14 @@
 		</dependency>
 
 		<dependency>
+		    <groupId>com.sun.xml.bind</groupId>
+		    <artifactId>jaxb-core</artifactId>
+		    <version>${jaxb-core.version}</version>
+		</dependency>
+		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
-		    <version>${jackson.version}</version>
+		    <version>${jackson.databind.version}</version>
 		</dependency>
 		<dependency>
 		    <groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -70,12 +67,6 @@
 		    <groupId>org.mapstruct</groupId>
 		    <artifactId>mapstruct</artifactId>
 		    <version>${mapstruct.version}</version>
-		</dependency>
- 
-		<dependency>
-		    <groupId>net.sf.dozer</groupId>
-		    <artifactId>dozer</artifactId>
-		    <version>${dozer.version}</version>
 		</dependency>
 
  		<dependency>
@@ -112,12 +103,6 @@
             <version>2.8.0</version>
         </dependency>
  
-        <dependency>
-            <groupId>com.thoughtworks.xstream</groupId>
-            <artifactId>xstream</artifactId>
-            <version>1.4.10</version>
-        </dependency>
-
 		<dependency>
 		    <groupId>org.xmlunit</groupId>
 		    <artifactId>xmlunit-core</artifactId>

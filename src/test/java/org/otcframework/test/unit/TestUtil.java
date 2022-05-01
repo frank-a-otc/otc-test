@@ -8,7 +8,6 @@ import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Collection;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -20,39 +19,12 @@ import org.apache.commons.io.IOUtils;
 import org.otcframework.common.config.OtcConfig;
 
 import com.kronos.airlines.dto.KronosAirlinePassenger;
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.security.NoTypePermission;
-import com.thoughtworks.xstream.security.NullPermission;
-import com.thoughtworks.xstream.security.PrimitiveTypePermission;
 
 public class TestUtil {
 	
     public static final Path EXPECTED_RESULT_PATH = Paths.get(OtcConfig.getTestCaseExpectedResultLocation());
 
 	private static final String OTC_HOME = OtcConfig.getOtcHomeLocation();
-
-    private static final XStream xs = new XStream();
-    
-    static {
-    	xs.addPermission(NoTypePermission.NONE);
-    	// allow some basics
-    	xs.addPermission(NullPermission.NULL);
-    	xs.addPermission(PrimitiveTypePermission.PRIMITIVES);
-    	xs.allowTypeHierarchy(Collection.class);
-    	// allow any type from the same package
-    	xs.allowTypesByWildcard(new String[] {
-    	    "com.your.package.**"
-    	});
-    }
-
-    public static String toXml(Object val){
-        return xs.toXML(val);
-    }
-
-    public static KronosAirlinePassenger kronosXmlFromFile(){
-    	String fileName = OTC_HOME + File.separator + "test-samples" + File.separator + "Kronos-passenger-map.xml";
-        return (KronosAirlinePassenger) xs.fromXML(new File(fileName));
-    }
 
 	protected static KronosAirlinePassenger loadKronosXml() {
 		KronosAirlinePassenger kronosAirlinePassenger = null;
@@ -67,7 +39,6 @@ public class TestUtil {
 			ex.printStackTrace();
 		}
 		return kronosAirlinePassenger;
-
 	}
 	
     public static String jaxbObjectToXML(Object jaxbObject)  {
@@ -90,7 +61,7 @@ public class TestUtil {
         try {
             FileInputStream fis = new FileInputStream(EXPECTED_RESULT_PATH.resolve(testcaseFilePath).toString());
             return IOUtils.toString(fis, "UTF-8");
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
