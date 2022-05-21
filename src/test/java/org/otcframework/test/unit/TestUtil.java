@@ -18,6 +18,9 @@ import javax.xml.parsers.FactoryConfigurationError;
 import org.apache.commons.io.IOUtils;
 import org.otcframework.common.config.OtcConfig;
 
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 public class TestUtil {
@@ -25,6 +28,13 @@ public class TestUtil {
     public static final Path EXPECTED_RESULT_PATH = Paths.get(OtcConfig.getTestCaseExpectedResultLocation());
 
 	private static final String OTC_HOME = OtcConfig.getOtcHomeLocation();
+	
+	private static final ObjectMapper objectMapper = new ObjectMapper();
+	
+	static {
+		objectMapper.setSerializationInclusion(Include.NON_NULL);
+		objectMapper.setSerializationInclusion(Include.NON_EMPTY);
+	}
 
 	protected static KronosAirlinePassenger loadKronosXml() {
 		KronosAirlinePassenger kronosAirlinePassenger = null;
@@ -41,7 +51,7 @@ public class TestUtil {
 		return kronosAirlinePassenger;
 	}
 	
-    public static String jaxbObjectToXML(Object jaxbObject)  {
+    public static String createXML(Object jaxbObject)  {
     	String xml = null;
 		try {
 			JAXBContext jaxbContext = JAXBContext.newInstance(jaxbObject.getClass());
@@ -57,6 +67,16 @@ public class TestUtil {
 		return xml;
 	}
 
+    public static String createJson(Object object)  {
+    	String json = null;
+		try {
+			json = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(object);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+    	return json;
+    }
+    
     public static String getTestCase(String testcaseFilePath){
         try {
             FileInputStream fis = new FileInputStream(EXPECTED_RESULT_PATH.resolve(testcaseFilePath).toString());

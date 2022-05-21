@@ -38,6 +38,11 @@ public class OtcTest {
 		FROM_SOURCE_OBJECT  
 	}
 	
+	private static enum OUTPUT_TYPE {
+		XML,
+		JSON
+	}
+	
 	// - set 'otclCommandType' to OTCL_COMMAND_TYPE.FROM_VALUES when the OTC file has 'from: values:' only and does 
 	//    not have even a single reference to a source object
 	// 
@@ -51,6 +56,7 @@ public class OtcTest {
  		compileAndRegister();
 		
 		OTCL_COMMAND_TYPE otclCommandType;
+		OUTPUT_TYPE outputType;
 		String pkg = null; 
 		String otclFile = null;
 		AthenaAirlinePassenger airlinePassenger = null;
@@ -58,7 +64,8 @@ public class OtcTest {
 		
 //		otclCommandType = OTCL_COMMAND_TYPE.FROM_VALUES;
 		otclCommandType = OTCL_COMMAND_TYPE.FROM_SOURCE_OBJECT;
-		pkg = "execute";
+		pkg = "cpysource_mixedpath";
+		outputType= OUTPUT_TYPE.XML;
 		
  		if (otclCommandType == OTCL_COMMAND_TYPE.FROM_VALUES) {
  			airlinePassenger = otcExecutor.execute(pkg, AthenaAirlinePassenger.class, null);
@@ -74,8 +81,13 @@ public class OtcTest {
  					OtcConstants.OTC_SCRIPT_EXTN; 
 		}
 		//-- compare results.
+		String result = null;
+		if (outputType == OUTPUT_TYPE.XML) {
+			result = TestUtil.createXML(airlinePassenger); 
+		} else {
+			result = TestUtil.createJson(airlinePassenger); 
+		}
 		System.out.println("\n\nResults for OTCL file: " + otclFile);
-		String result = TestUtil.jaxbObjectToXML(airlinePassenger); 
 		System.out.println("\n" + result);
 		
 //		verify(otcExpectedResultFile, result);
@@ -88,7 +100,8 @@ public class OtcTest {
 		otclCompiler.compileSourceCode();
 		
 		// -- register the generated .tmd and the executable files.
-		otcRegistry.register();
+		// -- the executor register's .tmd - So there is no need to invoke below line
+//		otcRegistry.register();
 	}
 	
 	private void verify(String compareWithFileName, String actualResult) {
