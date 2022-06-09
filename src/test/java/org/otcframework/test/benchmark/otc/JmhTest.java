@@ -54,25 +54,25 @@ public class JmhTest {
 		org.openjdk.jmh.Main.main(args);
 	}
 
-    @State(Scope.Thread)
+//    @State(Scope.Thread)
     public static class MyState {
     	
-    	@Setup(Level.Trial)
+//    	@Setup(Level.Trial)
         public void doSetup() {
     		otcRegistry.register();
     		System.out.println("initialized OTC 2 test ..............."); 
         }
 
-        @TearDown(Level.Trial)
+//        @TearDown(Level.Trial)
         public void doTearDown() {
         }
     }
 
-    @Benchmark
-    @Fork(value = 1, warmups = 2)
-    @BenchmarkMode(Mode.Throughput)
-    @Warmup(iterations = 10, time = 500, timeUnit = TimeUnit.MILLISECONDS)
-    @Measurement(iterations = 50, time = 200, timeUnit = TimeUnit.MILLISECONDS)
+//    @Benchmark
+//    @Fork(value = 1, warmups = 2)
+//    @BenchmarkMode(Mode.Throughput)
+//    @Warmup(iterations = 10, time = 500, timeUnit = TimeUnit.MILLISECONDS)
+//    @Measurement(iterations = 50, time = 200, timeUnit = TimeUnit.MILLISECONDS)
 	public void test(MyState myState) {
 //    	PermanentEmployee permanentEmployee = contractToPermananentEmployee.execute(contractEmployee, null, null);
 		PermanentEmployee permanentEmployee = otcExecutor.execute(pkg, contractEmployee, PermanentEmployee.class,
