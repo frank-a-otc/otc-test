@@ -64,7 +64,7 @@ public class OtcTest {
 		
 //		otclCommandType = OTCL_COMMAND_TYPE.FROM_VALUES;
 		otclCommandType = OTCL_COMMAND_TYPE.FROM_SOURCE_OBJECT;
-		pkg = "cpysource_mixedpath";
+		pkg = "execute";
 		outputType= OUTPUT_TYPE.XML;
 		
  		if (otclCommandType == OTCL_COMMAND_TYPE.FROM_VALUES) {
@@ -99,9 +99,9 @@ public class OtcTest {
 		otclCompiler.compile();
 		otclCompiler.compileSourceCode();
 		
-		// -- register the generated .tmd and the executable files.
-		// -- the executor register's .tmd - So there is no need to invoke below line
-//		otcRegistry.register();
+		// -- register the generated .tmd and the executable files - required only in this test class.
+		// -- On QA/PROD envs there is no need to invoke below line coz the auto-registration is done on instantiation.
+		otcRegistry.register();
 	}
 	
 	private void verify(String compareWithFileName, String actualResult) {

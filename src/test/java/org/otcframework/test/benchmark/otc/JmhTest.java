@@ -2,21 +2,9 @@
 package org.otcframework.test.benchmark.otc;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import javax.xml.bind.JAXBContext;
 
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Fork;
-import org.openjdk.jmh.annotations.Level;
-import org.openjdk.jmh.annotations.Measurement;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.Setup;
-import org.openjdk.jmh.annotations.State;
-import org.openjdk.jmh.annotations.TearDown;
-import org.openjdk.jmh.annotations.Warmup;
 import org.otcframework.executor.OtcExecutor;
 import org.otcframework.executor.OtcExecutorImpl;
 import org.otcframework.executor.OtcRegistry;
