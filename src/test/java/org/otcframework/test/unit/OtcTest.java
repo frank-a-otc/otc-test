@@ -1,3 +1,25 @@
+/**
+* Copyright (c) otcframework.org
+*
+* @author  Franklin J Abel
+* @version 1.0
+* @since   2020-06-08 
+*
+* This file is part of the OTC framework.
+* 
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      https://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
 package org.otcframework.test.unit;
 
 import javax.xml.transform.Source;
@@ -5,8 +27,8 @@ import javax.xml.transform.Source;
 import org.junit.jupiter.api.Test;
 import org.otcframework.common.OtcConstants;
 import org.otcframework.common.util.OtcUtils;
-import org.otcframework.core.engine.compiler.OtclCompiler;
-import org.otcframework.core.engine.compiler.OtclCompilerImpl;
+import org.otcframework.compiler.OtcsCompiler;
+import org.otcframework.compiler.OtcsCompilerImpl;
 import org.otcframework.executor.OtcExecutor;
 import org.otcframework.executor.OtcExecutorImpl;
 import org.otcframework.executor.OtcRegistry;
@@ -25,7 +47,7 @@ import com.kronos.airlines.dto.KronosAirlinePassenger;
 public class OtcTest {
 
 	/** The Constant otclCompiler. */
-	private static final OtclCompiler otclCompiler = OtclCompilerImpl.getInstance();
+	private static final OtcsCompiler otcsCompiler = OtcsCompilerImpl.getInstance();
 	
 	/** The Constant otcRegistry. */
 	private static final OtcRegistry otcRegistry = OtcRegistryImpl.instance;
@@ -33,7 +55,7 @@ public class OtcTest {
 	/** The Constant otcExecutor. */
 	private static final OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
 
-	private static enum OTCL_COMMAND_TYPE {
+	private static enum OTCS_COMMAND_TYPE {
 		FROM_VALUES, 
 		FROM_SOURCE_OBJECT  
 	}
@@ -43,10 +65,10 @@ public class OtcTest {
 		JSON
 	}
 	
-	// - set 'otclCommandType' to OTCL_COMMAND_TYPE.FROM_VALUES when the OTC file has 'from: values:' only and does 
+	// - set 'otcsCommandType' to OTCS_COMMAND_TYPE.FROM_VALUES when the OTC file has 'from: values:' only and does 
 	//    not have even a single reference to a source object
 	// 
-	//   set 'otclCommandType' to  OTCL_COMMAND_TYPE.FROM_SOURCE_OBJECT when the OTC file has references to a source object 
+	//   set 'otcsCommandType' to  OTCS_COMMAND_TYPE.FROM_SOURCE_OBJECT when the OTC file has references to a source object 
 	//    with or without 'from: values:'.
 	
 
@@ -55,24 +77,24 @@ public class OtcTest {
 
  		compileAndRegister();
 		
-		OTCL_COMMAND_TYPE otclCommandType;
+		OTCS_COMMAND_TYPE otcsCommandType;
 		OUTPUT_TYPE outputType;
 		String pkg = null; 
 		String otclFile = null;
 		AthenaAirlinePassenger airlinePassenger = null;
 		String otcExpectedResultFile = null;
 		
-//		otclCommandType = OTCL_COMMAND_TYPE.FROM_VALUES;
-		otclCommandType = OTCL_COMMAND_TYPE.FROM_SOURCE_OBJECT;
-		pkg = "execute";
+		otcsCommandType = OTCS_COMMAND_TYPE.FROM_VALUES;
+//		otcsCommandType = OTCS_COMMAND_TYPE.FROM_SOURCE_OBJECT;
+		pkg = "cpyvalues1";
 		outputType= OUTPUT_TYPE.XML;
 		
- 		if (otclCommandType == OTCL_COMMAND_TYPE.FROM_VALUES) {
+ 		if (otcsCommandType == OTCS_COMMAND_TYPE.FROM_VALUES) {
  			airlinePassenger = otcExecutor.execute(pkg, AthenaAirlinePassenger.class, null);
  			otcExpectedResultFile = OtcUtils.createRegistryId(pkg, AthenaAirlinePassenger.class) + ".xml"; 
  			otclFile = OtcUtils.createRegistryId(pkg, null, AthenaAirlinePassenger.class) +
  					OtcConstants.OTC_SCRIPT_EXTN; 
-		} else if (otclCommandType == OTCL_COMMAND_TYPE.FROM_SOURCE_OBJECT) {
+		} else if (otcsCommandType == OTCS_COMMAND_TYPE.FROM_SOURCE_OBJECT) {
  			KronosAirlinePassenger kronosAirlinePassenger = (KronosAirlinePassenger) TestUtil.loadKronosXml();
  			airlinePassenger = otcExecutor.execute(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
  			otcExpectedResultFile = OtcUtils.createRegistryId(pkg, kronosAirlinePassenger, 
@@ -96,8 +118,8 @@ public class OtcTest {
  	
 	private void compileAndRegister() {
 		// -- compile script and generate source code
-		otclCompiler.compile();
-		otclCompiler.compileSourceCode();
+		otcsCompiler.compile();
+		otcsCompiler.compileSourceCode();
 		
 		// -- register the generated .tmd and the executable files - required only in this test class.
 		// -- On QA/PROD envs there is no need to invoke below line coz the auto-registration is done on instantiation.
