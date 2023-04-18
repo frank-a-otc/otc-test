@@ -22,13 +22,14 @@
 */
 package org.otcframework.test.unit;
 
+import java.io.File;
+
 import javax.xml.transform.Source;
 
 import org.junit.jupiter.api.Test;
 import org.otcframework.common.OtcConstants;
+import org.otcframework.common.config.OtcConfig;
 import org.otcframework.common.util.OtcUtils;
-import org.otcframework.compiler.OtcsCompiler;
-import org.otcframework.compiler.OtcsCompilerImpl;
 import org.otcframework.executor.OtcExecutor;
 import org.otcframework.executor.OtcExecutorImpl;
 import org.otcframework.executor.OtcRegistry;
@@ -44,10 +45,7 @@ import com.athena.airlines.dto.AthenaAirlinePassenger;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 
-public class OtcTest {
-
-	/** The Constant otclCompiler. */
-	private static final OtcsCompiler otcsCompiler = OtcsCompilerImpl.getInstance();
+public class ExecutorTest {
 	
 	/** The Constant otcRegistry. */
 	private static final OtcRegistry otcRegistry = OtcRegistryImpl.instance;
@@ -65,6 +63,8 @@ public class OtcTest {
 		JSON
 	}
 	
+	private static final String OTC_HOME = OtcConfig.getOtcHomeLocation();
+
 	// - set 'otcsCommandType' to OTCS_COMMAND_TYPE.FROM_VALUES when the OTC file has 'from: values:' only and does 
 	//    not have even a single reference to a source object
 	// 
@@ -75,8 +75,7 @@ public class OtcTest {
 	@Test
 	public void runTest() {
 
- 		compileAndRegister();
-		
+		otcRegistry.register();
 		OTCS_COMMAND_TYPE otcsCommandType;
 		OUTPUT_TYPE outputType;
 		String pkg = null; 
@@ -86,7 +85,7 @@ public class OtcTest {
 		
 		otcsCommandType = OTCS_COMMAND_TYPE.FROM_VALUES;
 //		otcsCommandType = OTCS_COMMAND_TYPE.FROM_SOURCE_OBJECT;
-		pkg = "cpyvalues1";
+		pkg = "cpyvalues4";
 		outputType= OUTPUT_TYPE.XML;
 		
  		if (otcsCommandType == OTCS_COMMAND_TYPE.FROM_VALUES) {
@@ -95,7 +94,9 @@ public class OtcTest {
  			otclFile = OtcUtils.createRegistryId(pkg, null, AthenaAirlinePassenger.class) +
  					OtcConstants.OTC_SCRIPT_EXTN; 
 		} else if (otcsCommandType == OTCS_COMMAND_TYPE.FROM_SOURCE_OBJECT) {
- 			KronosAirlinePassenger kronosAirlinePassenger = (KronosAirlinePassenger) TestUtil.loadKronosXml();
+			String fileName = OTC_HOME + File.separator + "test-samples" + File.separator +
+					"Kronos-passenger-map.xml";
+ 			KronosAirlinePassenger kronosAirlinePassenger = TestUtil.loadXml(fileName, KronosAirlinePassenger.class);
  			airlinePassenger = otcExecutor.execute(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class, null);
  			otcExpectedResultFile = OtcUtils.createRegistryId(pkg, kronosAirlinePassenger, 
  					AthenaAirlinePassenger.class) + ".xml"; 
@@ -116,16 +117,12 @@ public class OtcTest {
 
 	}
  	
-	private void compileAndRegister() {
-		// -- compile script and generate source code
-		otcsCompiler.compile();
-		otcsCompiler.compileSourceCode();
-		
-		// -- register the generated .tmd and the executable files - required only in this test class.
-		// -- On QA/PROD envs there is no need to invoke below line coz the auto-registration is done on instantiation.
-		otcRegistry.register();
-	}
-	
+	/**
+	 * Verify.
+	 *
+	 * @param compareWithFileName the compare with file name
+	 * @param actualResult the actual result
+	 */
 	private void verify(String compareWithFileName, String actualResult) {
 		String expected = TestUtil.getTestCase(compareWithFileName);
 		Source control = Input.fromString(expected).build();

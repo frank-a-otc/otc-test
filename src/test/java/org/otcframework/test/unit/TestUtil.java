@@ -52,32 +52,42 @@ import com.kronos.airlines.dto.KronosAirlinePassenger;
 public class TestUtil {
 	
     public static final Path EXPECTED_RESULT_PATH = Paths.get(OtcConfig.getTestCaseExpectedResultLocation());
-
-	private static final String OTC_HOME = OtcConfig.getOtcHomeLocation();
 	
 	private static final ObjectMapper objectMapper = new ObjectMapper();
-	private static final String sampleFileName = OTC_HOME + File.separator + "test-samples" + File.separator +
-			"Kronos-passenger-map.xml";
-	
+
 	static {
 		objectMapper.setSerializationInclusion(Include.NON_NULL);
 		objectMapper.setSerializationInclusion(Include.NON_EMPTY);
 	}
 
-	protected static KronosAirlinePassenger loadKronosXml() {
-		KronosAirlinePassenger kronosAirlinePassenger = null;
+	/**
+	 * Load xml.
+	 *
+	 * @param <T> the generic type
+	 * @param fileName the file name
+	 * @param cls the cls
+	 * @return the t
+	 */
+	protected static <T> T loadXml(String fileName, Class<T> cls) {
+		T t = null;
 		try {
-			JAXBContext jaxbContext = JAXBContext.newInstance(KronosAirlinePassenger.class);
+			JAXBContext jaxbContext = JAXBContext.newInstance(cls);
 			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-			String xml = new String(Files.readAllBytes(Paths.get(sampleFileName)));
+			String xml = new String(Files.readAllBytes(Paths.get(fileName)));
 			StringReader reader = new StringReader(xml);
-			kronosAirlinePassenger = (KronosAirlinePassenger) unmarshaller.unmarshal(reader); 
+			t = (T) unmarshaller.unmarshal(reader); 
 		} catch (IOException | JAXBException | FactoryConfigurationError ex) {
 			ex.printStackTrace();
 		}
-		return kronosAirlinePassenger;
+		return t;
 	}
 	
+    /**
+     * Creates the XML.
+     *
+     * @param jaxbObject the jaxb object
+     * @return the string
+     */
     public static String createXML(Object jaxbObject)  {
     	String xml = null;
 		try {
@@ -94,6 +104,32 @@ public class TestUtil {
 		return xml;
 	}
 
+    /**
+     * Load json.
+     *
+     * @param <T> the generic type
+     * @param cls the cls
+     * @param fileName the file name
+     * @return the t
+     */
+    public static <T> T loadJson(Class<T> cls, String fileName)  {
+		T t = null;
+		try {
+			t = objectMapper.readValue(new File(fileName), cls);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return t;
+	}
+
+    /**
+     * Creates the json.
+     *
+     * @param object the object
+     * @return the string
+     */
     public static String createJson(Object object)  {
     	String json = null;
 		try {
@@ -104,6 +140,13 @@ public class TestUtil {
     	return json;
     }
     
+    
+    /**
+     * Gets the test case.
+     *
+     * @param testcaseFilePath the testcase file path
+     * @return the test case
+     */
     public static String getTestCase(String testcaseFilePath){
         try {
             FileInputStream fis = new FileInputStream(EXPECTED_RESULT_PATH.resolve(testcaseFilePath).toString());
@@ -116,7 +159,10 @@ public class TestUtil {
     public static void main(String args[]) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		FileOutputStream fos;
-		KronosAirlinePassenger kronosAirlinePassenger = loadKronosXml();
+		String OTC_HOME = OtcConfig.getOtcHomeLocation();
+		String fileName = OTC_HOME + File.separator + "test-samples" + File.separator +
+				"Kronos-passenger-map.xml";
+		KronosAirlinePassenger kronosAirlinePassenger = loadXml(fileName, KronosAirlinePassenger.class);
 		try {
 			byte[] bytes = objectMapper.writeValueAsBytes(kronosAirlinePassenger);
 			String str = objectMapper.writeValueAsString(kronosAirlinePassenger);
