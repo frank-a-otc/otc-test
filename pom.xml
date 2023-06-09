@@ -14,11 +14,11 @@
 		<junit-jupiter.version>5.4.0</junit-jupiter.version>
 		
 		<jaxb-core.version>3.1.0-M1</jaxb-core.version>
-		<jackson.databind.version>2.13.2.1</jackson.databind.version>
+		<jackson.databind.version>2.13.4.1</jackson.databind.version>
 		<jackson.version>2.12.1</jackson.version>
 		<jmh.version>1.23</jmh.version>
 		<otc-schema.version>1.0</otc-schema.version>
-		<otc.version>2.6-SNAPSHOT</otc.version>
+		<otc.version>2.7-SNAPSHOT</otc.version>
 		<mapstruct.version>1.4.1.Final</mapstruct.version>
 		<dateconverters.version>1.2</dateconverters.version>
 	</properties>

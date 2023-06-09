@@ -73,7 +73,7 @@ public class ExecutorTest {
 	
 
 	@Test
-	public void runTest() {
+	public void testExecute() {
 
 		otcRegistry.register();
 		OTCS_COMMAND_TYPE otcsCommandType;

@@ -33,7 +33,7 @@ public class CompilerTest {
 	private static final OtcsCompiler otcsCompiler = OtcsCompilerImpl.getInstance();
 	
 	@Test
-	public void runTest() {
+	public void testCompile() {
 		// -- compile script and generate source code
 		otcsCompiler.compile();
 		otcsCompiler.compileSourceCode();
