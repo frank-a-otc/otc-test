@@ -58,7 +58,7 @@ public class ExecutorTest {
 		FROM_SOURCE_OBJECT  
 	}
 	
-	private static enum OUTPUT_TYPE {
+	private enum OUTPUT_TYPE {
 		XML,
 		JSON
 	}
