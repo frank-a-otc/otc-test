@@ -23,20 +23,51 @@
 package org.otcframework.test.unit;
 
 import org.junit.jupiter.api.Test;
+import org.otcframework.common.config.OtcConfig;
 import org.otcframework.compiler.OtcsCompiler;
 import org.otcframework.compiler.OtcsCompilerImpl;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 
 public class CompilerTest {
+
+	private static final String OTC_HOME = OtcConfig.getOtcHomeLocation();
 
 	/** The Constant otclCompiler. */
 	private static final OtcsCompiler otcsCompiler = OtcsCompilerImpl.getInstance();
 	
 	@Test
 	public void testCompile() {
+		cleanupGeratedFiles();
 		// -- compile script and generate source code
 		otcsCompiler.compile();
 		otcsCompiler.compileSourceCode();
 	}
-	
+
+	private void cleanupGeratedFiles() {
+		deleteRecursive(new File(OTC_HOME + File.separator + "tmd"));
+		deleteRecursive(new File(OTC_HOME + File.separator + "src"));
+		deleteRecursive(new File(OTC_HOME + File.separator + "target"));
+	}
+
+	private void deleteRecursive(File folder) {
+		if (!folder.isDirectory()) {
+			return;
+		}
+		File[] allContents = folder.listFiles();
+		if (allContents != null) {
+			for (File file : allContents) {
+				if (file.isDirectory()) {
+					deleteRecursive(file);
+				} else {
+					file.delete();
+				}
+			}
+		}
+		folder.delete();
+	}
 }

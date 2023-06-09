@@ -26,6 +26,7 @@ import java.io.File;
 
 import javax.xml.transform.Source;
 
+import date.types.DateFields;
 import org.junit.jupiter.api.Test;
 import org.otcframework.common.OtcConstants;
 import org.otcframework.common.config.OtcConfig;
@@ -85,14 +86,16 @@ public class ExecutorTest {
 		
 		otcsCommandType = OTCS_COMMAND_TYPE.FROM_VALUES;
 //		otcsCommandType = OTCS_COMMAND_TYPE.FROM_SOURCE_OBJECT;
-		pkg = "cpyvalues4";
+		pkg = "date_converter";
 		outputType= OUTPUT_TYPE.XML;
 		
  		if (otcsCommandType == OTCS_COMMAND_TYPE.FROM_VALUES) {
- 			airlinePassenger = otcExecutor.execute(pkg, AthenaAirlinePassenger.class, null);
- 			otcExpectedResultFile = OtcUtils.createRegistryId(pkg, AthenaAirlinePassenger.class) + ".xml"; 
- 			otclFile = OtcUtils.createRegistryId(pkg, null, AthenaAirlinePassenger.class) +
- 					OtcConstants.OTC_SCRIPT_EXTN; 
+// 			airlinePassenger = otcExecutor.execute(pkg, AthenaAirlinePassenger.class, null);
+// 			otcExpectedResultFile = OtcUtils.createRegistryId(pkg, AthenaAirlinePassenger.class) + ".xml";
+// 			otclFile = OtcUtils.createRegistryId(pkg, null, AthenaAirlinePassenger.class) +
+// 					OtcConstants.OTC_SCRIPT_EXTN;
+			DateFields dateFields = otcExecutor.execute(pkg, DateFields.class, null);
+
 		} else if (otcsCommandType == OTCS_COMMAND_TYPE.FROM_SOURCE_OBJECT) {
 			String fileName = OTC_HOME + File.separator + "test-samples" + File.separator +
 					"Kronos-passenger-map.xml";
