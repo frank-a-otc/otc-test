@@ -49,7 +49,7 @@ import com.kronos.airlines.dto.KronosAirlinePassenger;
 public class ExecutorTest {
 	
 	/** The Constant otcRegistry. */
-	private static final OtcRegistry otcRegistry = OtcRegistryImpl.instance;
+	private static final OtcRegistry otcRegistry = OtcRegistryImpl.INSTANCE;
 	
 	/** The Constant otcExecutor. */
 	private static final OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();

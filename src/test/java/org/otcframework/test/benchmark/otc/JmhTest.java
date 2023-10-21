@@ -38,7 +38,7 @@ import benchmark.test.PermanentEmployee;
 public class JmhTest {
 	
 	/** The Constant otcRegistry. */
-	private static final OtcRegistry otcRegistry = OtcRegistryImpl.instance;
+	private static final OtcRegistry otcRegistry = OtcRegistryImpl.INSTANCE;
 	
 	/** The Constant otcExecutor. */
 	private static final OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
