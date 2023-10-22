@@ -24,9 +24,6 @@ package org.otcframework.test.unit;
 
 import java.io.File;
 
-import javax.xml.transform.Source;
-
-import date.types.DateFields;
 import org.junit.jupiter.api.Test;
 import org.otcframework.common.OtcConstants;
 import org.otcframework.common.config.OtcConfig;
@@ -35,18 +32,12 @@ import org.otcframework.executor.OtcExecutor;
 import org.otcframework.executor.OtcExecutorImpl;
 import org.otcframework.executor.OtcRegistry;
 import org.otcframework.executor.OtcRegistryImpl;
-import org.xmlunit.builder.Input;
-import org.xmlunit.diff.Comparison;
-import org.xmlunit.diff.ComparisonListener;
-import org.xmlunit.diff.ComparisonResult;
-import org.xmlunit.diff.DOMDifferenceEngine;
-import org.xmlunit.diff.DifferenceEngine;
 
 import com.athena.airlines.dto.AthenaAirlinePassenger;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 
-public class ExecutorCopySourceTest extends AbstractExecutorTest {
+public class ExecutorTest extends AbstractExecutorTest {
 	
 	/** The Constant otcRegistry. */
 	private static final OtcRegistry otcRegistry = OtcRegistryImpl.INSTANCE;

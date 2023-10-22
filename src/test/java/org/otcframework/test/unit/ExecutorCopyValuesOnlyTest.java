@@ -23,24 +23,16 @@
 package org.otcframework.test.unit;
 
 import com.athena.airlines.dto.AthenaAirlinePassenger;
-import com.kronos.airlines.dto.KronosAirlinePassenger;
-import date.types.DateFields;
 import org.junit.jupiter.api.Test;
 import org.otcframework.common.OtcConstants;
-import org.otcframework.common.config.OtcConfig;
 import org.otcframework.common.util.OtcUtils;
 import org.otcframework.executor.OtcExecutor;
 import org.otcframework.executor.OtcExecutorImpl;
 import org.otcframework.executor.OtcRegistry;
 import org.otcframework.executor.OtcRegistryImpl;
-import org.xmlunit.builder.Input;
-import org.xmlunit.diff.*;
-
-import javax.xml.transform.Source;
-import java.io.File;
 
 
-public class ExecutorCopyVauesTest extends AbstractExecutorTest {
+public class ExecutorCopyValuesOnlyTest extends AbstractExecutorTest {
 	
 	/** The Constant otcRegistry. */
 	private static final OtcRegistry otcRegistry = OtcRegistryImpl.INSTANCE;
