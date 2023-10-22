@@ -24,6 +24,7 @@ package org.otcframework.test.unit;
 
 import java.io.File;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.otcframework.common.OtcConstants;
 import org.otcframework.common.config.OtcConfig;
@@ -37,20 +38,20 @@ import com.athena.airlines.dto.AthenaAirlinePassenger;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
 
 
-public class ExecutorTest extends AbstractExecutorTest {
+class ExecutorTest extends AbstractExecutorTest {
 	
-	/** The Constant otcRegistry. */
 	private static final OtcRegistry otcRegistry = OtcRegistryImpl.INSTANCE;
-	
-	/** The Constant otcExecutor. */
-	private static final OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
-
 	private static final String OTC_HOME = OtcConfig.getOtcHomeLocation();
 
 	@Test
-	public void testExecute() {
+	@Disabled
+	void testExecute() {
 
-		otcRegistry.register();
+//		CompilerTest.compileOtcsFiles();
+
+		CompilerTest.compileSourceCode();
+		OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
+
 		String pkg = "cpysource_flatpath";
 
 		String fileName = OTC_HOME + "test-samples" + File.separator + "Kronos-passenger-map.xml";

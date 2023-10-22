@@ -29,7 +29,7 @@ import org.otcframework.compiler.OtcsCompilerImpl;
 
 import java.io.File;
 
-public class CompilerTest {
+class CompilerTest {
 
 	private static final String OTC_HOME = OtcConfig.getOtcHomeLocation();
 
@@ -37,20 +37,28 @@ public class CompilerTest {
 	private static final OtcsCompiler otcsCompiler = OtcsCompilerImpl.getInstance();
 	
 	@Test
-	public void testCompile() {
-		cleanupGeratedFiles();
+	void testCompile() {
+		compileOtcsFiles();
+		compileSourceCode();
+	}
+
+	public static void compileOtcsFiles() {
 		// -- compile script and generate source code
-		otcsCompiler.compile();
+		otcsCompiler.compileOtcsFiles();
+	}
+
+	public static void compileSourceCode() {
+		// -- compile script and generate source code
 		otcsCompiler.compileSourceCode();
 	}
 
-	private void cleanupGeratedFiles() {
+	private static void cleanupGeratedFiles() {
 		deleteRecursive(new File(OTC_HOME + File.separator + "tmd"));
 		deleteRecursive(new File(OTC_HOME + File.separator + "src"));
 		deleteRecursive(new File(OTC_HOME + File.separator + "target"));
 	}
 
-	private void deleteRecursive(File folder) {
+	private static void deleteRecursive(File folder) {
 		if (!folder.isDirectory()) {
 			return;
 		}

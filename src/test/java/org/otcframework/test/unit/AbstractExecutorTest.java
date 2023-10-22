@@ -22,13 +22,14 @@
 */
 package org.otcframework.test.unit;
 
+import com.sun.xml.bind.v2.model.runtime.RuntimeTypeInfo;
+import org.otcframework.test.exception.NotImplementedExceptiion;
 import org.xmlunit.builder.Input;
 import org.xmlunit.diff.*;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.xml.transform.Source;
 
-public class AbstractExecutorTest {
+class AbstractExecutorTest {
 
 	protected void verify(String compareWithFileName, String actualResult) {
 		String expected = TestUtil.getTestCase(compareWithFileName);
@@ -39,7 +40,7 @@ public class AbstractExecutorTest {
 		diff.addDifferenceListener(new ComparisonListener() {
 	        public void comparisonPerformed(Comparison comparison, ComparisonResult outcome) {
 //	            TODO - implement method
-				throw new NotImplementedException();
+				throw new NotImplementedExceptiion();
 	        }
 	    });
 		diff.compare(control, test);

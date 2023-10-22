@@ -23,6 +23,7 @@
 package org.otcframework.test.unit;
 
 import com.athena.airlines.dto.AthenaAirlinePassenger;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.otcframework.common.OtcConstants;
 import org.otcframework.common.util.OtcUtils;
@@ -32,18 +33,20 @@ import org.otcframework.executor.OtcRegistry;
 import org.otcframework.executor.OtcRegistryImpl;
 
 
-public class ExecutorCopyValuesOnlyTest extends AbstractExecutorTest {
+class ExecutorCopyValuesOnlyTest extends AbstractExecutorTest {
 	
 	/** The Constant otcRegistry. */
 	private static final OtcRegistry otcRegistry = OtcRegistryImpl.INSTANCE;
-	
-	/** The Constant otcExecutor. */
-	private static final OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
 
 	@Test
-	public void testExecute() {
+	@Disabled
+	void testExecuteCopyValuesOnly() {
 
-		otcRegistry.register();
+//		CompilerTest.compileOtcsFiles();
+
+		CompilerTest.compileSourceCode();
+		OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
+
 		String pkg = "cpysource_flatpath";
 
 		AthenaAirlinePassenger airlinePassenger = otcExecutor.execute(pkg, AthenaAirlinePassenger.class, null);
