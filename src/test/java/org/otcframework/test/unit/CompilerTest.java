@@ -26,10 +26,13 @@ import org.junit.jupiter.api.Test;
 import org.otcframework.common.config.OtcConfig;
 import org.otcframework.compiler.OtcsCompiler;
 import org.otcframework.compiler.OtcsCompilerImpl;
-
-import java.io.File;
+import org.otcframework.executor.OtcRegistryImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 class CompilerTest {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(OtcRegistryImpl.class);
 
 	private static final String OTC_HOME = OtcConfig.getOtcHomeLocation();
 
@@ -38,10 +41,15 @@ class CompilerTest {
 	
 	@Test
 	void testCompile() {
-		compileOtcsFiles();
-		compileSourceCode();
+		compile();
 	}
 
+	public static void compile() {
+		compileOtcsFiles();
+		if (OtcConfig.isDefaultLocations()) {
+			compileSourceCode();
+		}
+	}
 	public static void compileOtcsFiles() {
 		// -- compile script and generate source code
 		otcsCompiler.compileOtcsFiles();
@@ -52,26 +60,4 @@ class CompilerTest {
 		otcsCompiler.compileSourceCode();
 	}
 
-	private static void cleanupGeratedFiles() {
-		deleteRecursive(new File(OTC_HOME + File.separator + "tmd"));
-		deleteRecursive(new File(OTC_HOME + File.separator + "src"));
-		deleteRecursive(new File(OTC_HOME + File.separator + "target"));
-	}
-
-	private static void deleteRecursive(File folder) {
-		if (!folder.isDirectory()) {
-			return;
-		}
-		File[] allContents = folder.listFiles();
-		if (allContents != null) {
-			for (File file : allContents) {
-				if (file.isDirectory()) {
-					deleteRecursive(file);
-				} else {
-					file.delete();
-				}
-			}
-		}
-		folder.delete();
-	}
 }

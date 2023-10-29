@@ -47,9 +47,7 @@ class ExecutorTest extends AbstractExecutorTest {
 	@Disabled
 	void testExecute() {
 
-//		CompilerTest.compileOtcsFiles();
-
-		CompilerTest.compileSourceCode();
+		CompilerTest.compile();
 		OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
 
 		String pkg = "cpysource_flatpath";
