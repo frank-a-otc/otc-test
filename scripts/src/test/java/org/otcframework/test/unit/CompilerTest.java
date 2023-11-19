@@ -26,6 +26,8 @@ import org.junit.jupiter.api.Test;
 import org.otcframework.common.config.OtcConfig;
 import org.otcframework.compiler.OtcsCompiler;
 import org.otcframework.compiler.OtcsCompilerImpl;
+import org.otcframework.compiler.SourceCodeCompiler;
+import org.otcframework.compiler.SourceCodeCompilerImpl;
 import org.otcframework.executor.OtcRegistryImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,9 +38,10 @@ class CompilerTest {
 
 	private static final String OTC_HOME = OtcConfig.getOtcHomeDirectory();
 
-	/** The Constant otclCompiler. */
-	private static final OtcsCompiler otcsCompiler = OtcsCompilerImpl.getInstance();
-	
+	private static final OtcsCompiler OTCS_COMPILER = new OtcsCompilerImpl();
+
+	private static final SourceCodeCompiler SOURCE_CODE_COMPILER = new SourceCodeCompilerImpl();
+
 	@Test
 	void testCompile() {
 		compile();
@@ -52,12 +55,12 @@ class CompilerTest {
 	}
 	public static void compileOtcsFiles() {
 		// -- compile script and generate source code
-		otcsCompiler.compileOtcsFiles();
+		OTCS_COMPILER.compileOtcsFiles();
 	}
 
 	public static void compileSourceCode() {
 		// -- compile script and generate source code
-		otcsCompiler.compileSourceCode();
+		SOURCE_CODE_COMPILER.compileSourceCode();
 	}
 
 }
