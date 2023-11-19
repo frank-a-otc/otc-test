@@ -44,14 +44,8 @@ class CompilerTest {
 
 	@Test
 	void testCompile() {
-		compile();
-	}
-
-	public static void compile() {
 		compileOtcsFiles();
-		if (OtcConfig.isDefaultLocations()) {
-			compileSourceCode();
-		}
+		compileSourceCode();
 	}
 	public static void compileOtcsFiles() {
 		// -- compile script and generate source code
