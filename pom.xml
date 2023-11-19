@@ -9,13 +9,13 @@
 	<version>1.0</version>
 	<packaging>pom</packaging>
 	<modules>
+		<module>schema</module>
 		<module>scripts</module>
-        <module>schema</module>
     </modules>
 
 	<properties>
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>17</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<junit.version>4.13.2</junit.version>
