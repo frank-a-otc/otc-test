@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<AthenaAirlinePassenger>
+	<Travelers>
+		<Traveler>
+			<customObjectsMap>
+				<entry>
+					<key>
+						<PTC>Child</PTC>
+					</key>
+					<value></value>
+				</entry>
+				<entry>
+					<key>
+						<PTC>Adult</PTC>
+					</key>
+					<value></value>
+				</entry>
+			</customObjectsMap>
+		</Traveler>
+	</Travelers>
+</AthenaAirlinePassenger>

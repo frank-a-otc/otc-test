@@ -1,0 +1,135 @@
+<?xml version="1.0" ?>
+<KronosAirlinePassenger>
+	<CoreQuery>
+		<OriginDestinations>
+			<OriginDestination>
+				<Departure>
+					<AirportCode>ARN</AirportCode>
+					<Date>2016-06-20</Date>
+				</Departure>
+				<Arrival>
+					<AirportCode>LHR</AirportCode>
+				</Arrival>
+			</OriginDestination>
+			<OriginDestination>
+				<Departure>
+					<AirportCode>LHR</AirportCode>
+					<Date>2016-07-05</Date>
+				</Departure>
+				<Arrival>
+					<AirportCode>ARN</AirportCode>
+				</Arrival>
+			</OriginDestination>
+		</OriginDestinations>
+	</CoreQuery>
+	<Preference>
+		<AirlinePreferences>
+			<Airline>
+				<AirlineID>9A</AirlineID>
+			</Airline>
+		</AirlinePreferences>
+		<CabinPreferences>
+			<CabinType>
+				<Code>M</Code>
+				<Definition>Economy/coach discounted</Definition>
+			</CabinType>
+			<CabinType>
+				<Code>B</Code>
+				<Definition>Business</Definition>
+			</CabinType>
+		</CabinPreferences>
+	</Preference>
+	<Travelers>
+		<Traveler>
+			<AnonymousTraveler>
+				<PTC Quantity="1">CHD</PTC>
+				<Age>
+					<BirthDate>2016-06-20</BirthDate>
+				</Age>
+			</AnonymousTraveler>
+			<RecognizedTraveler>
+				<Name>
+					<Given>Frank</Given>
+					<Given>Josh</Given>
+				</Name>
+			</RecognizedTraveler>
+			<anonymousTravelerMap>
+				<entry>
+					<key xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="xs:int">0</key>
+					<value>
+						<PTC Quantity="1">CHD</PTC>
+						<Age>
+							<BirthDate>2017-03-05</BirthDate>
+						</Age>
+					</value>
+				</entry>
+			</anonymousTravelerMap>
+			<recognizedTravelerMap>
+				<entry>
+					<key>Child</key>
+					<value>
+						<Name>
+							<Given>Abel</Given>
+						</Name>
+						<PTC Quantity="1">CHD</PTC>
+						<Age>
+							<BirthDate>2018-05-17</BirthDate>
+						</Age>
+						<Gender>Male</Gender>
+					</value>
+				</entry>
+			</recognizedTravelerMap>
+		</Traveler>
+		<Traveler>
+			<AnonymousTraveler>
+				<PTC Quantity="1">ADT</PTC>
+				<Age>
+					<BirthDate>1990-04-15</BirthDate>
+				</Age>
+			</AnonymousTraveler>
+			<RecognizedTraveler>
+				<Name>
+					<Given>F</Given>
+					<Given>J</Given>
+				</Name>
+			</RecognizedTraveler>
+			<anonymousTravelerMap>
+				<entry>
+					<key xmlns:xs="http://www.w3.org/2001/XMLSchema"
+						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						xsi:type="xs:int">B</key>
+					<value>
+						<PTC Quantity="1">Adult</PTC>
+						<Age>
+							<BirthDate>2000-06-14</BirthDate>
+						</Age>
+					</value>
+				</entry>
+			</anonymousTravelerMap>
+			<recognizedTravelerMap>
+				<entry>
+					<key>1</key>
+					<value>
+						<Name>
+							<Given>F</Given>
+							<Given>J</Given>
+						</Name>
+						<PTC Quantity="1">ADT</PTC>
+						<Age>
+							<BirthDate>1995-07-21</BirthDate>
+						</Age>
+						<Gender>Male</Gender>
+					</value>
+				</entry>
+			</recognizedTravelerMap>
+		</Traveler>
+	</Travelers>
+	<MainPassengerName>Abel</MainPassengerName>
+	<Given>Martin</Given>
+	<Given>Jenny</Given>
+	<Given>Leslie</Given>
+	<Given>Jayan</Given>
+
+</KronosAirlinePassenger>

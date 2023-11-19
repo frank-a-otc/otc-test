@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="AirlineID" type="xs:string"/>
+
+  <xs:element name="ArrivalCode">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="Application" type="xs:string"/>
+          <xs:attribute name="Area" type="xs:positiveInteger"/>
+          <xs:attribute name="UOM" type="DistanceUnitListType"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CabinType">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="CodesetType">
+          <xs:sequence>
+            <xs:element name="Name" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Contacts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Contact" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AddressContact" type="AddressContactType" minOccurs="0"/>
+              <xs:element name="EmailContact" type="EmailType" minOccurs="0"/>
+              <xs:element name="PhoneContact" type="PhoneContactType" minOccurs="0"/>
+              <xs:element name="Name" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Surname">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="refs">
+                              <xs:simpleType>
+                                <xs:list itemType="xs:IDREF"/>
+                              </xs:simpleType>
+                            </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Given" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="refs">
+                              <xs:simpleType>
+                                <xs:list itemType="xs:IDREF"/>
+                              </xs:simpleType>
+                            </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Title" type="xs:string" minOccurs="0"/>
+                    <xs:element name="SurnameSuffix" type="xs:anyType" minOccurs="0"/>
+                    <xs:element name="Middle" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="refs">
+                              <xs:simpleType>
+                                <xs:list itemType="xs:IDREF"/>
+                              </xs:simpleType>
+                            </xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="refs">
+                    <xs:simpleType>
+                      <xs:list itemType="xs:IDREF"/>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="ObjectMetaReferences">
+                    <xs:simpleType>
+                      <xs:list itemType="xs:IDREF"/>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="ContactType" type="xs:anySimpleType"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CountryCode">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="CountryCodeType"/>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Departure">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="FlightDepartureType">
+          <xs:sequence/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DepartureCode">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="Application" type="xs:string"/>
+          <xs:attribute name="Area" type="xs:positiveInteger"/>
+          <xs:attribute name="UOM" type="DistanceUnitListType"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FlightNumber">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="OperationalSuffix" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FlightReferences">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="InstanceClassRefSimpleType">
+					<xs:attribute name="OnPoint" type="AirportCitySimpleType" use="optional">
+						<xs:annotation>
+							<xs:documentation>Flight slice on point. Example: TPA
+
+Encoding Scheme: IATA/ A4A (three character) Airport or City Code</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="OffPoint" type="AirportCitySimpleType" use="optional">
+						<xs:annotation>
+							<xs:documentation>Flight slice off point. Example: LHR
+
+Encoding Scheme: IATA/ A4A (three character) Airport or City Code</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+  </xs:element>
+
+  <xs:element name="KronosAirlinePassenger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CoreQuery">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OriginDestinations" type="AirShopReqAttributeQueryType" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Preference" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AirlinePreferences" type="AirlinePreferencesType" minOccurs="0"/>
+              <xs:element name="CabinPreferences" type="CabinPreferencesType" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataLists" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PassengerList" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Passenger" type="PassengerType" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ContactList" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ContactInformation" type="ContactInformationType" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="Travelers"/>
+        <xs:element name="MainPassengerName" type="xs:string" minOccurs="0"/>
+        <xs:element name="PTC" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="Quantity" type="xs:integer"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="OriginDestination">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="OriginDestinationType">
+          <xs:sequence>
+            <xs:element name="TotalJourney" type="TotalJourneyType" minOccurs="0"/>
+            <xs:element ref="FlightReferences" minOccurs="0"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Travelers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Traveler" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="anonymousTravelerMap">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="key" minOccurs="0" type="xs:int"/>
+                          <xs:element name="value" minOccurs="0" type="AnonymousTravelerType"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="recognizedTravelerMap">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="key" minOccurs="0" type="xs:string"/>
+                          <xs:element name="value" minOccurs="0" type="TravelerDetailType"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="CountryCodeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="refs">
+          <xs:simpleType>
+            <xs:list itemType="xs:IDREF"/>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="CabinPreferencesType">
+    <xs:sequence>
+      <xs:element ref="CabinType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CodesetType">
+    <xs:sequence>
+      <xs:element name="Code" type="xs:string"/>
+      <xs:element name="Definition" type="xs:string" minOccurs="0"/>
+      <xs:element name="TableName" type="xs:string" minOccurs="0"/>
+      <xs:element name="Link" type="xs:anyURI" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ContactInformationType">
+    <xs:sequence>
+      <xs:element name="ContactType" type="xs:string" minOccurs="0"/>
+      <xs:element name="PostalAddress" type="PostalAddressType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="ContactProvided" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="EmailAddress" type="EmailAddressType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Phone" type="PhoneTypeAIDM" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ContactNotProvided" type="xs:string" minOccurs="0"/>
+      <xs:element name="Individual" type="IndividualType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="ContactID" type="xs:ID"/>
+  </xs:complexType>
+
+  <xs:complexType name="PostalAddressType">
+    <xs:sequence>
+      <xs:element name="Label" type="xs:string" minOccurs="0"/>
+      <xs:element name="Street" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="BuildingRoom" type="xs:string" minOccurs="0"/>
+      <xs:element name="POBox" type="xs:token" minOccurs="0"/>
+      <xs:element name="PostalCode" type="xs:token" minOccurs="0"/>
+      <xs:element name="CityName" type="xs:token" minOccurs="0"/>
+      <xs:element name="CountrySubdivisionName" type="xs:string" minOccurs="0"/>
+      <xs:element name="CountryName" type="xs:string" minOccurs="0"/>
+      <xs:element name="CountryCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EmailAddressType">
+    <xs:sequence>
+      <xs:element name="Label" type="xs:string" minOccurs="0"/>
+      <xs:element name="EmailAddressValue" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PhoneTypeAIDM">
+    <xs:sequence>
+      <xs:element name="Label" type="xs:string" minOccurs="0"/>
+      <xs:element name="CountryDialingCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="AreaCode" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="PhoneNumber" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="Extension" type="xs:decimal" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IndividualType">
+    <xs:sequence>
+      <xs:element name="Birthdate" type="xs:date" minOccurs="0"/>
+      <xs:element name="Birthplace" type="xs:string" minOccurs="0"/>
+      <xs:element name="Gender" type="xs:string" minOccurs="0"/>
+      <xs:element name="NameTitle" type="xs:string" minOccurs="0"/>
+      <xs:element name="GivenName" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="MiddleName" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Surname" type="xs:string"/>
+      <xs:element name="SurnameSuffix" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="IndividualID" type="xs:ID"/>
+  </xs:complexType>
+
+  <xs:complexType name="AirShopReqAttributeQueryType">
+    <xs:sequence>
+      <xs:element name="OriginDestination" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="Departure"/>
+            <xs:element name="Arrival" type="FlightArrivalType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FlightDepartureType">
+    <xs:sequence>
+      <xs:element name="AirportCode">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="Area" type="xs:positiveInteger"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Date" type="xs:date"/>
+      <xs:element name="Time" type="xs:string" minOccurs="0"/>
+      <xs:element name="AirportName" type="xs:string" minOccurs="0"/>
+      <xs:element name="Terminal" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="xs:string" minOccurs="0"/>
+            <xs:element name="Gate" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FlightArrivalType">
+    <xs:sequence>
+      <xs:element name="AirportCode">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="Application" type="xs:string"/>
+              <xs:attribute name="Area" type="xs:positiveInteger"/>
+              <xs:attribute name="UOM" type="DistanceUnitListType"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Date" type="xs:date" minOccurs="0"/>
+      <xs:element name="Time" type="xs:string" minOccurs="0"/>
+      <xs:element name="ChangeOfDay" type="xs:integer" minOccurs="0"/>
+      <xs:element name="AirportName" type="xs:string" minOccurs="0"/>
+      <xs:element name="Terminal" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="xs:string" minOccurs="0"/>
+            <xs:element name="Gate" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AirlinePreferencesType">
+    <xs:sequence>
+      <xs:element name="Airline" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AirlineID" type="xs:string"/>
+            <xs:element name="FlightHaulLength" type="CodesetType" minOccurs="0"/>
+          </xs:sequence>
+          <xs:attribute name="refs">
+            <xs:simpleType>
+              <xs:list itemType="xs:IDREF"/>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="PreferencesLevel" type="xs:string"/>
+          <xs:attribute name="PreferencesContext" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PassengerType">
+    <xs:sequence>
+      <xs:element name="PTC" type="xs:string" minOccurs="0"/>
+      <xs:element name="Age" type="MeasureType" minOccurs="0"/>
+      <xs:element name="Birthdate" type="xs:date" minOccurs="0"/>
+      <xs:element name="ResidenceCountryCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="CitizenshipCountryCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="Individual" type="IndividualType" minOccurs="0"/>
+      <xs:element name="ProfileID" type="xs:string" minOccurs="0"/>
+      <xs:element name="IdentityDocument" type="IdentityDocumentType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Language" type="LanguageUsageType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="PassengerID" type="xs:ID" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="MeasureType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="UnitCode" type="xs:token"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="IdentityDocumentType">
+    <xs:sequence>
+      <xs:element name="IdentityDocumentNumber" type="xs:token"/>
+      <xs:element name="IdentityDocumentType" type="xs:string"/>
+      <xs:element name="IssuingCountryCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="CitizenshipCountryCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="ResidenceCountryCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="IssueDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="ExpiryDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="Birthdate" type="xs:date" minOccurs="0"/>
+      <xs:element name="Birthplace" type="xs:string" minOccurs="0"/>
+      <xs:element name="Gender" type="xs:string" minOccurs="0"/>
+      <xs:element name="NameTitle" type="xs:string" minOccurs="0"/>
+      <xs:element name="GivenName" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="MiddleName" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Surname" type="xs:string" minOccurs="0"/>
+      <xs:element name="SurnameSuffix" type="xs:string" minOccurs="0"/>
+      <xs:element name="Visa" type="VisaType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="VisaType">
+    <xs:sequence>
+      <xs:element name="VisaNumber" type="xs:token" minOccurs="0"/>
+      <xs:element name="VisaType" type="xs:token" minOccurs="0"/>
+      <xs:element name="VisaHostCountryCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="EnterBeforeDate" type="xs:date" minOccurs="0"/>
+      <xs:element name="DurationOfStay" type="xs:integer" minOccurs="0"/>
+      <xs:element name="NumberOfEntries" type="xs:integer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LanguageUsageType">
+    <xs:sequence>
+      <xs:element name="LanguageCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="LanguageUsage" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AnonymousTravelerType">
+    <xs:complexContent>
+      <xs:extension base="TravelerCoreType">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TravelerCoreType">
+    <xs:sequence>
+      <xs:element name="PTC" minOccurs="0">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="Quantity" type="xs:integer"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ResidenceCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="PassengerAssociation" type="xs:IDREF" minOccurs="0"/>
+      <xs:element name="Age" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Value" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:integer"/>
+              </xs:simpleType>
+            </xs:element>
+			<xs:element name="BirthDate">
+				<xs:annotation>
+					<xs:documentation source="description" xml:lang="en">Traveler birth date.  Example: YYYY-MM-DD</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:date"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+          </xs:sequence>
+          <xs:attribute name="refs">
+            <xs:simpleType>
+              <xs:list itemType="xs:IDREF"/>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="CitizenshipCountryCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TravelerSummaryType">
+    <xs:complexContent>
+      <xs:extension base="TravelerCoreType">
+        <xs:sequence>
+          <xs:element name="Name">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Surname">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="refs">
+                          <xs:simpleType>
+                            <xs:list itemType="xs:IDREF"/>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="Given" minOccurs="0" maxOccurs="unbounded">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="refs">
+                          <xs:simpleType>
+                            <xs:list itemType="xs:IDREF"/>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="Title" type="xs:string" minOccurs="0"/>
+                <xs:element name="SurnameSuffix" type="xs:anyType" minOccurs="0"/>
+                <xs:element name="Middle" minOccurs="0" maxOccurs="unbounded">
+                  <xs:complexType>
+                    <xs:simpleContent>
+                      <xs:extension base="xs:string">
+                        <xs:attribute name="refs">
+                          <xs:simpleType>
+                            <xs:list itemType="xs:IDREF"/>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:extension>
+                    </xs:simpleContent>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+              <xs:attribute name="refs">
+                <xs:simpleType>
+                  <xs:list itemType="xs:IDREF"/>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attribute name="ObjectMetaReferences">
+                <xs:simpleType>
+                  <xs:list itemType="xs:IDREF"/>
+                </xs:simpleType>
+              </xs:attribute>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ProfileID" minOccurs="0">
+            <xs:complexType>
+              <xs:simpleContent>
+                <xs:extension base="xs:string">
+                  <xs:attribute name="refs">
+                    <xs:simpleType>
+                      <xs:list itemType="xs:IDREF"/>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:extension>
+              </xs:simpleContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TravelerDetailType">
+    <xs:complexContent>
+      <xs:extension base="TravelerSummaryType">
+        <xs:sequence>
+          <xs:element name="Gender" minOccurs="0">
+            <xs:complexType>
+              <xs:simpleContent>
+                <xs:extension base="TravelerGenderSimpleType">
+                  <xs:attribute name="refs">
+                    <xs:simpleType>
+                      <xs:list itemType="xs:IDREF"/>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:extension>
+              </xs:simpleContent>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="FQTVs" type="TravelerFQTV_Type" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="Contacts" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TravelerFQTV_Type">
+    <xs:sequence>
+      <xs:element name="AirlineID" type="xs:string"/>
+      <xs:element name="Account" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="SignInID" minOccurs="0">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="refs">
+                      <xs:simpleType>
+                        <xs:list itemType="xs:IDREF"/>
+                      </xs:simpleType>
+                    </xs:attribute>
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Number">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="refs">
+                      <xs:simpleType>
+                        <xs:list itemType="xs:IDREF"/>
+                      </xs:simpleType>
+                    </xs:attribute>
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="refs">
+            <xs:simpleType>
+              <xs:list itemType="xs:IDREF"/>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProgramID" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="refs">
+      <xs:simpleType>
+        <xs:list itemType="xs:IDREF"/>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="AddressContactType">
+    <xs:complexContent>
+      <xs:extension base="StructuredAddrType">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="StructuredAddrType">
+    <xs:sequence>
+      <xs:element name="Application" type="xs:string" minOccurs="0"/>
+      <xs:element name="Street" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="BuildingRoom" type="xs:string" minOccurs="0"/>
+      <xs:element name="PO_Box" type="xs:string" minOccurs="0"/>
+      <xs:element name="CityName" type="xs:anyType" minOccurs="0"/>
+      <xs:element name="StateProv" type="xs:string" minOccurs="0"/>
+      <xs:element name="PostalCode" type="xs:string" minOccurs="0"/>
+      <xs:element ref="CountryCode" minOccurs="0"/>
+      <xs:element name="County" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EmailType">
+    <xs:sequence>
+      <xs:element name="Application" type="xs:anySimpleType" minOccurs="0"/>
+      <xs:element name="Address">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="EmailID_Type"/>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="refs">
+      <xs:simpleType>
+        <xs:list itemType="xs:IDREF"/>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="EmailID_Type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="refs">
+          <xs:simpleType>
+            <xs:list itemType="xs:IDREF"/>
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="ObjectMetaReferences">
+          <xs:simpleType>
+            <xs:list itemType="xs:IDREF"/>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="PhoneContactType">
+    <xs:complexContent>
+      <xs:extension base="PhoneType">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="PhoneType">
+    <xs:sequence>
+      <xs:element name="Application" type="xs:anySimpleType" minOccurs="0"/>
+      <xs:element name="Number" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="CountryCode" type="xs:string"/>
+              <xs:attribute name="AreaCode" type="xs:string"/>
+              <xs:attribute name="Extension" type="xs:string"/>
+              <xs:attribute name="refs">
+                <xs:simpleType>
+                  <xs:list itemType="xs:IDREF"/>
+                </xs:simpleType>
+              </xs:attribute>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="OperatingCarrierFlightType">
+    <xs:sequence>
+      <xs:element name="AirlineID" type="xs:string" minOccurs="0"/>
+      <xs:element name="Name" type="xs:string" minOccurs="0"/>
+      <xs:element ref="FlightNumber" minOccurs="0"/>
+      <xs:element name="ResBookDesigCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TotalJourneyType">
+    <xs:sequence>
+      <xs:element name="Time" type="xs:duration" minOccurs="0"/>
+      <xs:element name="Distance" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Value" type="xs:positiveInteger"/>
+            <xs:element name="UOM" type="xs:anySimpleType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="OriginDestinationType">
+    <xs:sequence>
+      <xs:element ref="DepartureCode"/>
+      <xs:element ref="ArrivalCode"/>
+    </xs:sequence>
+    <xs:attribute name="OriginDestinationKey" type="xs:ID"/>
+    <xs:attribute name="refs">
+      <xs:simpleType>
+        <xs:list itemType="xs:IDREF"/>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="DistanceUnitListType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Feet"/>
+      <xs:enumeration value="Kilometers"/>
+      <xs:enumeration value="Meters"/>
+      <xs:enumeration value="Miles"/>
+      <xs:enumeration value="Other"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TravelerGenderSimpleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male"/>
+      <xs:enumeration value="Female"/>
+      <xs:enumeration value="Unknown"/>
+      <xs:enumeration value="Other"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="GenderCodeContentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Female"/>
+      <xs:enumeration value="Male"/>
+      <xs:enumeration value="Unspecified"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+    <xs:simpleType name="InstanceClassRefSimpleType">
+	<xs:annotation>
+		<xs:documentation source="description" xml:lang="en">A data type definition for Globally Unique XML Instance or Other Class Reference Association size constraint.</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:IDREFS"/>
+  </xs:simpleType>
+
+<xs:simpleType name="AirportCitySimpleType">
+	<xs:annotation>
+		<xs:documentation source="description" xml:lang="en">A data type for an Airport or City Code constraint.</xs:documentation>
+		<xs:documentation source="Rules" xml:lang="en">Encoding: For maximum interoperability, use IATA/ A4A (three character) airport or city codes.</xs:documentation>
+		<xs:documentation source="Example" xml:lang="en">Examples: JFK, NYC</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:string">
+		<xs:length value="3"/>
+	</xs:restriction>
+</xs:simpleType>
+  
+</xs:schema>
+
