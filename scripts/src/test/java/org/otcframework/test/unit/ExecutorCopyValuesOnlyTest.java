@@ -42,12 +42,13 @@ class ExecutorCopyValuesOnlyTest extends AbstractExecutorTest {
 	@Disabled
 	void testExecuteCopyValuesOnly() {
 
-//		CompilerTest.compileOtcsFiles();
+		CompilerTest.compileOtcsFiles();
+		//--comment out above line if source files are already generated
 
 		CompilerTest.compileSourceCode();
 		OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
 
-		String pkg = "cpysource_flatpath";
+		String pkg = "cpyvalues_string";
 
 		AthenaAirlinePassenger airlinePassenger = otcExecutor.execute(pkg, AthenaAirlinePassenger.class, null);
 //		DateFields dateFields = otcExecutor.execute(pkg, DateFields.class, null);
