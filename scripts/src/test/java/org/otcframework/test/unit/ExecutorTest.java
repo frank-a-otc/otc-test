@@ -24,6 +24,8 @@ package org.otcframework.test.unit;
 
 import java.io.File;
 
+import com.athena.airlines.dto.AthenaAirlinePassenger;
+import com.kronos.airlines.dto.KronosAirlinePassenger;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.otcframework.common.OtcConstants;

@@ -159,7 +159,7 @@ public class TestUtil {
     public static void main(String args[]) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		FileOutputStream fos;
-		String OTC_HOME = OtcConfig.getOtcHomeLocation();
+		String OTC_HOME = OtcConfig.getOtcHomeDirectory();
 		String fileName = OTC_HOME + File.separator + "test-samples" + File.separator +
 				"Kronos-passenger-map.xml";
 		KronosAirlinePassenger kronosAirlinePassenger = loadXml(fileName, KronosAirlinePassenger.class);
