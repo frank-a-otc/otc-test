@@ -30,7 +30,7 @@ import org.otcframework.compiler.SourceCodeCompiler;
 import org.otcframework.compiler.SourceCodeCompilerImpl;
 
 
-public class CompilerTest {
+class CompilerTest {
 
 	private static final String OTC_HOME = OtcConfig.getOtcHomeDirectory();
 

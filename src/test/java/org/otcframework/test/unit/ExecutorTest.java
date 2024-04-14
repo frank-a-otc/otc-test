@@ -43,7 +43,7 @@ import org.otcframework.executor.OtcRegistryImpl;
 //import org.xmlunit.diff.DifferenceEngine;
 
 
-public class ExecutorTest {
+class ExecutorTest {
 	
 	/** The Constant otcRegistry. */
 	private static final OtcRegistry otcRegistry = OtcRegistryImpl.INSTANCE;
@@ -74,7 +74,7 @@ public class ExecutorTest {
 
 //		DateFields dateFields = otcExecutor.execute(pkg, DateFields.class, null);
 //		String otcExpectedResultFileName = OtcUtils.createRegistryId(pkg, AthenaAirlinePassenger.class) + ".xml";
-//		verify(otcExpectedResultFile, result);
+//		assert verify(otcExpectedResultFile, result);
 	}
 
 	@Test
@@ -96,7 +96,7 @@ public class ExecutorTest {
 
 //		String otcExpectedResultFileName = OtcUtils.createRegistryId(pkg, kronosAirlinePassenger,
 //				AthenaAirlinePassenger.class) + ".xml";
-//		verify(otcExpectedResultFile, result);
+//		assert verify(otcExpectedResultFile, result);
 	}
 
 	private void printOutput(AthenaAirlinePassenger airlinePassenger, String otcsFile, OUTPUT_TYPE outputType) {
@@ -118,7 +118,7 @@ public class ExecutorTest {
 //	 * @param compareWithFileName the compare with file name
 //	 * @param actualResult the actual result
 //	 */
-//	private void verify(String compareWithFileName, String actualResult) {
+//	private true verify(String compareWithFileName, String actualResult) {
 //		String expected = TestUtil.getTestCase(compareWithFileName);
 //		Source control = Input.fromString(expected).build();
 //
@@ -126,9 +126,10 @@ public class ExecutorTest {
 //		DifferenceEngine diff = new DOMDifferenceEngine();
 //		diff.addDifferenceListener(new ComparisonListener() {
 //	        public void comparisonPerformed(Comparison comparison, ComparisonResult outcome) {
-////	            TODO
+////	            TODO - throw exception if both are not the same DOM document
 //	        }
 //	    });
 //		diff.compare(control, test);
+//	    return true;
 //	}
 }
