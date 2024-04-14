@@ -58,23 +58,11 @@ class ExecutorTest {
 	
 	private static final String OTC_HOME = OtcConfig.getOtcHomeDirectory();
 
-	@Test
-	void runCopyFromLiteralsTestCases() {
+	private static OtcExecutor otcExecutor;
 
-		String pkg = "cpyvalues_string";
-		OUTPUT_TYPE outputType = OUTPUT_TYPE.XML;
-
+	ExecutorTest() {
 		otcRegistry.register();
-		OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
-		AthenaAirlinePassenger airlinePassenger = otcExecutor.copyFromLiterals(pkg, AthenaAirlinePassenger.class);
-		String otcsFile = OtcUtils.createRegistryId(pkg, null, AthenaAirlinePassenger.class) +
-				OtcConstants.OTC_SCRIPT_EXTN;
-		System.out.println("Executed test case - " + otcsFile);
-		printOutput(airlinePassenger, otcsFile, outputType);
-
-//		DateFields dateFields = otcExecutor.execute(pkg, DateFields.class, null);
-//		String otcExpectedResultFileName = OtcUtils.createRegistryId(pkg, AthenaAirlinePassenger.class) + ".xml";
-//		assert verify(otcExpectedResultFile, result);
+		otcExecutor = OtcExecutorImpl.getInstance();
 	}
 
 	@Test
@@ -83,12 +71,15 @@ class ExecutorTest {
 		String pkg = "cpysource_collection";
 		OUTPUT_TYPE outputType = OUTPUT_TYPE.XML;
 
-		otcRegistry.register();
-		OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
 		String fileName = OTC_HOME + File.separator + "test-samples" + File.separator + "Kronos-passenger-map.xml";
 		KronosAirlinePassenger kronosAirlinePassenger = TestUtil.loadXml(fileName, KronosAirlinePassenger.class);
+
+		//----------------------------------------------------------------------------------
+		// --- this below single line is the only code what you need to write in your actual project.
 		AthenaAirlinePassenger airlinePassenger = otcExecutor.copyFromSource(pkg, kronosAirlinePassenger,
 				AthenaAirlinePassenger.class, null);
+		//----------------------------------------------------------------------------------
+
 		String otcsFile = OtcUtils.createRegistryId(pkg, kronosAirlinePassenger, AthenaAirlinePassenger.class) +
 				OtcConstants.OTC_SCRIPT_EXTN;
 		System.out.println("Executed test case - " + otcsFile);
@@ -96,6 +87,27 @@ class ExecutorTest {
 
 //		String otcExpectedResultFileName = OtcUtils.createRegistryId(pkg, kronosAirlinePassenger,
 //				AthenaAirlinePassenger.class) + ".xml";
+//		assert verify(otcExpectedResultFile, result);
+	}
+
+	@Test
+	void runCopyFromLiteralsTestCases() {
+
+		String pkg = "cpyvalues_string";
+		OUTPUT_TYPE outputType = OUTPUT_TYPE.XML;
+
+		//----------------------------------------------------------------------------------
+		// --- this below single line is the only code what you need to write in your actual project.
+		AthenaAirlinePassenger airlinePassenger = otcExecutor.copyFromLiterals(pkg, AthenaAirlinePassenger.class);
+		//----------------------------------------------------------------------------------
+
+		String otcsFile = OtcUtils.createRegistryId(pkg, null, AthenaAirlinePassenger.class) +
+				OtcConstants.OTC_SCRIPT_EXTN;
+		System.out.println("Executed test case - " + otcsFile);
+		printOutput(airlinePassenger, otcsFile, outputType);
+
+//		DateFields dateFields = otcExecutor.execute(pkg, DateFields.class, null);
+//		String otcExpectedResultFileName = OtcUtils.createRegistryId(pkg, AthenaAirlinePassenger.class) + ".xml";
 //		assert verify(otcExpectedResultFile, result);
 	}
 

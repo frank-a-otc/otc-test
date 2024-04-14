@@ -29,7 +29,6 @@ import org.otcframework.compiler.OtcsCompilerImpl;
 import org.otcframework.compiler.SourceCodeCompiler;
 import org.otcframework.compiler.SourceCodeCompilerImpl;
 
-
 class CompilerTest {
 
 	private static final String OTC_HOME = OtcConfig.getOtcHomeDirectory();
