@@ -85,8 +85,7 @@ public class ExecutorTest {
 
 		otcRegistry.register();
 		OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
-		String fileName = OTC_HOME + File.separator + "test-samples" + File.separator +
-				"Kronos-passenger-map.xml";
+		String fileName = OTC_HOME + File.separator + "test-samples" + File.separator + "Kronos-passenger-map.xml";
 		KronosAirlinePassenger kronosAirlinePassenger = TestUtil.loadXml(fileName, KronosAirlinePassenger.class);
 		AthenaAirlinePassenger airlinePassenger = otcExecutor.copyFromSource(pkg, kronosAirlinePassenger,
 				AthenaAirlinePassenger.class, null);

@@ -29,8 +29,6 @@ import org.otcframework.compiler.OtcsCompilerImpl;
 import org.otcframework.compiler.SourceCodeCompiler;
 import org.otcframework.compiler.SourceCodeCompilerImpl;
 
-import java.io.File;
-
 
 public class CompilerTest {
 
@@ -42,32 +40,9 @@ public class CompilerTest {
 
 	@Test
 	public void testCompile() {
-		cleanupGeratedFiles();
 		// -- compile script and generate source code
 		otcsCompiler.compileOtcsFiles();
 		sourceCodeCompiler.compileSourceCode();
 	}
 
-	private void cleanupGeratedFiles() {
-		deleteRecursive(new File(OTC_HOME + File.separator + "tmd"));
-		deleteRecursive(new File(OTC_HOME + File.separator + "src"));
-		deleteRecursive(new File(OTC_HOME + File.separator + "target"));
-	}
-
-	private void deleteRecursive(File folder) {
-		if (!folder.isDirectory()) {
-			return;
-		}
-		File[] allContents = folder.listFiles();
-		if (allContents != null) {
-			for (File file : allContents) {
-				if (file.isDirectory()) {
-					deleteRecursive(file);
-				} else {
-					file.delete();
-				}
-			}
-		}
-		folder.delete();
-	}
 }
