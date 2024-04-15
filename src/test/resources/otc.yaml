@@ -1,0 +1,37 @@
+compiler:
+  # -- To apply defaults, comment out below properties as required.
+  #
+  # -- cleanupBeforeCompile if true will delete the generated folders under ${OTC_HOME}/. Default is false.
+  # -- WARNING: If you have updated the generated source code in ${OTC_HOME}/src, you will loose your updates.
+  cleanupBeforeCompile: true
+  # -- cyclicReferenceDepthLimit is the depth-stop-point for cyclic references of types. Default is 2
+  cyclicReferenceDepthLimit: 2
+  paths:
+    # -- libDirectory is the location of the .jar and / or .class files. Default is $OTC_HOME/lib. 
+    #libDirectory: D:/workspace/projects/otc-test-schema/target/classes/
+    #
+    # -- sourceCodeDirectory is the location of the generated .java files. Default is $OTC_HOME/src
+    sourceCodeDirectory: D:/workspace/projects/otc-test/src/main/java
+    #
+    # -- tmdDirectory is the location of the .tmd files. Default is $OTC_HOME/tmd
+    tmdDirectory: D:/workspace/projects/otc-test/src/main/resources
+    #
+    # -- targetDirectory is the location of the compiled .class files. Default is $OTC_HOME/target
+    targetDirectory: D:/workspace/projects/otc-test/target
+    #
+concreteTypes:
+  java.util.List:
+    java.util.ArrayList
+  java.util.Set:
+    java.util.HashSet
+  java.util.Map:
+    java.util.HashMap
+  java.util.Queue:
+    java.util.LinkedList
+
+filterPackages:
+- com.athena.airlines.dto
+- com.kronos.airlines.dto
+- date.types
+- ar.ndc_21_3_4
+- ar.ndc172
