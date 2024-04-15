@@ -17,7 +17,7 @@ compiler:
     tmdDirectory: D:/workspace/projects/otc-test/src/main/resources
     #
     # -- targetDirectory is the location of the compiled .class files. Default is $OTC_HOME/target
-    targetDirectory: D:/workspace/projects/otc-test/target
+    #targetDirectory: D:/workspace/projects/otc-test/target
     #
 concreteTypes:
   java.util.List:

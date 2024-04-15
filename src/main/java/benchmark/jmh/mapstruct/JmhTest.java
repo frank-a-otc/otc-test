@@ -20,7 +20,7 @@
 * limitations under the License.
 *
 */
-package org.otcframework.test.benchmark.mapstruct;
+package benchmark.jmh.mapstruct;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

@@ -20,7 +20,7 @@
 * limitations under the License.
 *
 */
-package org.otcframework.test.unit;
+package unittest;
 
 import org.junit.jupiter.api.Test;
 import org.otcframework.compiler.OtcsCompiler;
@@ -30,7 +30,6 @@ import org.otcframework.compiler.SourceCodeCompilerImpl;
 
 class CompilerTest {
 
-	/** The Constant otclCompiler. */
 	private static final OtcsCompiler otcsCompiler = OtcsCompilerImpl.getInstance();
 	private static final SourceCodeCompiler sourceCodeCompiler = SourceCodeCompilerImpl.getInstance();
 

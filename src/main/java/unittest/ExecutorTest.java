@@ -20,13 +20,12 @@
 * limitations under the License.
 *
 */
-package org.otcframework.test.unit;
+package unittest;
 
 import java.io.File;
 
 import com.athena.airlines.dto.AthenaAirlinePassenger;
 import com.kronos.airlines.dto.KronosAirlinePassenger;
-import date.types.DateFields;
 import org.junit.jupiter.api.Test;
 import org.otcframework.common.OtcConstants;
 import org.otcframework.common.config.OtcConfig;
@@ -56,22 +55,19 @@ class ExecutorTest {
 		JSON
 	}
 	
-	private static final String resourcesLocation = OtcConfig.getOtcConfigLocation();
+	private static final String RESOURCES_LOCATION = OtcConfig.getOtcConfigLocation();
 
-	private static OtcExecutor otcExecutor;
+	private static final OtcExecutor otcExecutor = OtcExecutorImpl.getInstance();
 
-	ExecutorTest() {
-		otcRegistry.register();
-		otcExecutor = OtcExecutorImpl.getInstance();
-	}
+	ExecutorTest() { }
 
 	@Test
 	void runCopyFromSourceObjectTestCases() {
 
-		String pkg = "cpysource_collection";
+		String pkg = "execute";
 		OUTPUT_TYPE outputType = OUTPUT_TYPE.XML;
 
-		String fileName = resourcesLocation + File.separator + "test-samples" + File.separator + "Kronos-passenger-map.xml";
+		String fileName = RESOURCES_LOCATION + File.separator + "test-samples" + File.separator + "Kronos-passenger-map.xml";
 		KronosAirlinePassenger kronosAirlinePassenger = TestUtil.loadXml(fileName, KronosAirlinePassenger.class);
 
 		//----------------------------------------------------------------------------------

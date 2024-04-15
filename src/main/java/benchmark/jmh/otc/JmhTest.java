@@ -20,7 +20,7 @@
 * limitations under the License.
 *
 */
-package org.otcframework.test.benchmark.otc;
+package benchmark.jmh.otc;
 
 import java.io.IOException;
 

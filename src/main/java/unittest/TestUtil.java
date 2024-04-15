@@ -20,7 +20,7 @@
 * limitations under the License.
 *
 */
-package org.otcframework.test.unit;
+package unittest;
 
 import java.io.DataOutputStream;
 import java.io.File;
