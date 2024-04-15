@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AthenaAirlinePassenger>
+    <DataLists>
+        <PassengerList>
+            <Passenger>
+                <IdentityDocuments>
+                    <Visas>
+                        <VisaType>Work</VisaType>
+                    </Visas>
+                </IdentityDocuments>
+            </Passenger>
+            <Passenger>
+                <IdentityDocuments>
+                    <Visas>
+                        <VisaType>Visit</VisaType>
+                    </Visas>
+                </IdentityDocuments>
+            </Passenger>
+        </PassengerList>
+    </DataLists>
+</AthenaAirlinePassenger>
+

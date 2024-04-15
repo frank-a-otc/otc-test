@@ -1,0 +1,778 @@
+22:06:00,705 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@11028347 - Adding [file:/D:/otc-home/config/logback-included.xml] to configuration watch list.
+22:06:00,751 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+22:06:00,761 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleLogger]
+22:06:00,780 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+22:06:00,854 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+22:06:00,862 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otcLogger]
+22:06:00,865 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+22:06:00,866 |-INFO in ch.qos.logback.core.FileAppender[otcLogger] - File property is set to [d:/otc-home/logs/otc.log]
+22:06:00,869 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otc] to OFF
+22:06:00,870 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otcLogger] to Logger[org.otc]
+22:06:00,871 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otc]
+22:06:00,871 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
+22:06:00,871 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[ROOT]
+22:06:00,871 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+22:06:00,873 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@5a01ccaa - Registering current configuration as safe fallback point
+# JMH version: 1.23
+# VM version: JDK 1.8.0_66, Java HotSpot(TM) 64-Bit Server VM, 25.66-b18
+# VM invoker: D:\Software\Java\jdk1.8.0_66\jre\bin\java.exe
+# VM options: -Dfile.encoding=UTF-8
+# Warmup: 10 iterations, 500 ms each
+# Measurement: 50 iterations, 200 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.otc.test.benchmark.Otc2.test
+
+# Run progress: 0.00% complete, ETA 00:00:45
+# Warmup Fork: 1 of 2
+# Warmup Iteration   1: 22:06:01,942 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+22:06:01,943 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+22:06:01,943 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+22:06:01,944 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+22:06:01,945 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+22:06:01,945 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+22:06:02,089 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@7769fe3d - Adding [file:/D:/otc-home/config/logback-included.xml] to configuration watch list.
+22:06:02,094 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+22:06:02,098 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleLogger]
+22:06:02,109 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+22:06:02,147 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+22:06:02,152 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otcLogger]
+22:06:02,153 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+22:06:02,154 |-INFO in ch.qos.logback.core.FileAppender[otcLogger] - File property is set to [d:/otc-home/logs/otc.log]
+22:06:02,157 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otc] to OFF
+22:06:02,157 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otcLogger] to Logger[org.otc]
+22:06:02,158 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otc]
+22:06:02,159 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
+22:06:02,159 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[ROOT]
+22:06:02,159 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+22:06:02,161 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@43c49504 - Registering current configuration as safe fallback point
+[INFO ] 2020/09/18 22:06:02 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.otc.core.engine.OtcEngineImpl - Begining OTC deployment from D:/otc-home/otc-test-source 
+[INFO ] 2020/09/18 22:06:02 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Initiating OTC compilations in D:/otc-home/otc-test-source 
+[INFO ] 2020/09/18 22:06:02 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Compiling OTC file : <DEFAULT>->com.kronos.airlines.dto.KronosAirlinePassenger_com.athena.airlines.dto.AthenaAirlinePassenger.otc 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_01 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_02 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_03 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_04 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_05 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_06 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_07 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_08 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_09 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_10 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_11 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_01 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_02-A 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_02-B 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_03 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_04 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_05 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_06 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_07 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_08-A 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_08-B 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_09-A 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_09-B 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_10 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_11 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_12 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_13 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_14 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_15 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_16 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_17 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_18 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_19 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_20 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_21 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_22 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_23 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_24 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_25 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_26 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_27 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_28 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_01 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_02 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_03 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_04 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_05 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_06 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_07 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_DT_01 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_DT_02 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_02 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_03 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_04 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_05 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_06 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_07 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_08 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_09 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_10 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_11 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_12 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_13 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_14 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_15 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_16 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_17 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_18 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_19 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_20 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_21 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_22 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_23 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_24 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_25 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_26 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_27 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_28 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_29 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_30 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_31 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_01 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_02 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_03 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_04 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_05 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_06 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_07 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_08 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_09 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_10 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_11 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_12 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_13 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_14 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_15 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_16 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_17 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_01 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_02 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_03 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_04 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_05 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_06 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_07 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_08 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_09 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_10 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_11 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_12 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_13 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_14 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_15 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_16 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_17 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_18 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_19 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_20 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_21 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_22 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_23 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_24 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_25 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_26 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_27 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_28 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_29 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_01 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_02-A 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_02-B 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_03-A 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_03-B 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_04-A 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_04-B 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_05 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_06-A 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_06-B 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_07-A 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_07-B 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_08-A 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_08-B 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_01 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_02 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_03 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_04 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_05 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_06 
+[WARN ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_07 
+[INFO ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Kickstarting Code generator.... 
+[INFO ] 2020/09/18 22:06:03 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.c.OtcCodeGeneratorImpl - Generated code 'FP_TC01_RootonlyToRootonly.java' for Script-Id : TC_FP_01 
+[INFO ] 2020/09/18 22:06:06 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Successfully compiled OTC file : <DEFAULT>->com.kronos.airlines.dto.KronosAirlinePassenger_com.athena.airlines.dto.AthenaAirlinePassenger.otc 
+[INFO ] 2020/09/18 22:06:06 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Completed OTC compilations in 3235.908582 millis. 
+[INFO ] 2020/09/18 22:06:06 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.DeploymentContainerImpl - Completed OTC deployments from D:/otc-home/otc-test-source 
+[INFO ] 2020/09/18 22:06:06 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.otc.core.engine.OtcEngineImpl - Completed 1/1 OTC deployments, Failed : 0/1. 
+initilized OTC 2 test ...............
+7665220.909 ops/s
+# Warmup Iteration   2: 7786599.760 ops/s
+# Warmup Iteration   3: 7928460.934 ops/s
+# Warmup Iteration   4: 9007823.109 ops/s
+# Warmup Iteration   5: 8605808.729 ops/s
+# Warmup Iteration   6: 8911008.235 ops/s
+# Warmup Iteration   7: 8907515.031 ops/s
+# Warmup Iteration   8: 8875119.720 ops/s
+# Warmup Iteration   9: 8916011.300 ops/s
+# Warmup Iteration  10: 8964021.119 ops/s
+Iteration   1: 8883329.182 ops/s
+Iteration   2: 9052511.198 ops/s
+Iteration   3: 8824604.673 ops/s
+Iteration   4: 8666839.726 ops/s
+Iteration   5: 8755398.134 ops/s
+Iteration   6: 8327197.383 ops/s
+Iteration   7: 8977191.407 ops/s
+Iteration   8: 8668509.471 ops/s
+Iteration   9: 8757535.984 ops/s
+Iteration  10: 9004767.767 ops/s
+Iteration  11: 8369139.090 ops/s
+Iteration  12: 9042493.312 ops/s
+Iteration  13: 9065999.755 ops/s
+Iteration  14: 8900993.458 ops/s
+Iteration  15: 8257917.929 ops/s
+Iteration  16: 5236399.651 ops/s
+Iteration  17: 9060722.396 ops/s
+Iteration  18: 8910045.882 ops/s
+Iteration  19: 8527129.500 ops/s
+Iteration  20: 9055034.424 ops/s
+Iteration  21: 8444761.950 ops/s
+Iteration  22: 8378108.965 ops/s
+Iteration  23: 7851441.702 ops/s
+Iteration  24: 7439088.881 ops/s
+Iteration  25: 7901320.041 ops/s
+Iteration  26: 8324832.128 ops/s
+Iteration  27: 8974866.418 ops/s
+Iteration  28: 9197355.339 ops/s
+Iteration  29: 8373012.688 ops/s
+Iteration  30: 8879597.193 ops/s
+Iteration  31: 8440665.092 ops/s
+Iteration  32: 8821450.299 ops/s
+Iteration  33: 9099549.221 ops/s
+Iteration  34: 8822429.048 ops/s
+Iteration  35: 8871464.500 ops/s
+Iteration  36: 8613349.573 ops/s
+Iteration  37: 8905774.178 ops/s
+Iteration  38: 9088898.932 ops/s
+Iteration  39: 8515749.942 ops/s
+Iteration  40: 9043017.335 ops/s
+Iteration  41: 8591206.915 ops/s
+Iteration  42: 8722810.028 ops/s
+Iteration  43: 9030313.615 ops/s
+Iteration  44: 8510082.501 ops/s
+Iteration  45: 8953074.899 ops/s
+Iteration  46: 8683257.190 ops/s
+Iteration  47: 8969897.592 ops/s
+Iteration  48: 8968805.842 ops/s
+Iteration  49: 8790382.745 ops/s
+Iteration  50: 
+
+Total operations in this iteration - 129967277
+9015316.980 ops/s
+
+# Run progress: 33.33% complete, ETA 00:00:39
+# Warmup Fork: 2 of 2
+# Warmup Iteration   1: 22:06:21,881 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+22:06:21,881 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+22:06:21,882 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+22:06:21,883 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+22:06:21,883 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+22:06:21,883 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+22:06:22,047 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@358ac8a6 - Adding [file:/D:/otc-home/config/logback-included.xml] to configuration watch list.
+22:06:22,052 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+22:06:22,056 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleLogger]
+22:06:22,069 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+22:06:22,104 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+22:06:22,109 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otcLogger]
+22:06:22,111 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+22:06:22,113 |-INFO in ch.qos.logback.core.FileAppender[otcLogger] - File property is set to [d:/otc-home/logs/otc.log]
+22:06:22,117 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otc] to OFF
+22:06:22,117 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otcLogger] to Logger[org.otc]
+22:06:22,118 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otc]
+22:06:22,118 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
+22:06:22,119 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[ROOT]
+22:06:22,119 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+22:06:22,120 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@645dd484 - Registering current configuration as safe fallback point
+[INFO ] 2020/09/18 22:06:22 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.otc.core.engine.OtcEngineImpl - Begining OTC deployment from D:/otc-home/otc-test-source 
+[INFO ] 2020/09/18 22:06:22 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Initiating OTC compilations in D:/otc-home/otc-test-source 
+[INFO ] 2020/09/18 22:06:22 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Compiling OTC file : <DEFAULT>->com.kronos.airlines.dto.KronosAirlinePassenger_com.athena.airlines.dto.AthenaAirlinePassenger.otc 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_01 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_02 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_03 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_04 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_05 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_06 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_07 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_08 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_09 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_10 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_11 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_01 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_02-A 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_02-B 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_03 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_04 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_05 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_06 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_07 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_08-A 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_08-B 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_09-A 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_09-B 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_10 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_11 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_12 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_13 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_14 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_15 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_16 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_17 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_18 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_19 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_20 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_21 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_22 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_23 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_24 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_25 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_26 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_27 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_28 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_01 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_02 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_03 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_04 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_05 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_06 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_07 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_DT_01 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_DT_02 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_02 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_03 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_04 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_05 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_06 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_07 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_08 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_09 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_10 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_11 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_12 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_13 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_14 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_15 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_16 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_17 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_18 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_19 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_20 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_21 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_22 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_23 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_24 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_25 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_26 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_27 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_28 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_29 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_30 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_31 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_01 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_02 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_03 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_04 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_05 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_06 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_07 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_08 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_09 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_10 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_11 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_12 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_13 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_14 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_15 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_16 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_17 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_01 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_02 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_03 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_04 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_05 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_06 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_07 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_08 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_09 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_10 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_11 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_12 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_13 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_14 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_15 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_16 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_17 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_18 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_19 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_20 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_21 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_22 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_23 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_24 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_25 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_26 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_27 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_28 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_29 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_01 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_02-A 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_02-B 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_03-A 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_03-B 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_04-A 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_04-B 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_05 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_06-A 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_06-B 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_07-A 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_07-B 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_08-A 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_08-B 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_01 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_02 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_03 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_04 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_05 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_06 
+[WARN ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_07 
+[INFO ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Kickstarting Code generator.... 
+[INFO ] 2020/09/18 22:06:23 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.c.OtcCodeGeneratorImpl - Generated code 'FP_TC01_RootonlyToRootonly.java' for Script-Id : TC_FP_01 
+[INFO ] 2020/09/18 22:06:25 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Successfully compiled OTC file : <DEFAULT>->com.kronos.airlines.dto.KronosAirlinePassenger_com.athena.airlines.dto.AthenaAirlinePassenger.otc 
+[INFO ] 2020/09/18 22:06:25 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Completed OTC compilations in 3153.716443 millis. 
+[INFO ] 2020/09/18 22:06:25 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.DeploymentContainerImpl - Completed OTC deployments from D:/otc-home/otc-test-source 
+[INFO ] 2020/09/18 22:06:25 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.otc.core.engine.OtcEngineImpl - Completed 1/1 OTC deployments, Failed : 0/1. 
+initilized OTC 2 test ...............
+6973884.259 ops/s
+# Warmup Iteration   2: 8381648.608 ops/s
+# Warmup Iteration   3: 7690724.871 ops/s
+# Warmup Iteration   4: 8248267.351 ops/s
+# Warmup Iteration   5: 8180495.607 ops/s
+# Warmup Iteration   6: 8954343.992 ops/s
+# Warmup Iteration   7: 8667822.318 ops/s
+# Warmup Iteration   8: 8758569.280 ops/s
+# Warmup Iteration   9: 8876555.090 ops/s
+# Warmup Iteration  10: 8817756.752 ops/s
+Iteration   1: 9043653.074 ops/s
+Iteration   2: 8099509.577 ops/s
+Iteration   3: 9079941.291 ops/s
+Iteration   4: 9076591.582 ops/s
+Iteration   5: 8805931.510 ops/s
+Iteration   6: 9006454.170 ops/s
+Iteration   7: 8614496.387 ops/s
+Iteration   8: 8832550.210 ops/s
+Iteration   9: 9115315.914 ops/s
+Iteration  10: 8539264.186 ops/s
+Iteration  11: 9050467.059 ops/s
+Iteration  12: 8764942.195 ops/s
+Iteration  13: 8944491.131 ops/s
+Iteration  14: 8946731.494 ops/s
+Iteration  15: 8772012.574 ops/s
+Iteration  16: 9137931.236 ops/s
+Iteration  17: 8829040.423 ops/s
+Iteration  18: 8639203.970 ops/s
+Iteration  19: 8371355.763 ops/s
+Iteration  20: 7366937.788 ops/s
+Iteration  21: 5742868.739 ops/s
+Iteration  22: 5278419.072 ops/s
+Iteration  23: 7348594.810 ops/s
+Iteration  24: 7717179.896 ops/s
+Iteration  25: 7081853.026 ops/s
+Iteration  26: 7517204.226 ops/s
+Iteration  27: 7341483.051 ops/s
+Iteration  28: 7827188.892 ops/s
+Iteration  29: 7823210.595 ops/s
+Iteration  30: 8305406.705 ops/s
+Iteration  31: 9226987.724 ops/s
+Iteration  32: 8889653.608 ops/s
+Iteration  33: 8909075.766 ops/s
+Iteration  34: 9196773.525 ops/s
+Iteration  35: 8891145.515 ops/s
+Iteration  36: 9077226.993 ops/s
+Iteration  37: 8201507.029 ops/s
+Iteration  38: 7464651.939 ops/s
+Iteration  39: 9111691.453 ops/s
+Iteration  40: 9087625.532 ops/s
+Iteration  41: 8937835.779 ops/s
+Iteration  42: 8949264.707 ops/s
+Iteration  43: 9069423.545 ops/s
+Iteration  44: 9026235.224 ops/s
+Iteration  45: 8920044.266 ops/s
+Iteration  46: 8976055.884 ops/s
+Iteration  47: 8744408.408 ops/s
+Iteration  48: 9132071.400 ops/s
+Iteration  49: 9037454.398 ops/s
+Iteration  50: 
+
+Total operations in this iteration - 127169197
+8852307.126 ops/s
+
+# Run progress: 66.67% complete, ETA 00:00:19
+# Fork: 1 of 1
+# Warmup Iteration   1: 22:06:41,711 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+22:06:41,712 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+22:06:41,713 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+22:06:41,715 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+22:06:41,715 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+22:06:41,715 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+22:06:41,871 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@430ff5d1 - Adding [file:/D:/otc-home/config/logback-included.xml] to configuration watch list.
+22:06:41,877 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+22:06:41,883 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleLogger]
+22:06:41,895 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+22:06:41,933 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+22:06:41,938 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otcLogger]
+22:06:41,939 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+22:06:41,940 |-INFO in ch.qos.logback.core.FileAppender[otcLogger] - File property is set to [d:/otc-home/logs/otc.log]
+22:06:41,943 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otc] to OFF
+22:06:41,943 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otcLogger] to Logger[org.otc]
+22:06:41,944 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otc]
+22:06:41,944 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
+22:06:41,944 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[ROOT]
+22:06:41,944 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+22:06:41,946 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@38c9bfbf - Registering current configuration as safe fallback point
+[INFO ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.otc.core.engine.OtcEngineImpl - Begining OTC deployment from D:/otc-home/otc-test-source 
+[INFO ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Initiating OTC compilations in D:/otc-home/otc-test-source 
+[INFO ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Compiling OTC file : <DEFAULT>->com.kronos.airlines.dto.KronosAirlinePassenger_com.athena.airlines.dto.AthenaAirlinePassenger.otc 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_01 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_02 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_03 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_04 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_05 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_06 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_07 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_08 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_09 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_10 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_CV_11 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_01 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_02-A 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_02-B 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_03 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_04 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_05 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_06 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_07 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_08-A 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_08-B 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_09-A 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_09-B 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_10 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_11 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_12 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_13 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_14 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_15 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_16 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_17 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_18 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_19 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_20 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_21 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_22 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_23 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_24 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_25 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_26 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_27 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_ET_28 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_01 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_02 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_03 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_04 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_05 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_06 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_07 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_DT_01 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_DT_02 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_02 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_03 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_04 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_05 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_06 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_07 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_08 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_09 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_10 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_11 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_12 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_13 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_14 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_15 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_16 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_17 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_18 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_19 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_20 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_21 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_22 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_23 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_24 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_25 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_26 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_27 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_28 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_29 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_30 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_FP_31 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_01 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_02 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_03 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_04 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_05 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_06 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_07 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_08 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_09 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_10 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_11 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_12 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_13 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_14 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_15 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_16 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EX_17 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_01 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_02 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_03 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_04 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_05 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_06 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_07 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_08 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_09 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_10 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_11 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_12 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_13 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_14 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_15 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_16 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_17 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_18 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_19 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_20 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_21 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_22 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_23 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_24 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_25 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NF_26 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_27 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_28 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_29 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_01 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_02-A 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_02-B 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_03-A 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_03-B 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_04-A 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_04-B 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_05 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_06-A 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_06-B 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_07-A 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_07-B 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_08-A 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_NFET_08-B 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_01 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_02 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_03 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_04 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_05 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_OV_06 
+[WARN ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcLexicalizer - Bypassing disabled script : TC_EN_07 
+[INFO ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Kickstarting Code generator.... 
+[INFO ] 2020/09/18 22:06:42 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.c.OtcCodeGeneratorImpl - Generated code 'FP_TC01_RootonlyToRootonly.java' for Script-Id : TC_FP_01 
+[INFO ] 2020/09/18 22:06:45 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Successfully compiled OTC file : <DEFAULT>->com.kronos.airlines.dto.KronosAirlinePassenger_com.athena.airlines.dto.AthenaAirlinePassenger.otc 
+[INFO ] 2020/09/18 22:06:45 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.compiler.OtcCompilerImpl - Completed OTC compilations in 3191.495413 millis. 
+[INFO ] 2020/09/18 22:06:45 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.o.c.e.DeploymentContainerImpl - Completed OTC deployments from D:/otc-home/otc-test-source 
+[INFO ] 2020/09/18 22:06:45 [org.otc.test.benchmark.Otc2.test-jmh-worker-1] o.otc.core.engine.OtcEngineImpl - Completed 1/1 OTC deployments, Failed : 0/1. 
+initilized OTC 2 test ...............
+6996881.333 ops/s
+# Warmup Iteration   2: 7627780.570 ops/s
+# Warmup Iteration   3: 7324074.369 ops/s
+# Warmup Iteration   4: 8821974.535 ops/s
+# Warmup Iteration   5: 6902976.217 ops/s
+# Warmup Iteration   6: 7958571.989 ops/s
+# Warmup Iteration   7: 8746119.294 ops/s
+# Warmup Iteration   8: 8523329.428 ops/s
+# Warmup Iteration   9: 8745203.781 ops/s
+# Warmup Iteration  10: 9035141.026 ops/s
+Iteration   1: 8885545.416 ops/s
+Iteration   2: 8752345.244 ops/s
+Iteration   3: 8841262.774 ops/s
+Iteration   4: 8928551.965 ops/s
+Iteration   5: 7409910.954 ops/s
+Iteration   6: 8303951.483 ops/s
+Iteration   7: 8810287.418 ops/s
+Iteration   8: 8762521.881 ops/s
+Iteration   9: 8910600.321 ops/s
+Iteration  10: 8848946.785 ops/s
+Iteration  11: 8807075.742 ops/s
+Iteration  12: 8886083.977 ops/s
+Iteration  13: 8901179.746 ops/s
+Iteration  14: 9144223.671 ops/s
+Iteration  15: 8838814.271 ops/s
+Iteration  16: 8939647.010 ops/s
+Iteration  17: 9104196.582 ops/s
+Iteration  18: 8721405.460 ops/s
+Iteration  19: 9108624.786 ops/s
+Iteration  20: 9042863.180 ops/s
+Iteration  21: 8767683.014 ops/s
+Iteration  22: 9096830.393 ops/s
+Iteration  23: 8537989.369 ops/s
+Iteration  24: 9115869.132 ops/s
+Iteration  25: 9178973.281 ops/s
+Iteration  26: 7827531.244 ops/s
+Iteration  27: 7220597.087 ops/s
+Iteration  28: 8800481.350 ops/s
+Iteration  29: 8951877.126 ops/s
+Iteration  30: 9186602.694 ops/s
+Iteration  31: 8809944.511 ops/s
+Iteration  32: 8804096.531 ops/s
+Iteration  33: 8898957.682 ops/s
+Iteration  34: 8849092.517 ops/s
+Iteration  35: 9143177.946 ops/s
+Iteration  36: 8811462.438 ops/s
+Iteration  37: 8829128.271 ops/s
+Iteration  38: 9055165.158 ops/s
+Iteration  39: 8739083.330 ops/s
+Iteration  40: 9148172.817 ops/s
+Iteration  41: 8774755.498 ops/s
+Iteration  42: 8566577.547 ops/s
+Iteration  43: 8941296.124 ops/s
+Iteration  44: 9003029.550 ops/s
+Iteration  45: 8954894.546 ops/s
+Iteration  46: 8198161.601 ops/s
+Iteration  47: 8266031.371 ops/s
+Iteration  48: 8616941.299 ops/s
+Iteration  49: 8923003.984 ops/s
+Iteration  50: 
+
+Total operations in this iteration - 128394179
+8609171.154 ops/s
+
+
+Result "org.otc.test.benchmark.Otc2.test":
+  8771492.345 ±(99.9%) 197504.231 ops/s [Average]
+  (min, avg, max) = (7220597.087, 8771492.345, 9186602.694), stdev = 398968.318
+  CI (99.9%): [8573988.113, 8968996.576] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:59
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark    Mode  Cnt        Score        Error  Units
+Otc2.test  thrpt   50  8771492.345 ± 197504.231  ops/s

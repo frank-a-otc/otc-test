@@ -1,0 +1,31 @@
+<AthenaAirlinePassenger>
+    <Travelers>
+        <Traveler>
+            <customObjectsMap>
+                <entry>
+                    <key>
+                        <Name>
+                            <Given>Work</Given>
+                            <Given>Business</Given>
+                        </Name>
+                    </key>
+                    <value/>
+                </entry>
+            </customObjectsMap>
+        </Traveler>
+        <Traveler>
+            <customObjectsMap>
+                <entry>
+                    <key>
+                        <Name>
+                            <Given>Diplomat</Given>
+                            <Given>Dependent</Given>
+                        </Name>
+                    </key>
+                    <value/>
+                </entry>
+            </customObjectsMap>
+        </Traveler>
+    </Travelers>
+</AthenaAirlinePassenger>
+

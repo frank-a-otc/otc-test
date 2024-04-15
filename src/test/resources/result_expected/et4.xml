@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AthenaAirlinePassenger>
+    <Travelers>
+        <Traveler>
+            <AnonymousTraveler>
+                <Name>
+                    <Given>Pondy Prem</Given>
+                    <Given>Rajesh</Given>
+                </Name>
+            </AnonymousTraveler>
+        </Traveler>
+        <Traveler>
+            <AnonymousTraveler>
+                <Name>
+                    <Given>Anand</Given>
+                    <Given>Thandav</Given>
+                </Name>
+            </AnonymousTraveler>
+        </Traveler>
+    </Travelers>
+</AthenaAirlinePassenger>
+

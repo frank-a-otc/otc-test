@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AthenaAirlinePassenger>
+    <TravelerDetailType>
+        <Gender>
+            <value>Male</value>
+        </Gender>
+    </TravelerDetailType>
+</AthenaAirlinePassenger>
+

@@ -1,0 +1,290 @@
+# JMH version: 1.23
+# VM version: JDK 1.8.0_66, Java HotSpot(TM) 64-Bit Server VM, 25.66-b18
+# VM invoker: D:\Software\Java\jdk1.8.0_66\jre\bin\java.exe
+# VM options: -Dfile.encoding=UTF-8
+# Warmup: 10 iterations, 500 ms each
+# Measurement: 50 iterations, 200 ms each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: org.otc.test.benchmark.MapStrut.testMapStrut
+
+# Run progress: 0.00% complete, ETA 00:00:45
+# Warmup Fork: 1 of 2
+# Warmup Iteration   1: 13:25:09,844 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+13:25:09,844 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+13:25:09,844 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+13:25:09,845 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+13:25:09,845 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+13:25:09,845 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+13:25:09,991 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@1ca3883f - Adding [file:/D:/otc-home/config/logback-included.xml] to configuration watch list.
+13:25:09,995 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+13:25:10,000 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleLogger]
+13:25:10,007 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:25:10,065 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+13:25:10,071 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otcLogger]
+13:25:10,074 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:25:10,075 |-INFO in ch.qos.logback.core.FileAppender[otcLogger] - File property is set to [d:/otc-home/logs/otc.log]
+13:25:10,079 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otc] to DEBUG
+13:25:10,080 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otcLogger] to Logger[org.otc]
+13:25:10,081 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otc]
+13:25:10,082 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
+13:25:10,082 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[ROOT]
+13:25:10,082 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+13:25:10,084 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@68375420 - Registering current configuration as safe fallback point
+initialized MapStrut test...............
+loaded...............
+346380.433 ops/s
+# Warmup Iteration   2: 720188.704 ops/s
+# Warmup Iteration   3: 886059.007 ops/s
+# Warmup Iteration   4: 981404.555 ops/s
+# Warmup Iteration   5: 899118.206 ops/s
+# Warmup Iteration   6: 1014488.005 ops/s
+# Warmup Iteration   7: 1009286.345 ops/s
+# Warmup Iteration   8: 1021806.934 ops/s
+# Warmup Iteration   9: 1020999.532 ops/s
+# Warmup Iteration  10: 1006559.052 ops/s
+Iteration   1: 1002618.872 ops/s
+Iteration   2: 918736.059 ops/s
+Iteration   3: 1013011.155 ops/s
+Iteration   4: 1011306.310 ops/s
+Iteration   5: 1000134.674 ops/s
+Iteration   6: 998737.573 ops/s
+Iteration   7: 1002736.240 ops/s
+Iteration   8: 1010370.705 ops/s
+Iteration   9: 999083.718 ops/s
+Iteration  10: 973171.027 ops/s
+Iteration  11: 997984.581 ops/s
+Iteration  12: 990266.521 ops/s
+Iteration  13: 994141.489 ops/s
+Iteration  14: 1012015.173 ops/s
+Iteration  15: 1011626.288 ops/s
+Iteration  16: 1006014.459 ops/s
+Iteration  17: 1021790.057 ops/s
+Iteration  18: 1009034.182 ops/s
+Iteration  19: 988010.893 ops/s
+Iteration  20: 980072.297 ops/s
+Iteration  21: 995930.930 ops/s
+Iteration  22: 1019180.119 ops/s
+Iteration  23: 984036.730 ops/s
+Iteration  24: 999492.090 ops/s
+Iteration  25: 913501.593 ops/s
+Iteration  26: 975362.570 ops/s
+Iteration  27: 970756.746 ops/s
+Iteration  28: 772236.376 ops/s
+Iteration  29: 988382.525 ops/s
+Iteration  30: 991083.125 ops/s
+Iteration  31: 1003956.596 ops/s
+Iteration  32: 998774.324 ops/s
+Iteration  33: 951990.672 ops/s
+Iteration  34: 984252.047 ops/s
+Iteration  35: 981234.116 ops/s
+Iteration  36: 979836.593 ops/s
+Iteration  37: 987530.853 ops/s
+Iteration  38: 969457.887 ops/s
+Iteration  39: 973112.098 ops/s
+Iteration  40: 996421.321 ops/s
+Iteration  41: 971994.961 ops/s
+Iteration  42: 1010801.599 ops/s
+Iteration  43: 971794.068 ops/s
+Iteration  44: 995706.666 ops/s
+Iteration  45: 985485.400 ops/s
+Iteration  46: 979186.291 ops/s
+Iteration  47: 990375.248 ops/s
+Iteration  48: 1006627.996 ops/s
+Iteration  49: 965993.960 ops/s
+Iteration  50: Total operations - 14337584
+964499.582 ops/s
+
+# Run progress: 33.33% complete, ETA 00:00:34
+# Warmup Fork: 2 of 2
+# Warmup Iteration   1: 13:25:27,436 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+13:25:27,436 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+13:25:27,437 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+13:25:27,438 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+13:25:27,439 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+13:25:27,439 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+13:25:27,614 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@30109176 - Adding [file:/D:/otc-home/config/logback-included.xml] to configuration watch list.
+13:25:27,625 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+13:25:27,632 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleLogger]
+13:25:27,643 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:25:27,743 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+13:25:27,751 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otcLogger]
+13:25:27,753 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:25:27,755 |-INFO in ch.qos.logback.core.FileAppender[otcLogger] - File property is set to [d:/otc-home/logs/otc.log]
+13:25:27,760 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otc] to DEBUG
+13:25:27,760 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otcLogger] to Logger[org.otc]
+13:25:27,761 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otc]
+13:25:27,762 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
+13:25:27,762 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[ROOT]
+13:25:27,762 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+13:25:27,764 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@32fabd25 - Registering current configuration as safe fallback point
+initialized MapStrut test...............
+loaded...............
+597940.522 ops/s
+# Warmup Iteration   2: 875714.450 ops/s
+# Warmup Iteration   3: 978802.103 ops/s
+# Warmup Iteration   4: 871780.317 ops/s
+# Warmup Iteration   5: 940878.010 ops/s
+# Warmup Iteration   6: 1030109.144 ops/s
+# Warmup Iteration   7: 965968.441 ops/s
+# Warmup Iteration   8: 930738.393 ops/s
+# Warmup Iteration   9: 1001390.104 ops/s
+# Warmup Iteration  10: 985768.235 ops/s
+Iteration   1: 978396.665 ops/s
+Iteration   2: 1012405.868 ops/s
+Iteration   3: 955210.026 ops/s
+Iteration   4: 993124.007 ops/s
+Iteration   5: 1032380.298 ops/s
+Iteration   6: 1023318.133 ops/s
+Iteration   7: 1025064.527 ops/s
+Iteration   8: 1027602.457 ops/s
+Iteration   9: 1029756.225 ops/s
+Iteration  10: 1018692.434 ops/s
+Iteration  11: 1020350.236 ops/s
+Iteration  12: 1026380.749 ops/s
+Iteration  13: 1027040.915 ops/s
+Iteration  14: 996733.096 ops/s
+Iteration  15: 1012371.585 ops/s
+Iteration  16: 1017708.855 ops/s
+Iteration  17: 1023133.299 ops/s
+Iteration  18: 1003298.128 ops/s
+Iteration  19: 1005971.600 ops/s
+Iteration  20: 987087.632 ops/s
+Iteration  21: 1032894.407 ops/s
+Iteration  22: 1025354.030 ops/s
+Iteration  23: 1018082.776 ops/s
+Iteration  24: 1031379.297 ops/s
+Iteration  25: 1016921.075 ops/s
+Iteration  26: 1021011.934 ops/s
+Iteration  27: 1009156.444 ops/s
+Iteration  28: 985432.485 ops/s
+Iteration  29: 988050.383 ops/s
+Iteration  30: 993400.483 ops/s
+Iteration  31: 1007336.684 ops/s
+Iteration  32: 984153.731 ops/s
+Iteration  33: 1021669.227 ops/s
+Iteration  34: 1004730.740 ops/s
+Iteration  35: 1025120.518 ops/s
+Iteration  36: 891373.226 ops/s
+Iteration  37: 821150.577 ops/s
+Iteration  38: 1007958.670 ops/s
+Iteration  39: 1017548.784 ops/s
+Iteration  40: 1014768.129 ops/s
+Iteration  41: 1019553.879 ops/s
+Iteration  42: 1009204.441 ops/s
+Iteration  43: 1006450.613 ops/s
+Iteration  44: 1012334.702 ops/s
+Iteration  45: 1011267.558 ops/s
+Iteration  46: 1016405.579 ops/s
+Iteration  47: 1017271.119 ops/s
+Iteration  48: 1001132.219 ops/s
+Iteration  49: 1007570.856 ops/s
+Iteration  50: Total operations - 14682701
+1007823.375 ops/s
+
+# Run progress: 66.67% complete, ETA 00:00:17
+# Fork: 1 of 1
+# Warmup Iteration   1: 13:25:45,685 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+13:25:45,685 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+13:25:45,685 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+13:25:45,686 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+13:25:45,686 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+13:25:45,686 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/D:/work/github_personal/otc/otc-core/target/classes/logback.xml]
+13:25:45,829 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@1ca3883f - Adding [file:/D:/otc-home/config/logback-included.xml] to configuration watch list.
+13:25:45,835 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+13:25:45,843 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleLogger]
+13:25:45,855 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:25:45,933 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+13:25:45,941 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [otcLogger]
+13:25:45,942 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+13:25:45,944 |-INFO in ch.qos.logback.core.FileAppender[otcLogger] - File property is set to [d:/otc-home/logs/otc.log]
+13:25:45,949 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.otc] to DEBUG
+13:25:45,949 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [otcLogger] to Logger[org.otc]
+13:25:45,952 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[org.otc]
+13:25:45,953 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to DEBUG
+13:25:45,953 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleLogger] to Logger[ROOT]
+13:25:45,953 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+13:25:45,955 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@68375420 - Registering current configuration as safe fallback point
+initialized MapStrut test...............
+loaded...............
+440009.185 ops/s
+# Warmup Iteration   2: 922988.952 ops/s
+# Warmup Iteration   3: 915434.960 ops/s
+# Warmup Iteration   4: 897671.729 ops/s
+# Warmup Iteration   5: 1020925.549 ops/s
+# Warmup Iteration   6: 1056105.895 ops/s
+# Warmup Iteration   7: 1041024.138 ops/s
+# Warmup Iteration   8: 1057967.047 ops/s
+# Warmup Iteration   9: 1035687.112 ops/s
+# Warmup Iteration  10: 1053203.857 ops/s
+Iteration   1: 822386.488 ops/s
+Iteration   2: 912494.544 ops/s
+Iteration   3: 1020304.946 ops/s
+Iteration   4: 1013301.587 ops/s
+Iteration   5: 1025529.160 ops/s
+Iteration   6: 1029269.561 ops/s
+Iteration   7: 1021977.638 ops/s
+Iteration   8: 1017929.008 ops/s
+Iteration   9: 1026054.653 ops/s
+Iteration  10: 1026923.591 ops/s
+Iteration  11: 1013839.150 ops/s
+Iteration  12: 1033374.880 ops/s
+Iteration  13: 988826.016 ops/s
+Iteration  14: 1012314.858 ops/s
+Iteration  15: 891783.394 ops/s
+Iteration  16: 997834.435 ops/s
+Iteration  17: 1031597.544 ops/s
+Iteration  18: 992016.923 ops/s
+Iteration  19: 1021140.086 ops/s
+Iteration  20: 1022478.418 ops/s
+Iteration  21: 1015506.729 ops/s
+Iteration  22: 1042322.750 ops/s
+Iteration  23: 1027164.226 ops/s
+Iteration  24: 1012802.834 ops/s
+Iteration  25: 1031254.697 ops/s
+Iteration  26: 1020562.655 ops/s
+Iteration  27: 1017175.507 ops/s
+Iteration  28: 1001190.194 ops/s
+Iteration  29: 1022934.848 ops/s
+Iteration  30: 1013977.463 ops/s
+Iteration  31: 1021944.930 ops/s
+Iteration  32: 1023193.950 ops/s
+Iteration  33: 1028214.451 ops/s
+Iteration  34: 1013071.075 ops/s
+Iteration  35: 1020181.440 ops/s
+Iteration  36: 1012470.733 ops/s
+Iteration  37: 971982.179 ops/s
+Iteration  38: 990814.671 ops/s
+Iteration  39: 954838.317 ops/s
+Iteration  40: 1007161.938 ops/s
+Iteration  41: 1028086.311 ops/s
+Iteration  42: 1026792.135 ops/s
+Iteration  43: 1017479.993 ops/s
+Iteration  44: 874325.747 ops/s
+Iteration  45: 1019303.325 ops/s
+Iteration  46: 1024875.636 ops/s
+Iteration  47: 1032468.653 ops/s
+Iteration  48: 1020980.582 ops/s
+Iteration  49: 1022186.687 ops/s
+Iteration  50: Total operations - 14813262
+997361.200 ops/s
+
+
+Result "org.otc.test.benchmark.MapStrut.testMapStrut":
+  1004680.055 ±(99.9%) 21118.772 ops/s [Average]
+  (min, avg, max) = (822386.488, 1004680.055, 1042322.750), stdev = 42660.965
+  CI (99.9%): [983561.282, 1025798.827] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:53
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark               Mode  Cnt        Score       Error  Units
+MapStrut.testMapStrut  thrpt   50  1004680.055 ± 21118.772  ops/s
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AthenaAirlinePassenger>
+    <Travelers>
+        <Traveler>
+            <customObjectsMap>
+                <entry>
+                    <key>
+                        <Age>
+                            <BirthDate>2006-07-29+05:30</BirthDate>
+                        </Age>
+                    </key>
+                    <value/>
+                </entry>
+                <entry>
+                    <key>
+                        <Age>
+                            <BirthDate>2005-12-12+05:30</BirthDate>
+                        </Age>
+                    </key>
+                    <value/>
+                </entry>
+            </customObjectsMap>
+        </Traveler>
+    </Travelers>
+</AthenaAirlinePassenger>
+

@@ -56,7 +56,7 @@ class ExecutorTest {
 		JSON
 	}
 	
-	private static final String OTC_HOME = OtcConfig.getOtcHomeDirectory();
+	private static final String resourcesLocation = OtcConfig.getOtcConfigLocation();
 
 	private static OtcExecutor otcExecutor;
 
@@ -71,7 +71,7 @@ class ExecutorTest {
 		String pkg = "cpysource_collection";
 		OUTPUT_TYPE outputType = OUTPUT_TYPE.XML;
 
-		String fileName = OTC_HOME + File.separator + "test-samples" + File.separator + "Kronos-passenger-map.xml";
+		String fileName = resourcesLocation + File.separator + "test-samples" + File.separator + "Kronos-passenger-map.xml";
 		KronosAirlinePassenger kronosAirlinePassenger = TestUtil.loadXml(fileName, KronosAirlinePassenger.class);
 
 		//----------------------------------------------------------------------------------

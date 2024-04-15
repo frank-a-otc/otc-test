@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AthenaAirlinePassenger>
+    <Preference>
+        <CabinPreferences>
+            <CabinType>
+                <Name>Economy</Name>
+            </CabinType>
+            <CabinType>
+                <Name>Business</Name>
+            </CabinType>
+        </CabinPreferences>
+    </Preference>
+</AthenaAirlinePassenger>
+

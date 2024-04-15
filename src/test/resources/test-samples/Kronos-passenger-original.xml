@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KronosAirlinePassenger>
+	<Travelers>
+		<Traveler>
+			<AnonymousTraveler>
+				<PTC Quantity="1">ADT</PTC>
+				<Age>
+					<BirthDate>2016-06-20</BirthDate>
+				</Age>
+			</AnonymousTraveler>
+			<RecognizedTraveler>
+				<Name>
+					<Given>Frank</Given>
+					<Given>Josh</Given>
+				</Name>
+			</RecognizedTraveler>
+		</Traveler>
+		<Traveler>
+			<AnonymousTraveler>
+				<PTC Quantity="1">ADT</PTC>
+				<Age>
+					<BirthDate>2016-06-20</BirthDate>
+				</Age>
+			</AnonymousTraveler>
+			<RecognizedTraveler>
+				<Name>
+					<Given>F</Given>
+					<Given>J</Given>
+				</Name>
+			</RecognizedTraveler>
+		</Traveler>
+	</Travelers>
+	<CoreQuery>
+		<OriginDestinations>
+			<OriginDestination>
+				<Departure>
+					<AirportCode>ARN</AirportCode>
+					<Date>2016-06-20</Date>
+				</Departure>
+				<Arrival>
+					<AirportCode>LHR</AirportCode>
+				</Arrival>
+				<MarketingCarrierAirline>
+					<AirlineID>9A</AirlineID>
+					<Name>Athena Air</Name>
+				</MarketingCarrierAirline>
+			</OriginDestination>
+			<OriginDestination>
+				<Departure>
+					<AirportCode>LHR</AirportCode>
+					<Date>2016-07-05</Date>
+				</Departure>
+				<Arrival>
+					<AirportCode>ARN</AirportCode>
+				</Arrival>
+				<MarketingCarrierAirline>
+					<AirlineID>9A</AirlineID>
+					<Name>Athena Air</Name>
+				</MarketingCarrierAirline>
+			</OriginDestination>
+		</OriginDestinations>
+	</CoreQuery>
+	<Preference>
+		<AirlinePreferences>
+			<Airline>
+				<AirlineID>9A</AirlineID>
+			</Airline>
+		</AirlinePreferences>
+		<CabinPreferences>
+			<CabinType>
+				<Code>M</Code>
+				<Definition>Economy/coach discounted</Definition>
+			</CabinType>
+			<CabinType>
+				<Code>B</Code>
+				<Definition>Business</Definition>
+			</CabinType>
+		</CabinPreferences>
+	</Preference>
+	<DataLists>
+		<PassengerList>
+			<Passenger>
+				<IdentityDocuments>
+					<Visa>
+						<VisaType>Abel</VisaType>
+					</Visa>
+				</IdentityDocuments>
+			</Passenger>
+		</PassengerList>
+	</DataLists>
+
+	<MainPassengerName>Abel</MainPassengerName>
+
+</KronosAirlinePassenger>
