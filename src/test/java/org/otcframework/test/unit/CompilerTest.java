@@ -23,15 +23,12 @@
 package org.otcframework.test.unit;
 
 import org.junit.jupiter.api.Test;
-import org.otcframework.common.config.OtcConfig;
 import org.otcframework.compiler.OtcsCompiler;
 import org.otcframework.compiler.OtcsCompilerImpl;
 import org.otcframework.compiler.SourceCodeCompiler;
 import org.otcframework.compiler.SourceCodeCompilerImpl;
 
 class CompilerTest {
-
-	private static final String OTC_HOME = OtcConfig.getOtcHomeDirectory();
 
 	/** The Constant otclCompiler. */
 	private static final OtcsCompiler otcsCompiler = OtcsCompilerImpl.getInstance();
