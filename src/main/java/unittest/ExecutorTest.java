@@ -32,8 +32,6 @@ import org.otcframework.common.config.OtcConfig;
 import org.otcframework.common.util.OtcUtils;
 import org.otcframework.executor.OtcExecutor;
 import org.otcframework.executor.OtcExecutorImpl;
-import org.otcframework.executor.OtcRegistry;
-import org.otcframework.executor.OtcRegistryImpl;
 //import org.xmlunit.builder.Input;
 //import org.xmlunit.diff.Comparison;
 //import org.xmlunit.diff.ComparisonListener;
@@ -43,12 +41,6 @@ import org.otcframework.executor.OtcRegistryImpl;
 
 
 class ExecutorTest {
-	
-	/** The Constant otcRegistry. */
-	private static final OtcRegistry otcRegistry = OtcRegistryImpl.INSTANCE;
-	
-	/** The Constant otcExecutor. */
-//	private static final OtcExecutor otcExecutor;
 
 	private enum OUTPUT_TYPE {
 		XML,
@@ -64,7 +56,7 @@ class ExecutorTest {
 	@Test
 	void runCopyFromSourceObjectTestCases() {
 
-		String pkg = "execute";
+		String pkg = "cpysource_mixedpath";
 		OUTPUT_TYPE outputType = OUTPUT_TYPE.XML;
 
 		String fileName = RESOURCES_LOCATION + File.separator + "test-samples" + File.separator + "Kronos-passenger-map.xml";
