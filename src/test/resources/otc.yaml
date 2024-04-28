@@ -14,7 +14,7 @@ compiler:
     sourceCodeDirectory: D:/workspace/projects/otc-test/src/main/java
     #
     # -- tmdDirectory is the location of the .tmd files. Default is $OTC_HOME/tmd
-    tmdDirectory: D:/workspace/projects/otc-test/src/main/resources
+    tmdDirectory: D:/workspace/projects/otc-test/src/test/resources
     #
 concreteTypes:
   java.util.List:

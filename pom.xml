@@ -30,7 +30,7 @@
 		<jaxb-runtime.version>2.3.2</jaxb-runtime.version>
 		<javax.activation.version>1.1.1</javax.activation.version>
 
-		<otc.version>2.7.2-SNAPSHOT</otc.version>
+		<otc.version>2.7.3-SNAPSHOT</otc.version>
 
 	</properties>
 

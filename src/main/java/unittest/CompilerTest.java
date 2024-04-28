@@ -25,19 +25,15 @@ package unittest;
 import org.junit.jupiter.api.Test;
 import org.otcframework.compiler.OtcsCompiler;
 import org.otcframework.compiler.OtcsCompilerImpl;
-import org.otcframework.compiler.SourceCodeCompiler;
-import org.otcframework.compiler.SourceCodeCompilerImpl;
 
 class CompilerTest {
 
 	private static final OtcsCompiler otcsCompiler = OtcsCompilerImpl.getInstance();
-	private static final SourceCodeCompiler sourceCodeCompiler = SourceCodeCompilerImpl.getInstance();
 
 	@Test
 	public void testCompile() {
 		// -- compile script and generate source code
 		otcsCompiler.compileOtcsFiles();
-		sourceCodeCompiler.compileSourceCode();
 	}
 
 }
